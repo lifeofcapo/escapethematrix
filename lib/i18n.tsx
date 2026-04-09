@@ -1,0 +1,393 @@
+export type Language = "ru" | "en" | "de" | "zh";
+
+export const translations = {
+  ru: {
+    nav: {
+      profile: "Профиль",
+      connect: "Подключиться",
+    },
+    hero: {
+      headline1: "Выйди из",
+      headline2: "Системы.",
+      sub: "Zero logs. Zero trace. Безлимитный трафик. Твой трафик — твоё дело.",
+      cta: "Подключиться в Telegram",
+      ctaSub: "Быстро. Анонимно. Без регистраций.",
+    },
+    features: {
+      title: "Почему мы",
+      items: [
+        {
+          icon: "◈",
+          title: "Zero Logs",
+          desc: "Мы технически не можем предоставить то, чего не существует. Никаких логов, никаких IP, никаких данных о трафике.",
+        },
+        {
+          icon: "◎",
+          title: "VLESS + Reality",
+          desc: "Современный протокол. Обходит DPI-блокировки. Работает везде: Windows, macOS, Linux, iOS, Android.",
+        },
+        {
+          icon: "◬",
+          title: "1+ Гбит/с",
+          desc: "Скорость для 4K стриминга и онлайн-игр. Без ограничений и троттлинга.",
+        },
+        {
+          icon: "◆",
+          title: "Крипта и карты",
+          desc: "Оплата криптой, Visa, Mastercard, МИР, СБП. Быстро и удобно.",
+        },
+        {
+          icon: "◉",
+          title: "5 устройств",
+          desc: "Одна подписка — 5 устройств одновременно. Нужно больше — +49₽ за ещё 5 слотов.",
+        },
+        {
+          icon: "◐",
+          title: "Безлимит",
+          desc: "Никаких лимитов трафика. Никогда. Используй сколько нужно.",
+        },
+      ],
+    },
+    pricing: {
+      title: "Тарифы",
+      sub: "Два региона. Одна цена. Полная свобода.",
+      month: "/ мес",
+      perMonth: "100 ₽",
+      badge: "Безлимит",
+      features: ["Zero logs", "VLESS + Reality", "5 устройств", "1+ Гбит/с", "Крипта / Карты / СБП"],
+      cta: "Подключить",
+      regions: [
+        { flag: "🇫🇮", city: "Хельсинки", country: "Финляндия", ping: "~12ms" },
+        { flag: "🇳🇱", city: "Амстердам", country: "Нидерланды", ping: "~18ms" },
+      ],
+    },
+    captcha: {
+      title: "Подтверди, что ты человек",
+      sub: "Нажми и удерживай кнопку 3 секунды",
+      hold: "Удерживай...",
+      start: "Нажми и держи",
+      verified: "Подтверждено ✓",
+    },
+    faq: {
+      title: "FAQ",
+      items: [
+        {
+          q: "Реально zero logs?",
+          a: "Да. Мы не храним никакие логи подключений, IP-адреса или данные о трафике. Технически не можем предоставить то, чего не существует.",
+        },
+        {
+          q: "Какой протокол?",
+          a: "VLESS. Современный, быстрый, безопасный. Обходит блокировки DPI. Работает на всех платформах: Windows, macOS, Linux, iOS, Android.",
+        },
+        {
+          q: "Какая скорость?",
+          a: "Зависит от сквада, но в среднем 1+ Гбит/с. Хватает для 4K стриминга и онлайн-игр.",
+        },
+        {
+          q: "Сколько устройств?",
+          a: "5 устройств включено в тариф. Нужно больше — +49₽ за ещё 5 слотов.",
+        },
+        {
+          q: "Возврат денег?",
+          a: "Если что-то не работает и мы не можем решить проблему — вернём деньги. Без вопросов.",
+        },
+      ],
+    },
+    profile: {
+      title: "Войти в профиль",
+      sub: "Получи ключ в боте @EscapeTheMatrix_Robot и введи его ниже",
+      placeholder: "Введи ключ доступа...",
+      btn: "Войти",
+      loading: "Проверяем...",
+      error: "Неверный ключ. Проверь правильность ввода.",
+      subLabel: "Подписка",
+      regionLabel: "Регион",
+      devicesLabel: "Устройства",
+      expiresLabel: "Истекает",
+      statusActive: "Активна",
+      statusInactive: "Неактивна",
+      close: "Закрыть",
+      manage: "Управление в боте",
+    },
+    footer: {
+      tagline: "Escape The Matrix",
+      sub: "Твоя свобода в сети.",
+      bot: "Подключиться",
+      privacy: "Политика конфиденциальности",
+      terms: "Условия использования",
+    },
+  },
+
+  en: {
+    nav: {
+      profile: "Profile",
+      connect: "Connect",
+    },
+    hero: {
+      headline1: "Escape The",
+      headline2: "Matrix.",
+      sub: "Zero logs. Zero trace. Unlimited traffic. Your data is your business.",
+      cta: "Connect via Telegram",
+      ctaSub: "Fast. Anonymous. No registration.",
+    },
+    features: {
+      title: "Why us",
+      items: [
+        {
+          icon: "◈",
+          title: "Zero Logs",
+          desc: "We technically cannot provide what doesn't exist. No logs, no IPs, no traffic data. Ever.",
+        },
+        {
+          icon: "◎",
+          title: "VLESS + Reality",
+          desc: "Modern protocol. Bypasses DPI censorship. Works everywhere: Windows, macOS, Linux, iOS, Android.",
+        },
+        {
+          icon: "◬",
+          title: "1+ Gbps",
+          desc: "Speed for 4K streaming and online gaming. No limits, no throttling.",
+        },
+        {
+          icon: "◆",
+          title: "Crypto & Cards",
+          desc: "Pay with crypto, Visa, Mastercard. Fast and convenient.",
+        },
+        {
+          icon: "◉",
+          title: "5 Devices",
+          desc: "One subscription — 5 simultaneous devices. Need more? +49₽ for 5 extra slots.",
+        },
+        {
+          icon: "◐",
+          title: "Unlimited",
+          desc: "No traffic limits. Ever. Use as much as you need.",
+        },
+      ],
+    },
+    pricing: {
+      title: "Pricing",
+      sub: "Two regions. One price. Total freedom.",
+      month: "/ mo",
+      perMonth: "100 ₽",
+      badge: "Unlimited",
+      features: ["Zero logs", "VLESS + Reality", "5 devices", "1+ Gbps", "Crypto / Cards"],
+      cta: "Connect",
+      regions: [
+        { flag: "🇫🇮", city: "Helsinki", country: "Finland", ping: "~12ms" },
+        { flag: "🇳🇱", city: "Amsterdam", country: "Netherlands", ping: "~18ms" },
+      ],
+    },
+    captcha: {
+      title: "Confirm you're human",
+      sub: "Press and hold the button for 3 seconds",
+      hold: "Holding...",
+      start: "Press and hold",
+      verified: "Verified ✓",
+    },
+    faq: {
+      title: "FAQ",
+      items: [
+        {
+          q: "Really zero logs?",
+          a: "Yes. We don't store any connection logs, IP addresses or traffic data. We technically cannot provide what doesn't exist.",
+        },
+        {
+          q: "Which protocol?",
+          a: "VLESS. Modern, fast, secure. Bypasses DPI blocking. Works on all platforms: Windows, macOS, Linux, iOS, Android.",
+        },
+        {
+          q: "What speed?",
+          a: "Depends on the server, but averages 1+ Gbps. Enough for 4K streaming and online gaming.",
+        },
+        {
+          q: "How many devices?",
+          a: "5 devices included in the plan. Need more — +49₽ for another 5 slots.",
+        },
+        {
+          q: "Refund policy?",
+          a: "If something doesn't work and we can't fix the problem — we'll refund. No questions asked.",
+        },
+      ],
+    },
+    profile: {
+      title: "Sign In",
+      sub: "Get your key from @EscapeTheMatrix_Robot and enter it below",
+      placeholder: "Enter your access key...",
+      btn: "Sign In",
+      loading: "Checking...",
+      error: "Invalid key. Please check and try again.",
+      subLabel: "Subscription",
+      regionLabel: "Region",
+      devicesLabel: "Devices",
+      expiresLabel: "Expires",
+      statusActive: "Active",
+      statusInactive: "Inactive",
+      close: "Close",
+      manage: "Manage in bot",
+    },
+    footer: {
+      tagline: "Escape The Matrix",
+      sub: "Your freedom online.",
+      bot: "Connect",
+      privacy: "Privacy Policy",
+      terms: "Terms of Service",
+    },
+  },
+
+  de: {
+    nav: {
+      profile: "Profil",
+      connect: "Verbinden",
+    },
+    hero: {
+      headline1: "Entkомme der",
+      headline2: "Matrix.",
+      sub: "Zero Logs. Zero Spuren. Unbegrenzter Traffic. Deine Daten gehören dir.",
+      cta: "Über Telegram verbinden",
+      ctaSub: "Schnell. Anonym. Ohne Registrierung.",
+    },
+    features: {
+      title: "Warum wir",
+      items: [
+        { icon: "◈", title: "Zero Logs", desc: "Wir können technisch nicht liefern, was nicht existiert. Keine Logs, keine IPs, keine Traffic-Daten." },
+        { icon: "◎", title: "VLESS + Reality", desc: "Modernes Protokoll. Umgeht DPI-Sperren. Läuft überall: Windows, macOS, Linux, iOS, Android." },
+        { icon: "◬", title: "1+ Gbps", desc: "Geschwindigkeit für 4K-Streaming und Online-Gaming. Ohne Limits." },
+        { icon: "◆", title: "Krypto & Karten", desc: "Zahle mit Krypto, Visa oder Mastercard. Schnell und bequem." },
+        { icon: "◉", title: "5 Geräte", desc: "Ein Abo — 5 gleichzeitige Geräte. Mehr nötig? +49₽ für 5 weitere." },
+        { icon: "◐", title: "Unbegrenzt", desc: "Keine Traffic-Limits. Niemals. Nutze so viel du brauchst." },
+      ],
+    },
+    pricing: {
+      title: "Preise",
+      sub: "Zwei Regionen. Ein Preis. Totale Freiheit.",
+      month: "/ Mon",
+      perMonth: "100 ₽",
+      badge: "Unlimited",
+      features: ["Zero Logs", "VLESS + Reality", "5 Geräte", "1+ Gbps", "Krypto / Karten"],
+      cta: "Verbinden",
+      regions: [
+        { flag: "🇫🇮", city: "Helsinki", country: "Finnland", ping: "~12ms" },
+        { flag: "🇳🇱", city: "Amsterdam", country: "Niederlande", ping: "~18ms" },
+      ],
+    },
+    captcha: {
+      title: "Bestätige, dass du ein Mensch bist",
+      sub: "Drücke und halte den Button 3 Sekunden",
+      hold: "Halten...",
+      start: "Drücken und halten",
+      verified: "Bestätigt ✓",
+    },
+    faq: {
+      title: "FAQ",
+      items: [
+        { q: "Wirklich zero logs?", a: "Ja. Wir speichern keine Verbindungslogs, IP-Adressen oder Traffic-Daten. Wir können technisch nichts bereitstellen, was nicht existiert." },
+        { q: "Welches Protokoll?", a: "VLESS. Modern, schnell, sicher. Umgeht DPI-Sperren. Funktioniert auf allen Plattformen." },
+        { q: "Welche Geschwindigkeit?", a: "Im Durchschnitt 1+ Gbps. Ausreichend für 4K-Streaming und Online-Gaming." },
+        { q: "Wie viele Geräte?", a: "5 Geräte im Tarif enthalten. Mehr nötig — +49₽ für weitere 5 Slots." },
+        { q: "Rückerstattungsrichtlinie?", a: "Wenn etwas nicht funktioniert und wir das Problem nicht lösen können — erstatten wir. Keine Fragen." },
+      ],
+    },
+    profile: {
+      title: "Anmelden",
+      sub: "Erhalte deinen Schlüssel vom Bot @EscapeTheMatrix_Robot",
+      placeholder: "Zugriffsschlüssel eingeben...",
+      btn: "Anmelden",
+      loading: "Prüfen...",
+      error: "Ungültiger Schlüssel. Bitte überprüfen.",
+      subLabel: "Abonnement",
+      regionLabel: "Region",
+      devicesLabel: "Geräte",
+      expiresLabel: "Läuft ab",
+      statusActive: "Aktiv",
+      statusInactive: "Inaktiv",
+      close: "Schließen",
+      manage: "Im Bot verwalten",
+    },
+    footer: {
+      tagline: "Escape The Matrix",
+      sub: "Deine Freiheit im Netz.",
+      bot: "Verbinden",
+      privacy: "Datenschutzerklärung",
+      terms: "Nutzungsbedingungen",
+    },
+  },
+
+  zh: {
+    nav: {
+      profile: "个人中心",
+      connect: "立即连接",
+    },
+    hero: {
+      headline1: "逃出",
+      headline2: "矩阵。",
+      sub: "零日志。零痕迹。无限流量。你的数据只属于你。",
+      cta: "通过 Telegram 连接",
+      ctaSub: "快速。匿名。无需注册。",
+    },
+    features: {
+      title: "为什么选择我们",
+      items: [
+        { icon: "◈", title: "零日志", desc: "我们在技术上无法提供不存在的东西。没有日志，没有IP，没有流量数据。" },
+        { icon: "◎", title: "VLESS + Reality", desc: "现代协议，绕过DPI封锁，支持所有平台：Windows、macOS、Linux、iOS、Android。" },
+        { icon: "◬", title: "1+ Gbps", desc: "足以支持4K流媒体和在线游戏，无限速，无节流。" },
+        { icon: "◆", title: "加密货币和银行卡", desc: "支持加密货币、Visa、Mastercard付款。快速便捷。" },
+        { icon: "◉", title: "5台设备", desc: "一个订阅，同时支持5台设备。需要更多？额外5个槽位仅需+49₽。" },
+        { icon: "◐", title: "无限流量", desc: "没有流量限制。永远。用多少都行。" },
+      ],
+    },
+    pricing: {
+      title: "套餐",
+      sub: "两个节点。统一价格。完全自由。",
+      month: "/ 月",
+      perMonth: "100 ₽",
+      badge: "无限流量",
+      features: ["零日志", "VLESS + Reality", "5台设备", "1+ Gbps", "加密货币 / 银行卡"],
+      cta: "立即连接",
+      regions: [
+        { flag: "🇫🇮", city: "赫尔辛基", country: "芬兰", ping: "~12ms" },
+        { flag: "🇳🇱", city: "阿姆斯特丹", country: "荷兰", ping: "~18ms" },
+      ],
+    },
+    captcha: {
+      title: "请确认您是人类",
+      sub: "按住按钮3秒",
+      hold: "按住中...",
+      start: "按住",
+      verified: "已验证 ✓",
+    },
+    faq: {
+      title: "常见问题",
+      items: [
+        { q: "真的是零日志吗？", a: "是的。我们不存储任何连接日志、IP地址或流量数据。我们在技术上无法提供不存在的东西。" },
+        { q: "使用什么协议？", a: "VLESS。现代、快速、安全。绕过DPI封锁，支持所有平台。" },
+        { q: "速度有多快？", a: "平均1+ Gbps，足以支持4K流媒体和在线游戏。" },
+        { q: "支持多少台设备？", a: "套餐包含5台设备。需要更多？额外5个槽位+49₽。" },
+        { q: "退款政策？", a: "如果出现问题且我们无法解决，将全额退款。无需理由。" },
+      ],
+    },
+    profile: {
+      title: "登录",
+      sub: "从 @EscapeTheMatrix_Robot 获取密钥并在下方输入",
+      placeholder: "输入访问密钥...",
+      btn: "登录",
+      loading: "验证中...",
+      error: "密钥无效，请检查后重试。",
+      subLabel: "订阅",
+      regionLabel: "节点",
+      devicesLabel: "设备",
+      expiresLabel: "到期时间",
+      statusActive: "活跃",
+      statusInactive: "未激活",
+      close: "关闭",
+      manage: "在机器人中管理",
+    },
+    footer: {
+      tagline: "Escape The Matrix",
+      sub: "您的网络自由。",
+      bot: "立即连接",
+      privacy: "隐私政策",
+      terms: "服务条款",
+    },
+  },
+};
