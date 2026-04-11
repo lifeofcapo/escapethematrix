@@ -7,7 +7,7 @@ export default function FeaturesSection({ t }: { t: any }) {
 
       <div className="max-w-6xl mx-auto relative">
         <div className="mb-16">
-          <span className="text-sm font-mono tracking-[0.4em] text-green-400/60 uppercase">
+          <span className="text-2xl md:text-3xl font-mono font-black tracking-wider text-green-400 uppercase">
             — {t.features.title}
           </span>
         </div>

@@ -1,77 +1,32 @@
+import type { Metadata } from "next";
+import TermsClient from "./TermsClient";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Terms of Service — Escape The Matrix VPN",
+    description:
+      "Terms of Service for Escape The Matrix VPN. Understand your rights and obligations when using our service.",
+    metadataBase: new URL("https://escapethematrix.to"),
+    alternates: {
+      canonical: "https://escapethematrix.to/terms",
+      languages: {
+        "en": "https://escapethematrix.to/terms",
+        "ru": "https://escapethematrix.to/terms",
+        "de": "https://escapethematrix.to/terms",
+        "es": "https://escapethematrix.to/terms",
+        "zh": "https://escapethematrix.to/terms",
+      },
+    },
+    openGraph: {
+      title: "Terms of Service — Escape The Matrix VPN",
+      description: "Terms of Service for Escape The Matrix VPN.",
+      url: "https://escapethematrix.to/terms",
+      siteName: "Escape The Matrix",
+      type: "website",
+    },
+  };
+}
+
 export default function TermsPage() {
-  return (
-    <main className="min-h-screen bg-[#080808] text-white px-6 py-24">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-mono font-black text-green-400 uppercase mb-8">
-          Условия использования
-        </h1>
-        <div className="prose prose-invert prose-sm md:prose-base font-mono text-white/60 max-w-none">
-          <p className="text-white/40">Последнее обновление: 09.04.2026</p>
-
-          <h2 className="text-white font-mono text-xl mt-8 mb-4">1. Предмет соглашения</h2>
-          <p>
-            Настоящие Условия использования (далее — «Условия») регулируют отношения между Escape The Matrix
-            (далее — «Сервис») и пользователем (далее — «Пользователь») при использовании сайта
-            <span className="text-green-400"> escapethematrix.to</span> и связанных с ним услуг VPN.
-          </p>
-
-          <h2 className="text-white font-mono text-xl mt-8 mb-4">2. Описание услуги</h2>
-          <p>
-            Сервис предоставляет доступ к зашифрованному VPN-туннелю с использованием протокола VLESS + Reality.
-            Услуга предоставляется на условиях подписки. Пользователь получает доступ к серверам в Хельсинки
-            и Амстердаме. Подробные характеристики указаны на главной странице Сайта.
-          </p>
-
-          <h2 className="text-white font-mono text-xl mt-8 mb-4">3. Обязанности пользователя</h2>
-          <p>Пользователь обязуется:</p>
-          <ul className="list-disc list-inside space-y-2">
-            <li>Не использовать Сервис для совершения противоправных действий, включая, но не ограничиваясь: распространение вредоносного ПО, фишинг, спам, DDoS-атаки, мошенничество, нарушение авторских прав.</li>
-            <li>Не предпринимать попыток взлома или нарушения нормальной работы Сервиса.</li>
-            <li>Не передавать свои учетные данные (конфигурационные файлы) третьим лицам. Обнаружение факта массовой раздачи конфигураций может привести к блокировке подписки без возврата средств.</li>
-          </ul>
-
-          <h2 className="text-white font-mono text-xl mt-8 mb-4">4. Отказ от ответственности</h2>
-          <p>
-            Сервис предоставляется «как есть» (as is). Мы не несем ответственности за:
-          </p>
-          <ul className="list-disc list-inside space-y-2">
-            <li>Действия Пользователя в сети Интернет при использовании VPN.</li>
-            <li>Временную недоступность сервиса по причинам, не зависящим от нас (форс-мажор, блокировки на уровне провайдера, технические работы).</li>
-            <li>Ущерб, причиненный в результате использования или невозможности использования Сервиса.</li>
-            <li>Контент сайтов и сервисов, к которым Пользователь получает доступ через VPN.</li>
-          </ul>
-          <p>
-            Мы прилагаем все разумные усилия для обеспечения стабильной работы и высокой скорости соединения.
-          </p>
-
-          <h2 className="text-white font-mono text-xl mt-8 mb-4">5. Политика возврата</h2>
-          <p>
-            Если в течение 24 часов с момента оплаты Сервис не работает на вашем устройстве по техническим причинам,
-            и наша служба поддержки не смогла решить проблему, мы осуществляем полный возврат средств.
-            Возврат производится на те же реквизиты, с которых был совершен платеж. Для запроса возврата обратитесь
-            в бота <a href="https://t.me/EscapeTheMatrix_Bot" className="text-green-400 hover:underline">@EscapeTheMatrix_Bot</a>.
-          </p>
-
-          <h2 className="text-white font-mono text-xl mt-8 mb-4">6. Блокировка аккаунта</h2>
-          <p>
-            Мы оставляем за собой право приостановить или прекратить предоставление услуг Пользователю в одностороннем
-            порядке в случае нарушения настоящих Условий или подозрения на злоупотребление (например, использование
-            для спама или сетевых атак).
-          </p>
-
-          <h2 className="text-white font-mono text-xl mt-8 mb-4">7. Изменение условий</h2>
-          <p>
-            Сервис может изменять настоящие Условия в любое время без предварительного уведомления Пользователя.
-            Актуальная версия всегда доступна по адресу <span className="text-green-400">escapethematrix.to/terms</span>.
-          </p>
-
-          <h2 className="text-white font-mono text-xl mt-8 mb-4">8. Применимое право</h2>
-          <p>
-            Отношения Сторон регулируются законодательством юрисдикции, в которой зарегистрирован Сервис.
-            Все споры решаются путем переговоров.
-          </p>
-        </div>
-      </div>
-    </main>
-  );
+  return <TermsClient />;
 }

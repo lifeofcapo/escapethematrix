@@ -1,6 +1,8 @@
 "use client";
 
-export default function BlogSection({ t }: { t: any }) {
+import Link from "next/link";
+
+export default function BlogSection({ t, lang }: { t: any; lang: string }) {
   const blog = t.blog;
 
   const articles = [
@@ -40,18 +42,19 @@ export default function BlogSection({ t }: { t: any }) {
             — {blog.title}
           </span>
         </div>
-        <p className="text-white/25 font-mono text-sm tracking-wider mb-2">
+        <p className="text-white/90 font-mono text-sm tracking-wider mb-2">
           {blog.sub}
         </p>
-        <p className="text-white/15 font-mono text-xs tracking-widest mb-16">
+        <p className="text-white/70 font-mono text-xs tracking-widest mb-16">
           {blog.desc}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
           {articles.map((article, i) => (
-            <div
+            <Link
               key={i}
-              className="group bg-[#080808] p-8 hover:bg-white/[0.02] transition-colors cursor-pointer relative overflow-hidden"
+              href={`/blog/${article.slug}?lang=${lang}`}
+              className="group bg-[#080808] p-8 hover:bg-white/[0.02] transition-colors cursor-pointer relative overflow-hidden block"
             >
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
@@ -80,7 +83,7 @@ export default function BlogSection({ t }: { t: any }) {
                   {blog.read} →
                 </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

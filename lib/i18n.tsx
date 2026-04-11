@@ -8,7 +8,7 @@ const compareRowsRu = [
   { feature: "Неограниченный трафик", us: true, free: "Обычно лимит" },
   { feature: "Современный протокол (VLESS)", us: true, free: false },
   { feature: "Шифрование каналов", us: true, free: "Частично" },
-  { feature: "Поддержка", us: "24/7 Telegram", free: "Нет" },
+  { feature: "Поддержка", us: "24/7 Telegram, Email", free: "Нет" },
 ];
 
 const compareRowsEn = [
@@ -19,7 +19,7 @@ const compareRowsEn = [
   { feature: "Unlimited traffic", us: true, free: "Usually capped" },
   { feature: "Modern protocol (VLESS)", us: true, free: false },
   { feature: "Encrypted channels", us: true, free: "Partial" },
-  { feature: "Support", us: "24/7 Telegram", free: "None" },
+  { feature: "Support", us: "24/7 Telegram, Email", free: "None" },
 ];
 
 const compareRowsEs = [
@@ -30,8 +30,567 @@ const compareRowsEs = [
   { feature: "Tráfico ilimitado", us: true, free: "Con límite" },
   { feature: "Protocolo moderno (VLESS)", us: true, free: false },
   { feature: "Canales cifrados", us: true, free: "Parcial" },
-  { feature: "Soporte", us: "24/7 Telegram", free: "Ninguno" },
+  { feature: "Soporte", us: "24/7 Telegram, Email", free: "Ninguno" },
 ];
+
+export const articleContent = {
+  "public-wifi-safe": {
+    ru: {
+      title: "Безопасен ли публичный Wi-Fi?",
+      tag: "Безопасность",
+      date: "09.04.2026",
+      readTime: "5 мин",
+      description: "Кофейня, аэропорт, отель — все они предлагают бесплатный Wi-Fi. Но что на самом деле происходит с вашими данными в публичных сетях?",
+      metaDescription: "Узнайте, насколько безопасен публичный Wi-Fi в кофейнях, аэропортах и отелях. Как защитить данные с помощью VPN.",
+      content: [
+        {
+          type: "intro",
+          text: "Публичный Wi-Fi повсюду — в кофейнях, аэропортах, отелях, торговых центрах. Он удобен и бесплатен. Но насколько он безопасен для ваших данных?"
+        },
+        {
+          type: "h2",
+          text: "Что происходит в открытой сети"
+        },
+        {
+          type: "p",
+          text: "В большинстве публичных Wi-Fi сетей трафик передаётся без шифрования. Это означает, что любой, кто подключён к той же сети, потенциально может перехватить ваши данные. Этот тип атаки называется «человек посередине» (MITM — Man-in-the-Middle)."
+        },
+        {
+          type: "h2",
+          text: "Основные угрозы публичного Wi-Fi"
+        },
+        {
+          type: "list",
+          items: [
+            "Перехват незашифрованного трафика (HTTP-сайты, часть мобильного трафика)",
+            "Поддельные точки доступа (Evil Twin) — когда злоумышленник создаёт сеть с похожим названием",
+            "ARP-спуфинг — перенаправление трафика через устройство атакующего",
+            "Сессионное перехватывание (Session Hijacking) — кража cookies авторизации",
+            "DNS-спуфинг — перенаправление на фишинговые сайты"
+          ]
+        },
+        {
+          type: "h2",
+          text: "Кому особенно стоит беспокоиться"
+        },
+        {
+          type: "p",
+          text: "Если вы работаете с конфиденциальными данными, проводите банковские операции или просто цените приватность — публичный Wi-Fi без защиты представляет реальный риск. Журналисты, предприниматели, путешественники — все, кто часто использует открытые сети, подвергают себя опасности."
+        },
+        {
+          type: "h2",
+          text: "Как защитить себя"
+        },
+        {
+          type: "list",
+          items: [
+            "Используйте VPN — он шифрует весь ваш трафик, делая перехват бессмысленным",
+            "Избегайте сайтов без HTTPS в публичных сетях",
+            "Отключите автоматическое подключение к открытым сетям",
+            "Не вводите платёжные данные через публичный Wi-Fi без VPN",
+            "Используйте двухфакторную аутентификацию везде, где это возможно"
+          ]
+        },
+        {
+          type: "h2",
+          text: "Почему VPN — лучшее решение"
+        },
+        {
+          type: "p",
+          text: "VPN создаёт зашифрованный туннель между вашим устройством и сервером. Даже если кто-то перехватит ваш трафик в публичной сети — они увидят лишь зашифрованные данные, расшифровать которые практически невозможно."
+        },
+        {
+          type: "p",
+          text: "Протокол VLESS + Reality, который использует Escape The Matrix, особенно эффективен: он не только шифрует трафик, но и маскирует его под обычный HTTPS, что делает обнаружение VPN крайне сложным."
+        },
+        {
+          type: "conclusion",
+          text: "Публичный Wi-Fi удобен, но опасен без дополнительной защиты. VPN — простое и эффективное решение, которое работает в фоне, не требуя от вас никаких усилий. Подключите Escape The Matrix один раз — и пользуйтесь любыми сетями без страха."
+        }
+      ]
+    },
+    en: {
+      title: "Is public Wi-Fi safe?",
+      tag: "Security",
+      date: "09.04.2026",
+      readTime: "5 min",
+      description: "Coffee shops, airports, hotels — they all offer free Wi-Fi. But what really happens to your data on public networks?",
+      metaDescription: "Learn how safe public Wi-Fi really is in coffee shops, airports and hotels. How to protect your data with a VPN.",
+      content: [
+        { type: "intro", text: "Public Wi-Fi is everywhere — in coffee shops, airports, hotels, malls. It's convenient and free. But how safe is it for your data?" },
+        { type: "h2", text: "What happens on an open network" },
+        { type: "p", text: "In most public Wi-Fi networks, traffic is transmitted without encryption. This means anyone connected to the same network can potentially intercept your data. This type of attack is called a Man-in-the-Middle (MITM) attack." },
+        { type: "h2", text: "Main threats of public Wi-Fi" },
+        { type: "list", items: ["Unencrypted traffic interception (HTTP sites, some mobile traffic)", "Fake access points (Evil Twin) — when an attacker creates a network with a similar name", "ARP spoofing — redirecting traffic through an attacker's device", "Session hijacking — stealing authorization cookies", "DNS spoofing — redirecting to phishing sites"] },
+        { type: "h2", text: "Who should be especially concerned" },
+        { type: "p", text: "If you work with confidential data, conduct banking operations, or simply value privacy — public Wi-Fi without protection poses a real risk. Journalists, entrepreneurs, travelers — anyone who frequently uses open networks exposes themselves to danger." },
+        { type: "h2", text: "How to protect yourself" },
+        { type: "list", items: ["Use a VPN — it encrypts all your traffic, making interception pointless", "Avoid sites without HTTPS on public networks", "Disable automatic connection to open networks", "Don't enter payment data over public Wi-Fi without a VPN", "Use two-factor authentication wherever possible"] },
+        { type: "h2", text: "Why VPN is the best solution" },
+        { type: "p", text: "A VPN creates an encrypted tunnel between your device and the server. Even if someone intercepts your traffic on a public network — they'll only see encrypted data that's practically impossible to decrypt." },
+        { type: "p", text: "The VLESS + Reality protocol used by Escape The Matrix is especially effective: it not only encrypts traffic but disguises it as regular HTTPS, making VPN detection extremely difficult." },
+        { type: "conclusion", text: "Public Wi-Fi is convenient but dangerous without extra protection. A VPN is a simple and effective solution that works in the background without requiring any effort from you. Connect Escape The Matrix once — and use any network without fear." }
+      ]
+    },
+    es: {
+      title: "¿Es seguro el Wi-Fi público?",
+      tag: "Seguridad",
+      date: "09.04.2026",
+      readTime: "5 min",
+      description: "Cafeterías, aeropuertos, hoteles — todos ofrecen Wi-Fi gratuito. ¿Pero qué pasa realmente con tus datos en redes públicas?",
+      metaDescription: "Descubre qué tan seguro es el Wi-Fi público en cafeterías, aeropuertos y hoteles. Cómo proteger tus datos con una VPN.",
+      content: [
+        { type: "intro", text: "El Wi-Fi público está en todas partes: cafeterías, aeropuertos, hoteles, centros comerciales. Es conveniente y gratuito. ¿Pero qué tan seguro es para tus datos?" },
+        { type: "h2", text: "Qué ocurre en una red abierta" },
+        { type: "p", text: "En la mayoría de las redes Wi-Fi públicas, el tráfico se transmite sin cifrado. Esto significa que cualquier persona conectada a la misma red puede interceptar potencialmente tus datos. Este tipo de ataque se llama 'Hombre en el Medio' (MITM)." },
+        { type: "h2", text: "Principales amenazas del Wi-Fi público" },
+        { type: "list", items: ["Interceptación de tráfico sin cifrar (sitios HTTP, parte del tráfico móvil)", "Puntos de acceso falsos (Evil Twin) — cuando un atacante crea una red con un nombre similar", "ARP spoofing — redirigir el tráfico a través del dispositivo del atacante", "Secuestro de sesión — robo de cookies de autorización", "DNS spoofing — redirigir a sitios de phishing"] },
+        { type: "h2", text: "Quién debe preocuparse especialmente" },
+        { type: "p", text: "Si trabajas con datos confidenciales, realizas operaciones bancarias o simplemente valoras la privacidad — el Wi-Fi público sin protección representa un riesgo real." },
+        { type: "h2", text: "Cómo protegerte" },
+        { type: "list", items: ["Usa una VPN — cifra todo tu tráfico, haciendo inútil la interceptación", "Evita sitios sin HTTPS en redes públicas", "Desactiva la conexión automática a redes abiertas", "No introduzcas datos de pago a través de Wi-Fi público sin VPN", "Usa autenticación de dos factores donde sea posible"] },
+        { type: "h2", text: "Por qué una VPN es la mejor solución" },
+        { type: "p", text: "Una VPN crea un túnel cifrado entre tu dispositivo y el servidor. Incluso si alguien intercepta tu tráfico en una red pública, solo verán datos cifrados prácticamente imposibles de descifrar." },
+        { type: "conclusion", text: "El Wi-Fi público es conveniente pero peligroso sin protección adicional. Una VPN es una solución simple y efectiva que funciona en segundo plano. Conecta Escape The Matrix una vez y usa cualquier red sin miedo." }
+      ]
+    },
+    de: {
+      title: "Ist öffentliches WLAN sicher?",
+      tag: "Sicherheit",
+      date: "09.04.2026",
+      readTime: "5 Min",
+      description: "Cafés, Flughäfen, Hotels — alle bieten kostenloses WLAN. Was passiert aber wirklich mit Ihren Daten in öffentlichen Netzwerken?",
+      metaDescription: "Erfahren Sie, wie sicher öffentliches WLAN in Cafés, Flughäfen und Hotels wirklich ist. Wie Sie Ihre Daten mit einem VPN schützen.",
+      content: [
+        { type: "intro", text: "Öffentliches WLAN ist überall — in Cafés, Flughäfen, Hotels, Einkaufszentren. Es ist bequem und kostenlos. Aber wie sicher ist es für Ihre Daten?" },
+        { type: "h2", text: "Was in einem offenen Netzwerk passiert" },
+        { type: "p", text: "In den meisten öffentlichen WLAN-Netzwerken wird der Datenverkehr unverschlüsselt übertragen. Das bedeutet, dass jeder, der mit demselben Netzwerk verbunden ist, Ihre Daten potenziell abfangen kann. Diese Art von Angriff heißt Man-in-the-Middle (MITM)." },
+        { type: "h2", text: "Hauptgefahren öffentlicher WLANs" },
+        { type: "list", items: ["Abfangen unverschlüsselten Datenverkehrs", "Gefälschte Zugangspunkte (Evil Twin)", "ARP-Spoofing — Weiterleitung des Datenverkehrs über das Gerät des Angreifers", "Session Hijacking — Diebstahl von Autorisierungs-Cookies", "DNS-Spoofing — Weiterleitung zu Phishing-Websites"] },
+        { type: "h2", text: "Wie Sie sich schützen" },
+        { type: "list", items: ["Verwenden Sie ein VPN — es verschlüsselt Ihren gesamten Datenverkehr", "Meiden Sie HTTP-Websites in öffentlichen Netzwerken", "Deaktivieren Sie die automatische Verbindung zu offenen Netzwerken", "Geben Sie keine Zahlungsdaten ohne VPN über öffentliches WLAN ein", "Verwenden Sie überall Zwei-Faktor-Authentifizierung"] },
+        { type: "h2", text: "Warum VPN die beste Lösung ist" },
+        { type: "p", text: "Ein VPN erstellt einen verschlüsselten Tunnel zwischen Ihrem Gerät und dem Server. Selbst wenn jemand Ihren Datenverkehr abfängt — er sieht nur verschlüsselte Daten, die praktisch unmöglich zu entschlüsseln sind." },
+        { type: "conclusion", text: "Öffentliches WLAN ist bequem, aber ohne zusätzlichen Schutz gefährlich. Verbinden Sie Escape The Matrix einmal — und nutzen Sie jedes Netzwerk ohne Angst." }
+      ]
+    },
+    zh: {
+      title: "公共Wi-Fi安全吗？",
+      tag: "安全",
+      date: "09.04.2026",
+      readTime: "5分钟",
+      description: "咖啡厅、机场、酒店——都提供免费Wi-Fi。但您的数据在公共网络中究竟发生了什么？",
+      metaDescription: "了解咖啡厅、机场和酒店公共Wi-Fi的真实安全性。如何使用VPN保护您的数据。",
+      content: [
+        { type: "intro", text: "公共Wi-Fi无处不在——咖啡厅、机场、酒店、购物中心。它方便且免费。但对您的数据有多安全？" },
+        { type: "h2", text: "开放网络中会发生什么" },
+        { type: "p", text: "在大多数公共Wi-Fi网络中，流量是在没有加密的情况下传输的。这意味着连接到同一网络的任何人都可能拦截您的数据。这种攻击类型称为中间人攻击（MITM）。" },
+        { type: "h2", text: "公共Wi-Fi的主要威胁" },
+        { type: "list", items: ["拦截未加密的流量（HTTP网站、部分移动流量）", "伪造接入点（Evil Twin）——攻击者创建类似名称的网络", "ARP欺骗——通过攻击者的设备重定向流量", "会话劫持——窃取授权Cookie", "DNS欺骗——重定向到钓鱼网站"] },
+        { type: "h2", text: "如何保护自己" },
+        { type: "list", items: ["使用VPN——它加密您所有的流量，使拦截毫无意义", "在公共网络上避免使用没有HTTPS的网站", "禁用自动连接到开放网络", "不要在没有VPN的情况下通过公共Wi-Fi输入支付数据", "尽可能使用双因素认证"] },
+        { type: "h2", text: "为什么VPN是最佳解决方案" },
+        { type: "p", text: "VPN在您的设备和服务器之间创建加密隧道。即使有人在公共网络上拦截您的流量——他们也只会看到几乎不可能解密的加密数据。" },
+        { type: "conclusion", text: "公共Wi-Fi方便但没有额外保护时很危险。连接Escape The Matrix一次——无惧地使用任何网络。" }
+      ]
+    }
+  },
+  "vpn-legal": {
+    ru: {
+      title: "Законно ли использование VPN? Законы разных стран",
+      tag: "Право",
+      date: "09.04.2026",
+      readTime: "8 мин",
+      description: "VPN легален в большинстве стран, но есть исключения. Разбираемся в правовом статусе VPN по всему миру.",
+      metaDescription: "Правовой статус VPN в разных странах мира. Где VPN легален, где ограничен, а где полностью запрещён. Полный обзор законодательства.",
+      content: [
+        { type: "intro", text: "Вопрос о законности VPN актуален для миллионов пользователей по всему миру. Короткий ответ: в большинстве стран VPN абсолютно легален. Но нюансы важны." },
+        { type: "h2", text: "Страны, где VPN полностью легален" },
+        { type: "p", text: "В большинстве демократических стран — США, странах ЕС, Великобритании, Канаде, Австралии, Японии и других — использование VPN полностью законно. Никаких ограничений, никакой регистрации, никаких разрешений не требуется." },
+        { type: "h2", text: "Страны с ограничениями" },
+        { type: "list", items: ["Россия — VPN-сервисы обязаны подключиться к государственному реестру и блокировать запрещённые сайты. Не подключившиеся сервисы сами могут быть заблокированы. Использование VPN рядовым пользователем не является уголовно наказуемым.", "Китай — VPN строго регулируется. Разрешены только одобренные государством VPN. Использование несанкционированного VPN может повлечь штрафы.", "ОАЭ — использование VPN для незаконных действий наказуемо. Сам по себе VPN не запрещён.", "Иран — аналогично России, VPN должны быть одобрены государством.", "Беларусь — использование VPN не запрещено напрямую, но регуляторная среда ужесточается."] },
+        { type: "h2", text: "Страны с полным запретом" },
+        { type: "list", items: ["Северная Корея — интернет практически недоступен, VPN запрещены.", "Туркменистан — крайне жёсткий контроль интернета.", "Ирак — VPN был запрещён в период борьбы с ИГИЛ."] },
+        { type: "h2", text: "Что важно понимать" },
+        { type: "p", text: "Даже там, где VPN ограничен, обычно под запрет попадает использование его для противоправных действий, а не само использование технологии. Большинство ограничений направлено против поставщиков VPN-услуг, а не рядовых пользователей." },
+        { type: "h2", text: "Escape The Matrix и законодательство" },
+        { type: "p", text: "Escape The Matrix предоставляет инструмент для защиты конфиденциальности. Мы не поощряем использование нашего сервиса для нарушения законов. Ответственность за соблюдение местного законодательства лежит на пользователе." },
+        { type: "conclusion", text: "В большинстве стран мира VPN — это законный инструмент защиты конфиденциальности. Используйте его разумно, соблюдайте законы своей страны, и VPN станет вашим надёжным щитом в цифровом мире." }
+      ]
+    },
+    en: {
+      title: "Is using a VPN legal? Understanding laws around the world",
+      tag: "Legal",
+      date: "09.04.2026",
+      readTime: "8 min",
+      description: "VPNs are legal in most countries, but there are exceptions. We break down the legal status of VPNs worldwide.",
+      metaDescription: "Legal status of VPNs in different countries. Where VPN is legal, restricted, or fully banned. Complete legislative overview.",
+      content: [
+        { type: "intro", text: "The question of VPN legality affects millions of users worldwide. The short answer: in most countries, VPNs are completely legal. But the nuances matter." },
+        { type: "h2", text: "Countries where VPN is fully legal" },
+        { type: "p", text: "In most democratic countries — the US, EU countries, UK, Canada, Australia, Japan and others — using a VPN is completely legal. No restrictions, no registration, no permits required." },
+        { type: "h2", text: "Countries with restrictions" },
+        { type: "list", items: ["Russia — VPN services must connect to a government registry and block banned sites. Using VPN as a regular user is not a criminal offense.", "China — VPN is strictly regulated. Only state-approved VPNs are permitted. Using an unauthorized VPN can result in fines.", "UAE — using VPN for illegal activities is punishable. The VPN itself is not banned.", "Iran — similar to Russia, VPNs must be state-approved.", "Belarus — VPN is not directly banned, but the regulatory environment is tightening."] },
+        { type: "h2", text: "Countries with total ban" },
+        { type: "list", items: ["North Korea — internet is nearly inaccessible, VPNs are banned.", "Turkmenistan — extremely strict internet control.", "Iraq — VPN was banned during the fight against ISIS."] },
+        { type: "h2", text: "What's important to understand" },
+        { type: "p", text: "Even where VPN is restricted, the ban usually targets using it for illegal activities, not the technology itself. Most restrictions target VPN providers, not regular users." },
+        { type: "conclusion", text: "In most of the world, a VPN is a legal tool for privacy protection. Use it wisely, follow your country's laws, and VPN will become your reliable shield in the digital world." }
+      ]
+    },
+    es: {
+      title: "¿Es legal usar una VPN? Leyes en todo el mundo",
+      tag: "Legal",
+      date: "09.04.2026",
+      readTime: "8 min",
+      description: "Las VPNs son legales en la mayoría de países, pero hay excepciones. Analizamos el estatus legal en todo el mundo.",
+      metaDescription: "Estado legal de las VPN en diferentes países del mundo. Dónde la VPN es legal, está restringida o completamente prohibida.",
+      content: [
+        { type: "intro", text: "La pregunta sobre la legalidad de las VPN afecta a millones de usuarios en todo el mundo. La respuesta corta: en la mayoría de los países, las VPN son completamente legales." },
+        { type: "h2", text: "Países donde las VPN son completamente legales" },
+        { type: "p", text: "En la mayoría de los países democráticos — EE.UU., países de la UE, Reino Unido, Canadá, Australia, Japón y otros — el uso de VPN es completamente legal. No se requieren restricciones, registro ni permisos." },
+        { type: "h2", text: "Países con restricciones" },
+        { type: "list", items: ["Rusia — los servicios VPN deben conectarse a un registro gubernamental. El uso de VPN por usuarios regulares no es delito.", "China — la VPN está estrictamente regulada. Solo se permiten VPN aprobadas por el Estado.", "EAU — el uso de VPN para actividades ilegales es punible. La VPN en sí no está prohibida.", "Irán — similar a Rusia, las VPN deben ser aprobadas por el Estado."] },
+        { type: "h2", text: "Lo más importante" },
+        { type: "p", text: "Incluso donde la VPN está restringida, generalmente la prohibición se dirige al uso para actividades ilegales, no a la tecnología en sí. La mayoría de las restricciones se dirigen a los proveedores de VPN, no a los usuarios regulares." },
+        { type: "conclusion", text: "En la mayor parte del mundo, una VPN es una herramienta legal para proteger la privacidad. Úsala con sabiduría y la VPN se convertirá en tu escudo confiable en el mundo digital." }
+      ]
+    },
+    de: {
+      title: "Ist ein VPN legal? Gesetze weltweit",
+      tag: "Recht",
+      date: "09.04.2026",
+      readTime: "8 Min",
+      description: "VPNs sind in den meisten Ländern legal, aber es gibt Ausnahmen. Wir klären den rechtlichen Status weltweit.",
+      metaDescription: "Rechtsstatus von VPN in verschiedenen Ländern. Wo VPN legal, eingeschränkt oder vollständig verboten ist. Vollständiger Überblick.",
+      content: [
+        { type: "intro", text: "Die Frage der VPN-Legalität betrifft Millionen von Nutzern weltweit. Die kurze Antwort: In den meisten Ländern ist VPN völlig legal." },
+        { type: "h2", text: "Länder, in denen VPN vollständig legal ist" },
+        { type: "p", text: "In den meisten demokratischen Ländern — USA, EU-Ländern, UK, Kanada, Australien, Japan und anderen — ist die Nutzung von VPN völlig legal. Keine Einschränkungen, keine Registrierung, keine Genehmigungen erforderlich." },
+        { type: "h2", text: "Länder mit Einschränkungen" },
+        { type: "list", items: ["Russland — VPN-Dienste müssen sich in ein staatliches Register eintragen. Die Nutzung durch normale Benutzer ist keine Straftat.", "China — VPN ist streng reguliert. Nur staatlich genehmigte VPNs sind erlaubt.", "VAE — die Nutzung von VPN für illegale Aktivitäten ist strafbar. VPN selbst ist nicht verboten.", "Iran — ähnlich wie Russland müssen VPNs staatlich genehmigt sein."] },
+        { type: "h2", text: "Was wichtig zu verstehen ist" },
+        { type: "p", text: "Selbst dort, wo VPN eingeschränkt ist, richtet sich das Verbot normalerweise gegen die Nutzung für illegale Aktivitäten, nicht gegen die Technologie selbst." },
+        { type: "conclusion", text: "In den meisten Teilen der Welt ist ein VPN ein legales Datenschutz-Tool. Nutzen Sie es verantwortungsbewusst, und VPN wird Ihr zuverlässiger Schutzschild in der digitalen Welt." }
+      ]
+    },
+    zh: {
+      title: "使用VPN合法吗？全球法律解读",
+      tag: "法律",
+      date: "09.04.2026",
+      readTime: "8分钟",
+      description: "VPN在大多数国家是合法的，但也有例外。我们分析全球法律状态。",
+      metaDescription: "不同国家VPN的法律状态。哪里VPN合法、受限或完全禁止。全面立法概述。",
+      content: [
+        { type: "intro", text: "VPN合法性问题影响着全球数百万用户。简短的答案是：在大多数国家，VPN是完全合法的。但细节很重要。" },
+        { type: "h2", text: "VPN完全合法的国家" },
+        { type: "p", text: "在大多数民主国家——美国、欧盟国家、英国、加拿大、澳大利亚、日本等——使用VPN是完全合法的。没有限制，不需要注册，不需要许可。" },
+        { type: "h2", text: "有限制的国家" },
+        { type: "list", items: ["俄罗斯——VPN服务必须接入政府注册表并屏蔽被禁止的网站。普通用户使用VPN不构成刑事犯罪。", "中国——VPN受到严格监管。只允许使用国家批准的VPN。", "阿联酋——使用VPN进行非法活动是可惩罚的。VPN本身并不被禁止。", "伊朗——类似俄罗斯，VPN必须获得国家批准。"] },
+        { type: "h2", text: "重要的是要理解" },
+        { type: "p", text: "即使在VPN受限的地方，禁令通常也是针对将其用于非法活动，而不是针对技术本身。大多数限制针对VPN提供商，而不是普通用户。" },
+        { type: "conclusion", text: "在世界大多数地方，VPN是保护隐私的合法工具。明智地使用它，遵守您所在国家的法律，VPN将成为您在数字世界中可靠的盾牌。" }
+      ]
+    }
+  },
+  "vpn-devices": {
+    ru: {
+      title: "Куда установить VPN? Полное руководство по устройствам",
+      tag: "Руководство",
+      date: "09.04.2026",
+      readTime: "10 мин",
+      description: "Смартфон, ноутбук, роутер, Smart TV — где и как правильно настроить VPN на каждом устройстве.",
+      metaDescription: "Полное руководство по установке VPN на все устройства: Android, iOS, Windows, macOS, Linux, роутер, Smart TV. Пошаговые инструкции.",
+      content: [
+        { type: "intro", text: "VPN можно установить практически на любое устройство, подключённое к интернету. Рассмотрим каждую платформу подробно." },
+        { type: "h2", text: "Android" },
+        { type: "p", text: "Для Android лучшие приложения для работы с VLESS-протоколом: FlClashX (рекомендуем) и Happ. Оба доступны в Google Play и на официальных сайтах. После установки достаточно импортировать VLESS-ссылку из Telegram-бота @EscapeTheMatrix_Robot." },
+        { type: "h2", text: "iOS (iPhone / iPad)" },
+        { type: "p", text: "На iOS рекомендуем Happ или Streisand. Доступны в App Store. Импортируйте VLESS-конфиг — и VPN готов к работе." },
+        { type: "h2", text: "Windows" },
+        { type: "p", text: "На Windows лучше всего работает FlClashX. Также доступны Happ и Clash Verge. Скачайте, запустите, импортируйте ссылку из бота — готово. Есть удобный системный трей для быстрого управления." },
+        { type: "h2", text: "macOS" },
+        { type: "p", text: "Для macOS подходят FlClashX, Happ и Clash Verge. Установка стандартная, интерфейс интуитивен. Работает на Apple Silicon и Intel." },
+        { type: "h2", text: "Linux" },
+        { type: "p", text: "На Linux работает FlClashX и Clash Verge. Для опытных пользователей доступна настройка через командную строку. Оба приложения поддерживают все основные дистрибутивы." },
+        { type: "h2", text: "Роутер" },
+        { type: "p", text: "Установка VPN на роутер — самый универсальный вариант: все устройства в сети автоматически получают защиту. Поддерживаемые прошивки: OpenWrt, Padavan, Keenetic. Настройка требует технических знаний, но даёт полную защиту всей домашней сети." },
+        { type: "h2", text: "Smart TV и TV Box" },
+        { type: "p", text: "Для Android TV подойдёт приложение на базе ClashX. Альтернативный вариант — настроить VPN на роутере, тогда Smart TV получит защиту автоматически." },
+        { type: "h2", text: "Сколько устройств можно подключить" },
+        { type: "p", text: "Одна подписка Escape The Matrix включает 5 одновременных устройств. Если нужно больше — всего +49₽ за ещё 5 слотов. Управление устройствами через @EscapeTheMatrix_Robot." },
+        { type: "conclusion", text: "VPN сегодня — это не только для компьютера. Защитите все свои устройства с одной подпиской Escape The Matrix и наслаждайтесь свободным интернетом везде." }
+      ]
+    },
+    en: {
+      title: "Where to install a VPN? Complete guide about devices and platforms",
+      tag: "Guide",
+      date: "09.04.2026",
+      readTime: "10 min",
+      description: "Smartphone, laptop, router, Smart TV — how to properly set up a VPN on every device.",
+      metaDescription: "Complete guide to installing VPN on all devices: Android, iOS, Windows, macOS, Linux, router, Smart TV. Step-by-step instructions.",
+      content: [
+        { type: "intro", text: "You can install a VPN on almost any internet-connected device. Let's cover each platform in detail." },
+        { type: "h2", text: "Android" },
+        { type: "p", text: "For Android, the best apps for VLESS protocol: FlClashX (recommended) and Happ. Both are available on Google Play and official websites. After installation, just import the VLESS link from the @EscapeTheMatrix_Robot Telegram bot." },
+        { type: "h2", text: "iOS (iPhone / iPad)" },
+        { type: "p", text: "On iOS we recommend Happ or Streisand. Available on the App Store. Import the VLESS config and the VPN is ready." },
+        { type: "h2", text: "Windows" },
+        { type: "p", text: "On Windows, FlClashX works best. Happ and Clash Verge are also available. Download, run, import the link from the bot — done. Has a convenient system tray for quick management." },
+        { type: "h2", text: "macOS" },
+        { type: "p", text: "FlClashX, Happ and Clash Verge work great on macOS. Installation is standard, interface is intuitive. Works on Apple Silicon and Intel." },
+        { type: "h2", text: "Linux" },
+        { type: "p", text: "FlClashX and Clash Verge work on Linux. For advanced users, command-line configuration is available. Both apps support all major distributions." },
+        { type: "h2", text: "Router" },
+        { type: "p", text: "Installing VPN on a router is the most universal option: all devices on the network automatically get protection. Supported firmware: OpenWrt, Padavan, Keenetic." },
+        { type: "h2", text: "Smart TV and TV Box" },
+        { type: "p", text: "For Android TV, a ClashX-based app works. Alternative — set up VPN on the router, then Smart TV gets protection automatically." },
+        { type: "h2", text: "How many devices can connect" },
+        { type: "p", text: "One Escape The Matrix subscription includes 5 simultaneous devices. Need more — just +49₽ for 5 extra slots. Manage devices through @EscapeTheMatrix_Robot." },
+        { type: "conclusion", text: "VPN today isn't just for computers. Protect all your devices with one Escape The Matrix subscription and enjoy free internet everywhere." }
+      ]
+    },
+    es: {
+      title: "¿Dónde instalar una VPN? Guía completa de dispositivos",
+      tag: "Guía",
+      date: "09.04.2026",
+      readTime: "10 min",
+      description: "Smartphone, portátil, router, Smart TV — cómo configurar correctamente una VPN en cada dispositivo.",
+      metaDescription: "Guía completa para instalar VPN en todos los dispositivos: Android, iOS, Windows, macOS, Linux, router, Smart TV. Instrucciones paso a paso.",
+      content: [
+        { type: "intro", text: "Puedes instalar una VPN en casi cualquier dispositivo conectado a internet. Cubramos cada plataforma en detalle." },
+        { type: "h2", text: "Android" },
+        { type: "p", text: "Para Android, las mejores apps para el protocolo VLESS: FlClashX (recomendado) y Happ. Disponibles en Google Play. Tras la instalación, importa el enlace VLESS del bot de Telegram @EscapeTheMatrix_Robot." },
+        { type: "h2", text: "iOS (iPhone / iPad)" },
+        { type: "p", text: "En iOS recomendamos Happ o Streisand. Disponibles en App Store. Importa la configuración VLESS y la VPN estará lista." },
+        { type: "h2", text: "Windows" },
+        { type: "p", text: "En Windows, FlClashX funciona mejor. También están disponibles Happ y Clash Verge. Descarga, ejecuta, importa el enlace del bot — listo." },
+        { type: "h2", text: "Router" },
+        { type: "p", text: "Instalar VPN en el router es la opción más universal: todos los dispositivos de la red obtienen protección automáticamente." },
+        { type: "h2", text: "Smart TV y TV Box" },
+        { type: "p", text: "Para Android TV funciona una app basada en ClashX. Alternativa: configura la VPN en el router y el Smart TV tendrá protección automáticamente." },
+        { type: "conclusion", text: "La VPN hoy no es solo para ordenadores. Protege todos tus dispositivos con una suscripción de Escape The Matrix y disfruta de internet libre en todas partes." }
+      ]
+    },
+    de: {
+      title: "Wo VPN installieren? Komplette Geräteanleitung",
+      tag: "Anleitung",
+      date: "09.04.2026",
+      readTime: "10 Min",
+      description: "Smartphone, Laptop, Router, Smart TV — wie man VPN auf jedem Gerät richtig einrichtet.",
+      metaDescription: "Vollständige Anleitung zur VPN-Installation auf allen Geräten: Android, iOS, Windows, macOS, Linux, Router, Smart TV.",
+      content: [
+        { type: "intro", text: "Sie können ein VPN auf nahezu jedem mit dem Internet verbundenen Gerät installieren. Schauen wir uns jede Plattform im Detail an." },
+        { type: "h2", text: "Android" },
+        { type: "p", text: "Für Android sind die besten Apps für das VLESS-Protokoll: FlClashX (empfohlen) und Happ. Beide sind auf Google Play verfügbar. Nach der Installation importieren Sie einfach den VLESS-Link vom Telegram-Bot @EscapeTheMatrix_Robot." },
+        { type: "h2", text: "iOS (iPhone / iPad)" },
+        { type: "p", text: "Auf iOS empfehlen wir Happ oder Streisand. Im App Store erhältlich. Importieren Sie die VLESS-Konfiguration und das VPN ist betriebsbereit." },
+        { type: "h2", text: "Windows" },
+        { type: "p", text: "Auf Windows funktioniert FlClashX am besten. Happ und Clash Verge sind ebenfalls verfügbar. Herunterladen, starten, Link importieren — fertig." },
+        { type: "h2", text: "Router" },
+        { type: "p", text: "VPN auf dem Router zu installieren ist die universellste Option: Alle Geräte im Netzwerk werden automatisch geschützt." },
+        { type: "h2", text: "Smart TV und TV Box" },
+        { type: "p", text: "Für Android TV eignet sich eine ClashX-basierte App. Alternative: VPN auf dem Router einrichten, dann erhält Smart TV automatisch Schutz." },
+        { type: "conclusion", text: "VPN ist heute nicht nur für Computer. Schützen Sie alle Ihre Geräte mit einem Escape The Matrix-Abonnement und genießen Sie überall freies Internet." }
+      ]
+    },
+    zh: {
+      title: "在哪里安装VPN？设备和平台完整指南",
+      tag: "指南",
+      date: "09.04.2026",
+      readTime: "10分钟",
+      description: "智能手机、笔记本电脑、路由器、智能电视——如何在每台设备上正确设置VPN。",
+      metaDescription: "在所有设备上安装VPN的完整指南：Android、iOS、Windows、macOS、Linux、路由器、智能电视。分步说明。",
+      content: [
+        { type: "intro", text: "您可以在几乎任何连接互联网的设备上安装VPN。让我们详细了解每个平台。" },
+        { type: "h2", text: "Android" },
+        { type: "p", text: "对于Android，支持VLESS协议的最佳应用：FlClashX（推荐）和Happ。两者都可在Google Play上找到。安装后，只需从Telegram机器人@EscapeTheMatrix_Robot导入VLESS链接。" },
+        { type: "h2", text: "iOS（iPhone / iPad）" },
+        { type: "p", text: "在iOS上，我们推荐Happ或Streisand。可在App Store找到。导入VLESS配置，VPN即可使用。" },
+        { type: "h2", text: "Windows" },
+        { type: "p", text: "在Windows上，FlClashX效果最好。Happ和Clash Verge也可使用。下载、运行、从机器人导入链接——完成。" },
+        { type: "h2", text: "路由器" },
+        { type: "p", text: "在路由器上安装VPN是最通用的选择：网络中的所有设备都会自动受到保护。" },
+        { type: "h2", text: "智能电视和TV盒子" },
+        { type: "p", text: "对于Android TV，可使用基于ClashX的应用。另一种方式——在路由器上设置VPN，这样智能电视也会自动受到保护。" },
+        { type: "conclusion", text: "如今VPN不仅仅适用于电脑。用一个Escape The Matrix订阅保护您的所有设备，随时随地享受自由的互联网。" }
+      ]
+    }
+  }
+};
+
+// Privacy policy translations for all languages
+export const privacyTranslations = {
+  ru: {
+    title: "Политика конфиденциальности",
+    updated: "Последнее обновление: 09.04.2026",
+    metaTitle: "Политика конфиденциальности — Escape The Matrix VPN",
+    metaDesc: "Политика конфиденциальности Escape The Matrix VPN. Zero logs — мы не собираем никаких данных пользователей.",
+    sections: [
+      { h: "1. Общие положения", p: "Escape The Matrix (далее — «Сервис», «мы») не собирает и не хранит персональные данные пользователей. Мы не ведём логи подключений, не фиксируем IP-адреса, не отслеживаем историю посещений и не анализируем трафик пользователей. Наша инфраструктура построена таким образом, чтобы технически исключить возможность сбора подобной информации." },
+      { h: "2. Какие данные мы НЕ собираем", list: ["IP-адреса (оригинальные и назначенные)", "Временные метки подключения", "Объём переданного/полученного трафика", "DNS-запросы", "Информация об устройствах и браузерах"] },
+      { h: "3. Данные, необходимые для работы", p: "Единственная информация, которую мы можем иметь — это данные, добровольно предоставленные пользователем через Telegram-бота (@EscapeTheMatrix_Robot) для управления подпиской:", list: ["Telegram ID (для идентификации подписки)", "Username в Telegram (опционально)", "Информация о сроке действия подписки и количестве устройств"], p2: "Эти данные хранятся в зашифрованном виде и используются исключительно для предоставления доступа к сервису." },
+      { h: "4. Платёжная информация", p: "Мы не обрабатываем и не храним платёжные данные. Все платежи проходят через сторонние защищённые шлюзы. Сервис получает только подтверждение факта оплаты и сумму." },
+      { h: "5. Использование файлов cookie", p: "Сайт escapethematrix.to не использует собственные cookie для отслеживания. Возможно использование технических cookie для обеспечения работы сессий (например, для запоминания выбранного языка), которые не содержат идентифицирующей информации." },
+      { h: "6. Передача данных третьим лицам", p: "Мы не передаём никакие данные третьим лицам, поскольку не располагаем таковыми. Мы не сотрудничаем с рекламными сетями и аналитическими платформами." },
+      { h: "7. Безопасность", p: "Мы применяем современные методы шифрования для защиты каналов связи (VLESS + Reality) и инфраструктуры. Доступ к серверам строго ограничен." },
+      { h: "8. Изменения в политике", p: "Мы оставляем за собой право вносить изменения в настоящую Политику конфиденциальности. Новая редакция вступает в силу с момента её публикации на Сайте." },
+      { h: "9. Контакты", p: "По всем вопросам, связанным с конфиденциальностью, обращайтесь в нашего Telegram-бота:", bot: true },
+    ]
+  },
+  en: {
+    title: "Privacy Policy",
+    updated: "Last updated: 09.04.2026",
+    metaTitle: "Privacy Policy — Escape The Matrix VPN",
+    metaDesc: "Escape The Matrix VPN Privacy Policy. Zero logs — we collect no user data whatsoever.",
+    sections: [
+      { h: "1. General Provisions", p: "Escape The Matrix (hereinafter — \"Service\", \"we\") does not collect or store personal data of users. We do not maintain connection logs, do not record IP addresses, do not track browsing history, and do not analyze user traffic. Our infrastructure is built to technically exclude the possibility of collecting such information." },
+      { h: "2. Data We Do NOT Collect", list: ["IP addresses (original and assigned)", "Connection timestamps", "Volume of transmitted/received traffic", "DNS queries", "Device and browser information"] },
+      { h: "3. Data Required for Operation", p: "The only information we may have is data voluntarily provided by the user through the Telegram bot (@EscapeTheMatrix_Robot) to manage their subscription:", list: ["Telegram ID (for subscription identification)", "Telegram username (optional)", "Subscription expiry and device count information"], p2: "This data is stored in encrypted form and used exclusively to provide access to the service." },
+      { h: "4. Payment Information", p: "We do not process or store payment data. All payments go through third-party secure gateways. The service only receives confirmation of payment and the amount." },
+      { h: "5. Cookie Usage", p: "The site escapethematrix.to does not use proprietary tracking cookies. Technical session cookies may be used (e.g., to remember the selected language), which contain no identifying information." },
+      { h: "6. Third-Party Data Sharing", p: "We do not share any data with third parties because we have none. We do not partner with advertising networks or analytics platforms." },
+      { h: "7. Security", p: "We use modern encryption methods to protect communication channels (VLESS + Reality) and infrastructure. Server access is strictly limited." },
+      { h: "8. Policy Changes", p: "We reserve the right to make changes to this Privacy Policy. The new version takes effect upon publication on the site." },
+      { h: "9. Contact", p: "For all privacy-related questions, contact our Telegram bot:", bot: true },
+    ]
+  },
+  es: {
+    title: "Política de Privacidad",
+    updated: "Última actualización: 09.04.2026",
+    metaTitle: "Política de Privacidad — Escape The Matrix VPN",
+    metaDesc: "Política de privacidad de Escape The Matrix VPN. Zero logs — no recopilamos ningún dato de usuario.",
+    sections: [
+      { h: "1. Disposiciones Generales", p: "Escape The Matrix (en adelante, «Servicio», «nosotros») no recopila ni almacena datos personales de los usuarios. No mantenemos registros de conexión, no registramos direcciones IP, no rastreamos el historial de navegación ni analizamos el tráfico de los usuarios." },
+      { h: "2. Datos que NO recopilamos", list: ["Direcciones IP (originales y asignadas)", "Marcas de tiempo de conexión", "Volumen de tráfico transmitido/recibido", "Consultas DNS", "Información sobre dispositivos y navegadores"] },
+      { h: "3. Datos Necesarios para el Funcionamiento", p: "La única información que podemos tener son los datos proporcionados voluntariamente por el usuario a través del bot de Telegram (@EscapeTheMatrix_Robot) para gestionar la suscripción:", list: ["ID de Telegram (para identificación de suscripción)", "Nombre de usuario de Telegram (opcional)", "Información sobre la vigencia de la suscripción y el número de dispositivos"], p2: "Estos datos se almacenan de forma cifrada y se utilizan exclusivamente para proporcionar acceso al servicio." },
+      { h: "4. Información de Pago", p: "No procesamos ni almacenamos datos de pago. Todos los pagos se realizan a través de pasarelas seguras de terceros." },
+      { h: "5. Uso de Cookies", p: "El sitio escapethematrix.to no utiliza cookies propias para el rastreo. Se pueden usar cookies técnicas de sesión que no contienen información identificativa." },
+      { h: "6. Compartir Datos con Terceros", p: "No compartimos ningún dato con terceros porque no disponemos de ellos. No colaboramos con redes publicitarias ni plataformas analíticas." },
+      { h: "7. Seguridad", p: "Utilizamos métodos de cifrado modernos para proteger los canales de comunicación (VLESS + Reality) y la infraestructura." },
+      { h: "8. Cambios en la Política", p: "Nos reservamos el derecho de realizar cambios en esta Política de Privacidad. La nueva versión entra en vigor tras su publicación en el sitio." },
+      { h: "9. Contacto", p: "Para todas las preguntas relacionadas con la privacidad, contacta con nuestro bot de Telegram:", bot: true },
+    ]
+  },
+  de: {
+    title: "Datenschutzerklärung",
+    updated: "Letzte Aktualisierung: 09.04.2026",
+    metaTitle: "Datenschutzerklärung — Escape The Matrix VPN",
+    metaDesc: "Datenschutzerklärung von Escape The Matrix VPN. Zero Logs — wir erheben keinerlei Nutzerdaten.",
+    sections: [
+      { h: "1. Allgemeine Bestimmungen", p: "Escape The Matrix (nachfolgend Dienst, wir) erhebt und speichert keine personenbezogenen Daten der Nutzer. Wir führen keine Verbindungsprotokolle, erfassen keine IP-Adressen, verfolgen keinen Browserverlauf und analysieren keinen Nutzerverkehr." },
+      { h: "2. Daten, die wir NICHT erheben", list: ["IP-Adressen (originale und zugewiesene)", "Verbindungszeitstempel", "Volumen des übertragenen/empfangenen Datenverkehrs", "DNS-Anfragen", "Gerät- und Browser-Informationen"] },
+      { h: "3. Für den Betrieb erforderliche Daten", p: "Die einzigen Informationen, die wir haben können, sind Daten, die der Nutzer freiwillig über den Telegram-Bot (@EscapeTheMatrix_Robot) zur Abonnementverwaltung bereitstellt:", list: ["Telegram-ID (zur Abonnement-Identifikation)", "Telegram-Benutzername (optional)", "Informationen über Abonnementlaufzeit und Geräteanzahl"], p2: "Diese Daten werden verschlüsselt gespeichert und ausschließlich zur Bereitstellung des Dienstzugangs verwendet." },
+      { h: "4. Zahlungsinformationen", p: "Wir verarbeiten oder speichern keine Zahlungsdaten. Alle Zahlungen laufen über sichere Drittanbieter-Gateways." },
+      { h: "5. Cookie-Nutzung", p: "Die Website escapethematrix.to verwendet keine eigenen Tracking-Cookies. Technische Session-Cookies ohne identifizierende Informationen können verwendet werden." },
+      { h: "6. Weitergabe von Daten an Dritte", p: "Wir geben keine Daten an Dritte weiter, weil wir keine haben. Wir arbeiten nicht mit Werbenetzwerken oder Analyseplattformen zusammen." },
+      { h: "7. Sicherheit", p: "Wir verwenden moderne Verschlüsselungsmethoden zum Schutz der Kommunikationskanäle (VLESS + Reality) und der Infrastruktur." },
+      { h: "8. Änderungen der Richtlinie", p: "Wir behalten uns das Recht vor, Änderungen an dieser Datenschutzerklärung vorzunehmen. Die neue Version tritt mit der Veröffentlichung auf der Website in Kraft." },
+      { h: "9. Kontakt", p: "Bei allen datenschutzbezogenen Fragen wenden Sie sich an unseren Telegram-Bot:", bot: true },
+    ]
+  },
+  zh: {
+    title: "隐私政策",
+    updated: "最后更新：09.04.2026",
+    metaTitle: "隐私政策 — Escape The Matrix VPN",
+    metaDesc: "Escape The Matrix VPN隐私政策。零日志——我们不收集任何用户数据。",
+    sections: [
+      { h: "1. 总则", p: "Escape The Matrix（以下简称`服务`、`我们`）不收集或存储用户个人数据。我们不维护连接日志，不记录IP地址，不跟踪浏览历史，不分析用户流量。我们的基础设施在技术上排除了收集此类信息的可能性。" },
+      { h: "2. 我们不收集的数据", list: ["IP地址（原始和分配的）", "连接时间戳", "传输/接收流量的量", "DNS查询", "设备和浏览器信息"] },
+      { h: "3. 运营所需数据", p: "我们可能拥有的唯一信息是用户通过Telegram机器人（@EscapeTheMatrix_Robot）自愿提供的用于管理订阅的数据：", list: ["Telegram ID（用于订阅识别）", "Telegram用户名（可选）", "订阅有效期和设备数量信息"], p2: "这些数据以加密形式存储，仅用于提供服务访问。" },
+      { h: "4. 支付信息", p: "我们不处理或存储支付数据。所有支付通过第三方安全网关进行。服务仅接收付款确认和金额。" },
+      { h: "5. Cookie使用", p: "网站escapethematrix.to不使用自己的跟踪Cookie。可能使用不含识别信息的技术会话Cookie（例如，记住所选语言）。" },
+      { h: "6. 向第三方共享数据", p: "我们不向第三方共享任何数据，因为我们没有。我们不与广告网络或分析平台合作。" },
+      { h: "7. 安全", p: "我们使用现代加密方法保护通信渠道（VLESS + Reality）和基础设施。服务器访问受到严格限制。" },
+      { h: "8. 政策变更", p: "我们保留对本隐私政策进行修改的权利。新版本在网站发布后立即生效。" },
+      { h: "9. 联系方式", p: "有关隐私的所有问题，请联系我们的Telegram机器人：", bot: true },
+    ]
+  }
+};
+
+// Terms of service translations for all languages
+export const termsTranslations = {
+  ru: {
+    title: "Условия использования",
+    updated: "Последнее обновление: 09.04.2026",
+    metaTitle: "Условия использования — Escape The Matrix VPN",
+    metaDesc: "Условия использования сервиса Escape The Matrix VPN. Права и обязанности пользователей.",
+    sections: [
+      { h: "1. Предмет соглашения", p: "Настоящие Условия использования регулируют отношения между Escape The Matrix (далее — «Сервис») и пользователем при использовании сайта escapethematrix.to и связанных с ним услуг VPN." },
+      { h: "2. Описание услуги", p: "Сервис предоставляет доступ к зашифрованному VPN-туннелю с использованием протокола VLESS + Reality. Услуга предоставляется на условиях подписки. Пользователь получает доступ к серверам в Хельсинки и Амстердаме." },
+      { h: "3. Обязанности пользователя", p: "Пользователь обязуется:", list: ["Не использовать Сервис для совершения противоправных действий, включая распространение вредоносного ПО, фишинг, спам, DDoS-атаки, мошенничество.", "Не предпринимать попыток взлома или нарушения нормальной работы Сервиса.", "Не передавать свои учетные данные третьим лицам."] },
+      { h: "4. Отказ от ответственности", p: "Сервис предоставляется «как есть». Мы не несем ответственности за:", list: ["Действия пользователя в сети при использовании VPN.", "Временную недоступность сервиса по форс-мажорным причинам.", "Ущерб от использования или невозможности использования Сервиса.", "Контент сайтов, к которым пользователь получает доступ через VPN."] },
+      { h: "5. Политика возврата", p: "Если в течение 24 часов с момента оплаты Сервис не работает по техническим причинам и наша поддержка не смогла решить проблему — осуществляем полный возврат средств. Для запроса обратитесь в @EscapeTheMatrix_Robot." },
+      { h: "6. Блокировка аккаунта", p: "Мы оставляем за собой право приостановить услуги в случае нарушения настоящих Условий или подозрения в злоупотреблении (спам, сетевые атаки)." },
+      { h: "7. Изменение условий", p: "Сервис может изменять настоящие Условия в любое время. Актуальная версия всегда доступна по адресу escapethematrix.to/terms." },
+      { h: "8. Применимое право", p: "Отношения сторон регулируются законодательством юрисдикции, в которой зарегистрирован Сервис. Все споры решаются путём переговоров." },
+    ]
+  },
+  en: {
+    title: "Terms of Service",
+    updated: "Last updated: 09.04.2026",
+    metaTitle: "Terms of Service — Escape The Matrix VPN",
+    metaDesc: "Terms of Service for Escape The Matrix VPN. User rights and obligations.",
+    sections: [
+      { h: "1. Subject of Agreement", p: "These Terms of Service govern the relationship between Escape The Matrix (\"Service\") and the user when using the site escapethematrix.to and related VPN services." },
+      { h: "2. Service Description", p: "The Service provides access to an encrypted VPN tunnel using the VLESS + Reality protocol. The service is provided on a subscription basis. The user gets access to servers in Helsinki and Amsterdam." },
+      { h: "3. User Obligations", p: "The user agrees to:", list: ["Not use the Service for illegal activities, including distributing malware, phishing, spam, DDoS attacks, fraud.", "Not attempt to hack or disrupt the normal operation of the Service.", "Not share credentials with third parties."] },
+      { h: "4. Disclaimer", p: "The Service is provided \"as is\". We are not responsible for:", list: ["User actions on the network while using VPN.", "Temporary service unavailability due to force majeure.", "Damage from using or inability to use the Service.", "Content of sites accessed through the VPN."] },
+      { h: "5. Refund Policy", p: "If within 24 hours of payment the Service doesn't work for technical reasons and our support couldn't resolve the issue — we provide a full refund. Request via @EscapeTheMatrix_Robot." },
+      { h: "6. Account Blocking", p: "We reserve the right to suspend services in case of violation of these Terms or suspected abuse (spam, network attacks)." },
+      { h: "7. Changes to Terms", p: "The Service may change these Terms at any time. The current version is always available at escapethematrix.to/terms." },
+      { h: "8. Applicable Law", p: "The parties' relationship is governed by the laws of the jurisdiction where the Service is registered. All disputes are resolved through negotiation." },
+    ]
+  },
+  es: {
+    title: "Términos de Servicio",
+    updated: "Última actualización: 09.04.2026",
+    metaTitle: "Términos de Servicio — Escape The Matrix VPN",
+    metaDesc: "Términos de servicio de Escape The Matrix VPN. Derechos y obligaciones de los usuarios.",
+    sections: [
+      { h: "1. Objeto del Acuerdo", p: "Estos Términos de Servicio rigen la relación entre Escape The Matrix («Servicio») y el usuario al usar el sitio escapethematrix.to y los servicios VPN relacionados." },
+      { h: "2. Descripción del Servicio", p: "El Servicio proporciona acceso a un túnel VPN cifrado usando el protocolo VLESS + Reality. El servicio se proporciona por suscripción. El usuario obtiene acceso a servidores en Helsinki y Ámsterdam." },
+      { h: "3. Obligaciones del Usuario", p: "El usuario se compromete a:", list: ["No usar el Servicio para actividades ilegales, incluyendo distribución de malware, phishing, spam, ataques DDoS, fraude.", "No intentar hackear ni interrumpir el funcionamiento normal del Servicio.", "No compartir credenciales con terceros."] },
+      { h: "4. Descargo de Responsabilidad", p: "El Servicio se proporciona «tal cual». No somos responsables de:", list: ["Acciones del usuario en la red mientras usa VPN.", "Indisponibilidad temporal del servicio por causas de fuerza mayor.", "Daños por uso o imposibilidad de uso del Servicio.", "Contenido de sitios a los que el usuario accede a través de VPN."] },
+      { h: "5. Política de Reembolso", p: "Si dentro de las 24 horas posteriores al pago el Servicio no funciona por razones técnicas y nuestro soporte no pudo resolver el problema — realizamos un reembolso completo. Solicítalo en @EscapeTheMatrix_Robot." },
+      { h: "6. Bloqueo de Cuenta", p: "Nos reservamos el derecho de suspender servicios en caso de violación de estos Términos o sospecha de abuso." },
+      { h: "7. Cambios en los Términos", p: "El Servicio puede cambiar estos Términos en cualquier momento. La versión actual siempre está disponible en escapethematrix.to/terms." },
+      { h: "8. Ley Aplicable", p: "La relación de las partes se rige por las leyes de la jurisdicción donde está registrado el Servicio. Todas las disputas se resuelven mediante negociación." },
+    ]
+  },
+  de: {
+    title: "Nutzungsbedingungen",
+    updated: "Letzte Aktualisierung: 09.04.2026",
+    metaTitle: "Nutzungsbedingungen — Escape The Matrix VPN",
+    metaDesc: "Nutzungsbedingungen für Escape The Matrix VPN. Rechte und Pflichten der Nutzer.",
+    sections: [
+      { h: "1. Vertragsgegenstand", p: "Diese Nutzungsbedingungen regeln die Beziehung zwischen Escape The Matrix («Dienst») und dem Nutzer bei der Verwendung der Website escapethematrix.to und der damit verbundenen VPN-Dienste." },
+      { h: "2. Dienstbeschreibung", p: "Der Dienst bietet Zugang zu einem verschlüsselten VPN-Tunnel mit dem VLESS + Reality-Protokoll. Der Dienst wird auf Abonnementbasis bereitgestellt. Der Nutzer erhält Zugang zu Servern in Helsinki und Amsterdam." },
+      { h: "3. Nutzerpflichten", p: "Der Nutzer verpflichtet sich:", list: ["Den Dienst nicht für illegale Aktivitäten zu nutzen, einschließlich Verbreitung von Malware, Phishing, Spam, DDoS-Angriffe, Betrug.", "Keine Versuche zu unternehmen, den Dienst zu hacken oder seinen normalen Betrieb zu stören.", "Zugangsdaten nicht an Dritte weiterzugeben."] },
+      { h: "4. Haftungsausschluss", p: "Der Dienst wird «wie besehen» bereitgestellt. Wir haften nicht für:", list: ["Handlungen des Nutzers im Netz bei der VPN-Nutzung.", "Vorübergehende Nichtverfügbarkeit des Dienstes aus höherer Gewalt.", "Schäden durch Nutzung oder Nichtnutzung des Dienstes.", "Inhalte von Websites, auf die der Nutzer über VPN zugreift."] },
+      { h: "5. Rückerstattungsrichtlinie", p: "Wenn der Dienst innerhalb von 24 Stunden nach der Zahlung aus technischen Gründen nicht funktioniert und unser Support das Problem nicht lösen konnte — erstatten wir den vollen Betrag. Anfrage über @EscapeTheMatrix_Robot." },
+      { h: "6. Kontosperrung", p: "Wir behalten uns das Recht vor, Dienste bei Verstoß gegen diese Bedingungen oder Verdacht auf Missbrauch zu sperren." },
+      { h: "7. Änderung der Bedingungen", p: "Der Dienst kann diese Bedingungen jederzeit ändern. Die aktuelle Version ist immer unter escapethematrix.to/terms verfügbar." },
+      { h: "8. Anwendbares Recht", p: "Die Beziehung der Parteien unterliegt dem Recht der Jurisdiktion, in der der Dienst registriert ist. Alle Streitigkeiten werden durch Verhandlungen gelöst." },
+    ]
+  },
+  zh: {
+    title: "服务条款",
+    updated: "最后更新：09.04.2026",
+    metaTitle: "服务条款 — Escape The Matrix VPN",
+    metaDesc: "Escape The Matrix VPN服务条款。用户权利和义务。",
+    sections: [
+      { h: "1. 协议主题", p: "本服务条款规范Escape The Matrix（`服务`）与用户在使用网站escapethematrix.to及相关VPN服务时的关系。" },
+      { h: "2. 服务描述", p: "该服务提供使用VLESS + Reality协议的加密VPN隧道访问。服务以订阅方式提供。用户可访问赫尔辛基和阿姆斯特丹的服务器。" },
+      { h: "3. 用户义务", p: "用户同意：", list: ["不将服务用于非法活动，包括分发恶意软件、钓鱼、垃圾邮件、DDoS攻击、欺诈。", "不尝试入侵或中断服务的正常运行。", "不与第三方共享凭证。"] },
+      { h: "4. 免责声明", p: "服务按`原样`提供。我们不对以下情况负责：", list: ["用户使用VPN时在网络上的行为。", "由不可抗力原因导致的服务临时不可用。", "使用或无法使用服务造成的损害。", "用户通过VPN访问的网站内容。"] },
+      { h: "5. 退款政策", p: "如果付款后24小时内服务因技术原因无法正常工作且我们的支持无法解决问题——我们提供全额退款。通过@EscapeTheMatrix_Robot请求。" },
+      { h: "6. 账户封禁", p: "我们保留在违反本条款或怀疑滥用（垃圾邮件、网络攻击）的情况下暂停服务的权利。" },
+      { h: "7. 条款变更", p: "服务可随时更改本条款。当前版本始终可在escapethematrix.to/terms获取。" },
+      { h: "8. 适用法律", p: "双方关系受服务注册所在司法管辖区的法律管辖。所有争议通过谈判解决。" },
+    ]
+  }
+};
 
 export const translations = {
   ru: {
@@ -49,36 +608,12 @@ export const translations = {
     features: {
       title: "Почему мы",
       items: [
-        {
-          icon: "◈",
-          title: "Zero Logs",
-          desc: "Мы технически не можем предоставить то, чего не существует. Никаких логов, никаких IP, никаких данных о трафике.",
-        },
-        {
-          icon: "◎",
-          title: "VLESS + Reality",
-          desc: "Современный протокол. Обходит DPI-блокировки. Работает везде: Windows, macOS, Linux, iOS, Android.",
-        },
-        {
-          icon: "◬",
-          title: "1+ Гбит/с",
-          desc: "Скорость для 4K стриминга и онлайн-игр. Без ограничений и троттлинга.",
-        },
-        {
-          icon: "◆",
-          title: "Крипта и карты",
-          desc: "Оплата криптой, Visa, Mastercard, МИР, СБП. Быстро и удобно.",
-        },
-        {
-          icon: "◉",
-          title: "5 устройств",
-          desc: "Одна подписка — 5 устройств одновременно. Нужно больше — +49₽ за ещё 5 слотов.",
-        },
-        {
-          icon: "◐",
-          title: "Безлимит",
-          desc: "Никаких лимитов трафика. Никогда. Используй сколько нужно.",
-        },
+        { icon: "◈", title: "Zero Logs", desc: "Мы технически не можем предоставить то, чего не существует. Никаких логов, никаких IP, никаких данных о трафике." },
+        { icon: "◎", title: "VLESS + Reality", desc: "Современный протокол. Обходит DPI-блокировки. Работает везде: Windows, macOS, Linux, iOS, Android." },
+        { icon: "◬", title: "1+ Гбит/с", desc: "Скорость для 4K стриминга и онлайн-игр. Без ограничений и троттлинга." },
+        { icon: "◆", title: "Крипта и карты", desc: "Оплата криптой, Visa, Mastercard, МИР, СБП. Быстро и удобно." },
+        { icon: "◉", title: "5 устройств", desc: "Одна подписка — 5 устройств одновременно. Нужно больше — +49₽ за ещё 5 слотов." },
+        { icon: "◐", title: "Безлимит", desc: "Никаких лимитов трафика. Никогда. Используй сколько нужно." },
       ],
     },
     pricing: {
@@ -112,21 +647,9 @@ export const translations = {
       tagGuide: "Руководство",
       read: "Читать",
       articles: [
-        {
-          title: "Безопасен ли публичный Wi-Fi?",
-          desc: "Кофейня, аэропорт, отель — все они предлагают бесплатный Wi-Fi. Но что на самом деле происходит с вашими данными?",
-          readTime: "5 мин",
-        },
-        {
-          title: "Законно ли использование VPN? Законы разных стран",
-          desc: "VPN легален в большинстве стран, но есть исключения. Разбираемся в правовом статусе по всему миру.",
-          readTime: "8 мин",
-        },
-        {
-          title: "Куда установить VPN? Полное руководство по устройствам",
-          desc: "Смартфон, ноутбук, роутер, Smart TV — где и как правильно настроить VPN на каждом устройстве.",
-          readTime: "10 мин",
-        },
+        { title: "Безопасен ли публичный Wi-Fi?", desc: "Кофейня, аэропорт, отель — все они предлагают бесплатный Wi-Fi. Но что на самом деле происходит с вашими данными?", readTime: "5 мин" },
+        { title: "Законно ли использование VPN? Законы разных стран", desc: "VPN легален в большинстве стран, но есть исключения. Разбираемся в правовом статусе по всему миру.", readTime: "8 мин" },
+        { title: "Куда установить VPN? Полное руководство по устройствам", desc: "Смартфон, ноутбук, роутер, Smart TV — где и как правильно настроить VPN на каждом устройстве.", readTime: "10 мин" },
       ],
     },
     howto: {
@@ -137,51 +660,21 @@ export const translations = {
       cta: "Открыть Telegram-бот",
       ctaSub: "@EscapeTheMatrix_Robot",
       steps: [
-        {
-          title: "Открой Telegram-бот",
-          desc: "@EscapeTheMatrix_Robot — там всё просто и понятно",
-        },
-        {
-          title: "Выбери тариф",
-          desc: "1 локация за 100₽/мес — один из лучших серверов Европы",
-        },
-        {
-          title: "Оплати",
-          desc: "Карта или СБП — быстро и удобно",
-        },
-        {
-          title: "Получи ссылку",
-          desc: "VLESS-ссылка для импорта в приложение",
-        },
-        {
-          title: "Подключись",
-          desc: "Импортируй в FlClashX / Happ — готово",
-        },
+        { title: "Открой Telegram-бот", desc: "@EscapeTheMatrix_Robot — там всё просто и понятно" },
+        { title: "Выбери тариф", desc: "1 локация за 100₽/мес — один из лучших серверов Европы" },
+        { title: "Оплати", desc: "Карта или СБП — быстро и удобно" },
+        { title: "Получи ссылку", desc: "VLESS-ссылка для импорта в приложение" },
+        { title: "Подключись", desc: "Импортируй в FlClashX / Happ — готово" },
       ],
     },
     faq: {
       title: "FAQ",
       items: [
-        {
-          q: "Реально zero logs?",
-          a: "Да. Мы не храним никакие логи подключений, IP-адреса или данные о трафике. Технически не можем предоставить то, чего не существует.",
-        },
-        {
-          q: "Какой протокол?",
-          a: "VLESS. Современный, быстрый, безопасный. Обходит блокировки DPI. Работает на всех платформах: Windows, macOS, Linux, iOS, Android.",
-        },
-        {
-          q: "Какая скорость?",
-          a: "Зависит от сервера, но в среднем 1+ Гбит/с. Хватает для 4K стриминга и онлайн-игр.",
-        },
-        {
-          q: "Сколько устройств?",
-          a: "5 устройств включено в тариф. Нужно больше — +49₽ за ещё 5 слотов.",
-        },
-        {
-          q: "Возврат денег?",
-          a: "Если что-то не работает и мы не можем решить проблему — вернём деньги. Без вопросов.",
-        },
+        { q: "Реально zero logs?", a: "Да. Мы не храним никакие логи подключений, IP-адреса или данные о трафике. Технически не можем предоставить то, чего не существует." },
+        { q: "Какой протокол?", a: "VLESS. Современный, быстрый, безопасный. Обходит блокировки DPI. Работает на всех платформах: Windows, macOS, Linux, iOS, Android." },
+        { q: "Какая скорость?", a: "Зависит от сервера, но в среднем 1+ Гбит/с. Хватает для 4K стриминга и онлайн-игр." },
+        { q: "Сколько устройств?", a: "5 устройств включено в тариф. Нужно больше — +49₽ за ещё 5 слотов." },
+        { q: "Возврат денег?", a: "Если что-то не работает и мы не можем решить проблему — вернём деньги. Без вопросов." },
       ],
     },
     profile: {
@@ -210,10 +703,7 @@ export const translations = {
   },
 
   en: {
-    nav: {
-      profile: "Profile",
-      connect: "Connect",
-    },
+    nav: { profile: "Profile", connect: "Connect" },
     hero: {
       headline1: "Escape The",
       headline2: "Matrix.",
@@ -224,36 +714,12 @@ export const translations = {
     features: {
       title: "Why us",
       items: [
-        {
-          icon: "◈",
-          title: "Zero Logs",
-          desc: "We technically cannot provide what doesn't exist. No logs, no IPs, no traffic data. Ever.",
-        },
-        {
-          icon: "◎",
-          title: "VLESS + Reality",
-          desc: "Modern protocol. Bypasses DPI censorship. Works everywhere: Windows, macOS, Linux, iOS, Android.",
-        },
-        {
-          icon: "◬",
-          title: "1+ Gbps",
-          desc: "Speed for 4K streaming and online gaming. No limits, no throttling.",
-        },
-        {
-          icon: "◆",
-          title: "Crypto & Cards",
-          desc: "Pay with crypto, Visa, Mastercard. Fast and convenient.",
-        },
-        {
-          icon: "◉",
-          title: "5 Devices",
-          desc: "One subscription — 5 simultaneous devices. Need more? +49₽ for 5 extra slots.",
-        },
-        {
-          icon: "◐",
-          title: "Unlimited",
-          desc: "No traffic limits. Ever. Use as much as you need.",
-        },
+        { icon: "◈", title: "Zero Logs", desc: "We technically cannot provide what doesn't exist. No logs, no IPs, no traffic data. Ever." },
+        { icon: "◎", title: "VLESS + Reality", desc: "Modern protocol. Bypasses DPI censorship. Works everywhere: Windows, macOS, Linux, iOS, Android." },
+        { icon: "◬", title: "1+ Gbps", desc: "Speed for 4K streaming and online gaming. No limits, no throttling." },
+        { icon: "◆", title: "Crypto & Cards", desc: "Pay with crypto, Visa, Mastercard. Fast and convenient." },
+        { icon: "◉", title: "5 Devices", desc: "One subscription — 5 simultaneous devices. Need more? +49₽ for 5 extra slots." },
+        { icon: "◐", title: "Unlimited", desc: "No traffic limits. Ever. Use as much as you need." },
       ],
     },
     pricing: {
@@ -287,21 +753,9 @@ export const translations = {
       tagGuide: "Guide",
       read: "Read",
       articles: [
-        {
-          title: "Is public Wi-Fi safe?",
-          desc: "Coffee shops, airports, hotels — they all offer free Wi-Fi. But what really happens to your data?",
-          readTime: "5 min",
-        },
-        {
-          title: "Is using a VPN legal? Understanding laws around the world",
-          desc: "VPNs are legal in most countries, but there are exceptions. We break down the legal status worldwide.",
-          readTime: "8 min",
-        },
-        {
-          title: "Where to install a VPN? Complete guide about devices and platforms",
-          desc: "Smartphone, laptop, router, Smart TV — how to properly set up a VPN on every device.",
-          readTime: "10 min",
-        },
+        { title: "Is public Wi-Fi safe?", desc: "Coffee shops, airports, hotels — they all offer free Wi-Fi. But what really happens to your data?", readTime: "5 min" },
+        { title: "Is using a VPN legal? Understanding laws around the world", desc: "VPNs are legal in most countries, but there are exceptions. We break down the legal status worldwide.", readTime: "8 min" },
+        { title: "Where to install a VPN? Complete guide about devices and platforms", desc: "Smartphone, laptop, router, Smart TV — how to properly set up a VPN on every device.", readTime: "10 min" },
       ],
     },
     howto: {
@@ -312,51 +766,21 @@ export const translations = {
       cta: "Open Telegram Bot",
       ctaSub: "@EscapeTheMatrix_Robot",
       steps: [
-        {
-          title: "Open Telegram Bot",
-          desc: "@EscapeTheMatrix_Robot — simple and clear",
-        },
-        {
-          title: "Choose a plan",
-          desc: "1 location for 100₽/mo — one of Europe's best servers",
-        },
-        {
-          title: "Pay",
-          desc: "Card or crypto — fast and easy",
-        },
-        {
-          title: "Get your link",
-          desc: "VLESS link to import into the app",
-        },
-        {
-          title: "Connect",
-          desc: "Import into FlClashX / Happ — done",
-        },
+        { title: "Open Telegram Bot", desc: "@EscapeTheMatrix_Robot — simple and clear" },
+        { title: "Choose a plan", desc: "1 location for 100₽/mo — one of Europe's best servers" },
+        { title: "Pay", desc: "Card or crypto — fast and easy" },
+        { title: "Get your link", desc: "VLESS link to import into the app" },
+        { title: "Connect", desc: "Import into FlClashX / Happ — done" },
       ],
     },
     faq: {
       title: "FAQ",
       items: [
-        {
-          q: "Really zero logs?",
-          a: "Yes. We don't store any connection logs, IP addresses or traffic data. We technically cannot provide what doesn't exist.",
-        },
-        {
-          q: "Which protocol?",
-          a: "VLESS. Modern, fast, secure. Bypasses DPI blocking. Works on all platforms: Windows, macOS, Linux, iOS, Android.",
-        },
-        {
-          q: "What speed?",
-          a: "Depends on the server, but averages 1+ Gbps. Enough for 4K streaming and online gaming.",
-        },
-        {
-          q: "How many devices?",
-          a: "5 devices included in the plan. Need more — +49₽ for another 5 slots.",
-        },
-        {
-          q: "Refund policy?",
-          a: "If something doesn't work and we can't fix the problem — we'll refund. No questions asked.",
-        },
+        { q: "Really zero logs?", a: "Yes. We don't store any connection logs, IP addresses or traffic data. We technically cannot provide what doesn't exist." },
+        { q: "Which protocol?", a: "VLESS. Modern, fast, secure. Bypasses DPI blocking. Works on all platforms: Windows, macOS, Linux, iOS, Android." },
+        { q: "What speed?", a: "Depends on the server, but averages 1+ Gbps. Enough for 4K streaming and online gaming." },
+        { q: "How many devices?", a: "5 devices included in the plan. Need more — +49₽ for another 5 slots." },
+        { q: "Refund policy?", a: "If something doesn't work and we can't fix the problem — we'll refund. No questions asked." },
       ],
     },
     profile: {
@@ -385,10 +809,7 @@ export const translations = {
   },
 
   es: {
-    nav: {
-      profile: "Perfil",
-      connect: "Conectar",
-    },
+    nav: { profile: "Perfil", connect: "Conectar" },
     hero: {
       headline1: "Escapa de la",
       headline2: "Matriz.",
@@ -399,36 +820,12 @@ export const translations = {
     features: {
       title: "Por qué nosotros",
       items: [
-        {
-          icon: "◈",
-          title: "Zero Logs",
-          desc: "Técnicamente no podemos proporcionar lo que no existe. Sin logs, sin IPs, sin datos de tráfico.",
-        },
-        {
-          icon: "◎",
-          title: "VLESS + Reality",
-          desc: "Protocolo moderno. Evita la censura DPI. Funciona en todas partes: Windows, macOS, Linux, iOS, Android.",
-        },
-        {
-          icon: "◬",
-          title: "1+ Gbps",
-          desc: "Velocidad para streaming 4K y juegos online. Sin límites ni throttling.",
-        },
-        {
-          icon: "◆",
-          title: "Cripto y tarjetas",
-          desc: "Paga con criptomoneda, Visa, Mastercard. Rápido y conveniente.",
-        },
-        {
-          icon: "◉",
-          title: "5 dispositivos",
-          desc: "Una suscripción — 5 dispositivos simultáneos. ¿Necesitas más? +49₽ por 5 ranuras extra.",
-        },
-        {
-          icon: "◐",
-          title: "Ilimitado",
-          desc: "Sin límites de tráfico. Nunca. Usa todo lo que necesites.",
-        },
+        { icon: "◈", title: "Zero Logs", desc: "Técnicamente no podemos proporcionar lo que no existe. Sin logs, sin IPs, sin datos de tráfico." },
+        { icon: "◎", title: "VLESS + Reality", desc: "Protocolo moderno. Evita la censura DPI. Funciona en todas partes: Windows, macOS, Linux, iOS, Android." },
+        { icon: "◬", title: "1+ Gbps", desc: "Velocidad para streaming 4K y juegos online. Sin límites ni throttling." },
+        { icon: "◆", title: "Cripto y tarjetas", desc: "Paga con criptomoneda, Visa, Mastercard. Rápido y conveniente." },
+        { icon: "◉", title: "5 dispositivos", desc: "Una suscripción — 5 dispositivos simultáneos. ¿Necesitas más? +49₽ por 5 ranuras extra." },
+        { icon: "◐", title: "Ilimitado", desc: "Sin límites de tráfico. Nunca. Usa todo lo que necesites." },
       ],
     },
     pricing: {
@@ -446,11 +843,11 @@ export const translations = {
     },
     compare: {
       title: "EscapeTheMatrix vs VPNs gratuitas",
-      sub: "Ten cuidado — las VPNs gratuitas suelen vender tus datos para cubrir sus costos, poniendo en riesgo tu privacidad.",
+      sub: "Ten cuidado — las VPNs gratuitas suelen vender tus datos para cubrir sus costos.",
       feature: "Característica",
       us: "Escape The Matrix",
       free: "VPNs gratuitas",
-      warning: "Estudios muestran que más del 70% de las apps VPN gratuitas contienen rastreadores de terceros. Tus datos son su producto.",
+      warning: "Estudios muestran que más del 70% de las apps VPN gratuitas contienen rastreadores de terceros.",
       rows: compareRowsEs,
     },
     blog: {
@@ -462,21 +859,9 @@ export const translations = {
       tagGuide: "Guía",
       read: "Leer",
       articles: [
-        {
-          title: "¿Es seguro el Wi-Fi público?",
-          desc: "Cafeterías, aeropuertos, hoteles — todos ofrecen Wi-Fi gratis. ¿Pero qué pasa realmente con tus datos?",
-          readTime: "5 min",
-        },
-        {
-          title: "¿Es legal usar una VPN? Leyes en todo el mundo",
-          desc: "Las VPNs son legales en la mayoría de países, pero hay excepciones. Analizamos el estatus legal mundial.",
-          readTime: "8 min",
-        },
-        {
-          title: "¿Dónde instalar una VPN? Guía completa de dispositivos",
-          desc: "Smartphone, portátil, router, Smart TV — cómo configurar correctamente una VPN en cada dispositivo.",
-          readTime: "10 min",
-        },
+        { title: "¿Es seguro el Wi-Fi público?", desc: "Cafeterías, aeropuertos, hoteles — todos ofrecen Wi-Fi gratis. ¿Pero qué pasa realmente con tus datos?", readTime: "5 min" },
+        { title: "¿Es legal usar una VPN? Leyes en todo el mundo", desc: "Las VPNs son legales en la mayoría de países, pero hay excepciones.", readTime: "8 min" },
+        { title: "¿Dónde instalar una VPN? Guía completa de dispositivos", desc: "Smartphone, portátil, router, Smart TV — cómo configurar correctamente una VPN en cada dispositivo.", readTime: "10 min" },
       ],
     },
     howto: {
@@ -487,51 +872,21 @@ export const translations = {
       cta: "Abrir Bot de Telegram",
       ctaSub: "@EscapeTheMatrixRobot",
       steps: [
-        {
-          title: "Abre el Bot de Telegram",
-          desc: "@EscapeTheMatrix_Robot — simple y claro",
-        },
-        {
-          title: "Elige un plan",
-          desc: "1 ubicación por 100₽/mes — uno de los mejores servidores de Europa",
-        },
-        {
-          title: "Paga",
-          desc: "Tarjeta o cripto — rápido y fácil",
-        },
-        {
-          title: "Obtén tu enlace",
-          desc: "Enlace VLESS para importar en la app",
-        },
-        {
-          title: "Conéctate",
-          desc: "Importa en FlClashX / Happ — listo",
-        },
+        { title: "Abre el Bot de Telegram", desc: "@EscapeTheMatrix_Robot — simple y claro" },
+        { title: "Elige un plan", desc: "1 ubicación por 100₽/mes" },
+        { title: "Paga", desc: "Tarjeta o cripto — rápido y fácil" },
+        { title: "Obtén tu enlace", desc: "Enlace VLESS para importar en la app" },
+        { title: "Conéctate", desc: "Importa en FlClashX / Happ — listo" },
       ],
     },
     faq: {
       title: "Preguntas frecuentes",
       items: [
-        {
-          q: "¿De verdad zero logs?",
-          a: "Sí. No almacenamos logs de conexión, direcciones IP ni datos de tráfico. Técnicamente no podemos proporcionar lo que no existe.",
-        },
-        {
-          q: "¿Qué protocolo?",
-          a: "VLESS. Moderno, rápido, seguro. Evita el bloqueo DPI. Funciona en todas las plataformas.",
-        },
-        {
-          q: "¿Qué velocidad?",
-          a: "Depende del servidor, pero promedia 1+ Gbps. Suficiente para streaming 4K y juegos.",
-        },
-        {
-          q: "¿Cuántos dispositivos?",
-          a: "5 dispositivos incluidos en el plan. ¿Necesitas más? +49₽ por 5 ranuras adicionales.",
-        },
-        {
-          q: "¿Política de reembolso?",
-          a: "Si algo no funciona y no podemos resolver el problema — te devolvemos el dinero. Sin preguntas.",
-        },
+        { q: "¿De verdad zero logs?", a: "Sí. No almacenamos logs de conexión, direcciones IP ni datos de tráfico." },
+        { q: "¿Qué protocolo?", a: "VLESS. Moderno, rápido, seguro. Evita el bloqueo DPI. Funciona en todas las plataformas." },
+        { q: "¿Qué velocidad?", a: "Promedia 1+ Gbps. Suficiente para streaming 4K y juegos." },
+        { q: "¿Cuántos dispositivos?", a: "5 dispositivos incluidos. ¿Necesitas más? +49₽ por 5 ranuras adicionales." },
+        { q: "¿Política de reembolso?", a: "Si algo no funciona y no podemos resolver el problema — te devolvemos el dinero." },
       ],
     },
     profile: {
@@ -560,10 +915,7 @@ export const translations = {
   },
 
   de: {
-    nav: {
-      profile: "Profil",
-      connect: "Verbinden",
-    },
+    nav: { profile: "Profil", connect: "Verbinden" },
     hero: {
       headline1: "Entkомme der",
       headline2: "Matrix.",
@@ -597,11 +949,11 @@ export const translations = {
     },
     compare: {
       title: "EscapeTheMatrix vs kostenlose VPNs",
-      sub: "Vorsicht — kostenlose VPNs verkaufen oft Ihre Daten, um ihre Kosten zu decken, und gefährden Ihre Privatsphäre.",
+      sub: "Vorsicht — kostenlose VPNs verkaufen oft Ihre Daten, um ihre Kosten zu decken.",
       feature: "Kriterium",
       us: "Escape The Matrix",
       free: "Kostenlose VPNs",
-      warning: "Studien zeigen, dass über 70% der kostenlosen VPN-Apps Drittanbieter-Tracker enthalten. Ihre Daten sind ihr Produkt.",
+      warning: "Studien zeigen, dass über 70% der kostenlosen VPN-Apps Drittanbieter-Tracker enthalten.",
       rows: [
         { feature: "Zero Logs", us: true, free: false },
         { feature: "Kein Datenverkauf", us: true, free: false },
@@ -610,7 +962,7 @@ export const translations = {
         { feature: "Unbegrenzter Traffic", us: true, free: "Oft limitiert" },
         { feature: "Modernes Protokoll (VLESS)", us: true, free: false },
         { feature: "Verschlüsselte Kanäle", us: true, free: "Teilweise" },
-        { feature: "Support", us: "24/7 Telegram", free: "Keiner" },
+        { feature: "Support", us: "24/7 Telegram, Email", free: "Keiner" },
       ],
     },
     blog: {
@@ -622,21 +974,9 @@ export const translations = {
       tagGuide: "Anleitung",
       read: "Lesen",
       articles: [
-        {
-          title: "Ist öffentliches WLAN sicher?",
-          desc: "Cafés, Flughäfen, Hotels — alle bieten kostenloses WLAN. Was passiert wirklich mit Ihren Daten?",
-          readTime: "5 Min",
-        },
-        {
-          title: "Ist ein VPN legal? Gesetze weltweit",
-          desc: "VPNs sind in den meisten Ländern legal, aber es gibt Ausnahmen. Wir klären den rechtlichen Status weltweit.",
-          readTime: "8 Min",
-        },
-        {
-          title: "Wo VPN installieren? Komplette Geräteanleitung",
-          desc: "Smartphone, Laptop, Router, Smart TV — VPN richtig auf jedem Gerät einrichten.",
-          readTime: "10 Min",
-        },
+        { title: "Ist öffentliches WLAN sicher?", desc: "Cafés, Flughäfen, Hotels — alle bieten kostenloses WLAN. Was passiert wirklich mit Ihren Daten?", readTime: "5 Min" },
+        { title: "Ist ein VPN legal? Gesetze weltweit", desc: "VPNs sind in den meisten Ländern legal, aber es gibt Ausnahmen.", readTime: "8 Min" },
+        { title: "Wo VPN installieren? Komplette Geräteanleitung", desc: "Smartphone, Laptop, Router, Smart TV — VPN richtig auf jedem Gerät einrichten.", readTime: "10 Min" },
       ],
     },
     howto: {
@@ -657,11 +997,11 @@ export const translations = {
     faq: {
       title: "FAQ",
       items: [
-        { q: "Wirklich zero logs?", a: "Ja. Wir speichern keine Verbindungslogs, IP-Adressen oder Traffic-Daten. Wir können technisch nichts bereitstellen, was nicht existiert." },
+        { q: "Wirklich zero logs?", a: "Ja. Wir speichern keine Verbindungslogs, IP-Adressen oder Traffic-Daten." },
         { q: "Welches Protokoll?", a: "VLESS. Modern, schnell, sicher. Umgeht DPI-Sperren. Funktioniert auf allen Plattformen." },
         { q: "Welche Geschwindigkeit?", a: "Im Durchschnitt 1+ Gbps. Ausreichend für 4K-Streaming und Online-Gaming." },
         { q: "Wie viele Geräte?", a: "5 Geräte im Tarif enthalten. Mehr nötig — +49₽ für weitere 5 Slots." },
-        { q: "Rückerstattungsrichtlinie?", a: "Wenn etwas nicht funktioniert und wir das Problem nicht lösen können — erstatten wir. Keine Fragen." },
+        { q: "Rückerstattungsrichtlinie?", a: "Wenn etwas nicht funktioniert und wir das Problem nicht lösen können — erstatten wir." },
       ],
     },
     profile: {
@@ -690,10 +1030,7 @@ export const translations = {
   },
 
   zh: {
-    nav: {
-      profile: "个人中心",
-      connect: "立即连接",
-    },
+    nav: { profile: "个人中心", connect: "立即连接" },
     hero: {
       headline1: "逃出",
       headline2: "矩阵。",
@@ -740,7 +1077,7 @@ export const translations = {
         { feature: "无限流量", us: true, free: "通常有限" },
         { feature: "现代协议 (VLESS)", us: true, free: false },
         { feature: "加密通道", us: true, free: "部分" },
-        { feature: "支持", us: "24/7 Telegram", free: "无" },
+        { feature: "支持", us: "24/7 Telegram, Email", free: "无" },
       ],
     },
     blog: {
@@ -752,21 +1089,9 @@ export const translations = {
       tagGuide: "指南",
       read: "阅读",
       articles: [
-        {
-          title: "公共Wi-Fi安全吗？",
-          desc: "咖啡厅、机场、酒店——都提供免费Wi-Fi。但您的数据究竟发生了什么？",
-          readTime: "5分钟",
-        },
-        {
-          title: "使用VPN合法吗？全球法律解读",
-          desc: "VPN在大多数国家是合法的，但也有例外。我们分析全球法律状态。",
-          readTime: "8分钟",
-        },
-        {
-          title: "在哪里安装VPN？设备和平台完整指南",
-          desc: "智能手机、笔记本、路由器、智能电视——如何在每个设备上正确设置VPN。",
-          readTime: "10分钟",
-        },
+        { title: "公共Wi-Fi安全吗？", desc: "咖啡厅、机场、酒店——都提供免费Wi-Fi。但您的数据究竟发生了什么？", readTime: "5分钟" },
+        { title: "使用VPN合法吗？全球法律解读", desc: "VPN在大多数国家是合法的，但也有例外。我们分析全球法律状态。", readTime: "8分钟" },
+        { title: "在哪里安装VPN？设备和平台完整指南", desc: "智能手机、笔记本、路由器、智能电视——如何在每个设备上正确设置VPN。", readTime: "10分钟" },
       ],
     },
     howto: {
@@ -787,9 +1112,9 @@ export const translations = {
     faq: {
       title: "常见问题",
       items: [
-        { q: "真的零日志？", a: "是的。我们不存储任何连接日志、IP地址或流量数据。我们在技术上无法提供不存在的东西。" },
-        { q: "使用什么协议？", a: "VLESS。现代、快速、安全。绕过DPI封锁。适用于所有平台：Windows、macOS、Linux、iOS、Android。" },
-        { q: "速度如何？", a: "取决于服务器，但平均1+ Gbps。足以支持4K流媒体和在线游戏。" },
+        { q: "真的零日志？", a: "是的。我们不存储任何连接日志、IP地址或流量数据。" },
+        { q: "使用什么协议？", a: "VLESS。现代、快速、安全。绕过DPI封锁。适用于所有平台。" },
+        { q: "速度如何？", a: "平均1+ Gbps。足以支持4K流媒体和在线游戏。" },
         { q: "支持多少设备？", a: "套餐包含5台设备。需要更多——额外5个槽位只需+49₽。" },
         { q: "退款政策？", a: "如果某些功能不起作用且我们无法解决问题——我们将退款。无需理由。" },
       ],

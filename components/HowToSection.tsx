@@ -76,16 +76,6 @@ export default function HowToSection({ t }: { t: any }) {
               <p className="font-mono text-white/30 text-xs leading-relaxed">
                 {step.desc}
               </p>
-              {step.highlight && (
-                <a
-                  href="https://t.me/EscapeTheMatrix_Robot"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 text-green-400/60 font-mono text-xs hover:text-green-400 transition-colors"
-                >
-                  {step.highlight}
-                </a>
-              )}
             </div>
           ))}
         </div>

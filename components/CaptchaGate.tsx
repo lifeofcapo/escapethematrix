@@ -13,6 +13,7 @@ function generateGrid(rows = 6, cols = 8) {
   );
 }
 
+
 function runHeuristicChecks(): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -44,8 +45,10 @@ export default function CaptchaGate({ onPassed }: CaptchaGateProps) {
   const [phase, setPhase] = useState<"scanning" | "success" | "blocked">("scanning");
   const [loadProgress, setLoadProgress] = useState(0);
   const [statusLine, setStatusLine] = useState("Initializing...");
-  const [grid, setGrid] = useState(generateGrid());
+  // Initialize with empty array to avoid SSR/client hydration mismatch
+  const [grid, setGrid] = useState<string[]>([]);
   const [glitchIndex, setGlitchIndex] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   const statusLines = [
     "Analyzing environment...",
@@ -56,7 +59,15 @@ export default function CaptchaGate({ onPassed }: CaptchaGateProps) {
     "Access check complete.",
   ];
 
+  // Initialize grid on client only (avoids SSR hydration mismatch)
   useEffect(() => {
+    setMounted(true);
+    setGrid(generateGrid());
+  }, []);
+
+  // Grid glitch effect — only after mount
+  useEffect(() => {
+    if (!mounted) return;
     const chars = "01アイウエオカキクケコ∆◈◎◬◆◉◐░▒▓";
     const interval = setInterval(() => {
       const idx = Math.floor(Math.random() * grid.length);
@@ -69,7 +80,7 @@ export default function CaptchaGate({ onPassed }: CaptchaGateProps) {
       setTimeout(() => setGlitchIndex(null), 150);
     }, 120);
     return () => clearInterval(interval);
-  }, [grid.length]);
+  }, [grid.length, mounted]);
 
   useEffect(() => {
     const steps = [0, 18, 35, 52, 68, 84, 100];
@@ -133,7 +144,7 @@ export default function CaptchaGate({ onPassed }: CaptchaGateProps) {
               — Access Verification —
             </div>
             <div className="text-white/60 font-mono text-sm tracking-wide">
-              Automatic Human Check
+              Automatic Check
             </div>
           </div>
           <div className="relative w-20 h-20 flex items-center justify-center">
@@ -194,7 +205,7 @@ export default function CaptchaGate({ onPassed }: CaptchaGateProps) {
             Suspicious Activity
           </div>
           <div className="text-white/25 font-mono text-xs">
-            Try to open the website in another browser
+            Try to open website in other browser
           </div>
         </div>
       )}

@@ -36,12 +36,12 @@ export default function Home() {
           onProfileOpen={() => setProfileOpen(true)}
         />
         <HeroSection t={t} />
-        <PaymentSection />
         <FeaturesSection t={t} />
         <CompareSection t={t} />
         <PricingSection t={t} />
+        <PaymentSection />
         <HowToSection t={t} />
-        <BlogSection t={t} />
+        <BlogSection t={t} lang={lang} />
         <FAQSection t={t} />
         <Footer t={t} />
         {profileOpen && (
