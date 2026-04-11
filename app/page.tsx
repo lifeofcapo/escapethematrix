@@ -5,6 +5,10 @@ import { translations, Language } from "../lib/i18n";
 import HeroSection from "../components/HeroSection";
 import FeaturesSection from "../components/FeaturesSection";
 import PricingSection from "../components/PricingSection";
+import PaymentSection from "../components/PaymentSection";
+import CompareSection from "../components/CompareSection";
+import BlogSection from "../components/BlogSection";
+import HowToSection from "../components/HowToSection";
 import FAQSection from "../components/FAQSection";
 import ProfileModal from "../components/ProfileModal";
 import Navbar from "../components/Navbar";
@@ -32,8 +36,12 @@ export default function Home() {
           onProfileOpen={() => setProfileOpen(true)}
         />
         <HeroSection t={t} />
+        <PaymentSection />
         <FeaturesSection t={t} />
+        <CompareSection t={t} />
         <PricingSection t={t} />
+        <HowToSection t={t} />
+        <BlogSection t={t} />
         <FAQSection t={t} />
         <Footer t={t} />
         {profileOpen && (

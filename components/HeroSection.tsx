@@ -58,7 +58,7 @@ export default function HeroSection({ t }: { t: any }) {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://t.me/EscapeTheMatrix_Bot"
+            href="https://t.me/EscapeTheMatrix_Robot"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-3 px-8 py-4 bg-green-400 text-[#080808] font-mono font-bold text-sm tracking-wider rounded hover:bg-green-300 transition-all"

@@ -6,6 +6,8 @@ import { Language } from "@/lib/i18n";
 const LANGS: { code: Language; label: string; flag: string }[] = [
   { code: "ru", label: "Русский", flag: "🇷🇺" },
   { code: "en", label: "English", flag: "🇬🇧" },
+  { code: "es", label: "Español", flag: "🇪🇸" },
+  { code: "de", label: "Deutsch", flag: "🇩🇪" },
   { code: "zh", label: "中文", flag: "🇨🇳" },
 ];
 
@@ -42,14 +44,14 @@ export default function Navbar({ t, lang, setLang, onProfileOpen }: NavbarProps)
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setLangOpen(v => !v)}
-              className="flex items-center gap-2 px-4 py-2 border border-white/10 rounded-sm font-mono text-sm text-white/60 hover:border-white/25 hover:text-white/80 transition-all"
+              className="flex items-center gap-2 px-3 py-2 border border-white/8 text-white/40 font-mono text-xs tracking-widest hover:border-white/20 hover:text-white/60 transition-all rounded-sm"
             >
               <span>{currentLang.flag}</span>
-              <span className="tracking-wider uppercase text-xs">{currentLang.code}</span>
+              <span className="uppercase hidden sm:inline">{currentLang.label}</span>
               <span className={`text-[10px] text-white/30 transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`}>▼</span>
             </button>
             {langOpen && (
-              <div className="absolute top-full mt-2 right-0 w-40 border border-white/10 bg-[#0e0e0e] rounded-sm overflow-hidden shadow-xl z-50">
+              <div className="absolute top-full mt-2 right-0 w-44 border border-white/10 bg-[#0e0e0e] rounded-sm overflow-hidden shadow-xl z-50">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-400/30 to-transparent" />
                 {LANGS.map(l => (
                   <button
@@ -76,7 +78,7 @@ export default function Navbar({ t, lang, setLang, onProfileOpen }: NavbarProps)
             {t.nav.profile}
           </button>
           <a
-            href="https://t.me/EscapeTheMatrix_Bot"
+            href="https://t.me/EscapeTheMatrix_Robot"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2 border border-green-400/40 text-green-400 font-mono text-sm tracking-wider uppercase hover:bg-green-400/10 hover:border-green-400/70 transition-all rounded-sm"

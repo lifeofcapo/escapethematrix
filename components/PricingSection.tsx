@@ -5,7 +5,6 @@ export default function PricingSection({ t }: { t: any }) {
     <section className="py-32 px-6 relative">
       <div className="max-w-6xl mx-auto">
         <div className="mb-4">
-          {/* Увеличенный заголовок слева */}
           <span className="text-2xl md:text-3xl font-mono font-black tracking-wider text-green-400 uppercase">
             — {t.pricing.title}
           </span>
@@ -58,7 +57,7 @@ export default function PricingSection({ t }: { t: any }) {
               </ul>
 
               <a
-                href="https://t.me/EscapeTheMatrix_Bot"
+                href="https://t.me/EscapeTheMatrix_Robot"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center py-3 border border-white/10 text-white/60 font-mono text-xs tracking-widest uppercase hover:border-green-400/40 hover:text-green-400 transition-all rounded-sm"
@@ -66,17 +65,6 @@ export default function PricingSection({ t }: { t: any }) {
                 {t.pricing.cta}
               </a>
             </div>
-          ))}
-        </div>
-        <div className="mt-10 flex flex-wrap items-center gap-4">
-          <span className="text-white/20 font-mono text-xs tracking-widest uppercase">Оплата:</span>
-          {["BTC", "ETH", "USDT", "Visa", "MC", "МИР", "СБП"].map((p) => (
-            <span
-              key={p}
-              className="text-white/30 font-mono text-xs border border-white/8 px-3 py-1 rounded-full"
-            >
-              {p}
-            </span>
           ))}
         </div>
       </div>

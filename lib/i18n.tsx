@@ -1,4 +1,37 @@
-export type Language = "ru" | "en" | "de" | "zh";
+export type Language = "ru" | "en" | "es" | "de" | "zh";
+
+const compareRowsRu = [
+  { feature: "Zero Logs", us: true, free: false },
+  { feature: "Нет продажи данных", us: true, free: false },
+  { feature: "Без рекламы", us: true, free: false },
+  { feature: "Неограниченная скорость", us: true, free: "Ограничена" },
+  { feature: "Неограниченный трафик", us: true, free: "Обычно лимит" },
+  { feature: "Современный протокол (VLESS)", us: true, free: false },
+  { feature: "Шифрование каналов", us: true, free: "Частично" },
+  { feature: "Поддержка", us: "24/7 Telegram", free: "Нет" },
+];
+
+const compareRowsEn = [
+  { feature: "Zero Logs", us: true, free: false },
+  { feature: "No data selling", us: true, free: false },
+  { feature: "No ads", us: true, free: false },
+  { feature: "Unlimited speed", us: true, free: "Throttled" },
+  { feature: "Unlimited traffic", us: true, free: "Usually capped" },
+  { feature: "Modern protocol (VLESS)", us: true, free: false },
+  { feature: "Encrypted channels", us: true, free: "Partial" },
+  { feature: "Support", us: "24/7 Telegram", free: "None" },
+];
+
+const compareRowsEs = [
+  { feature: "Zero Logs", us: true, free: false },
+  { feature: "Sin venta de datos", us: true, free: false },
+  { feature: "Sin publicidad", us: true, free: false },
+  { feature: "Velocidad ilimitada", us: true, free: "Limitada" },
+  { feature: "Tráfico ilimitado", us: true, free: "Con límite" },
+  { feature: "Protocolo moderno (VLESS)", us: true, free: false },
+  { feature: "Canales cifrados", us: true, free: "Parcial" },
+  { feature: "Soporte", us: "24/7 Telegram", free: "Ninguno" },
+];
 
 export const translations = {
   ru: {
@@ -61,12 +94,70 @@ export const translations = {
         { flag: "🇳🇱", city: "Амстердам", country: "Нидерланды", ping: "~18ms" },
       ],
     },
-    captcha: {
-      title: "Подтверди, что ты человек",
-      sub: "Нажми и удерживай кнопку 3 секунды",
-      hold: "Удерживай...",
-      start: "Нажми и держи",
-      verified: "Подтверждено ✓",
+    compare: {
+      title: "EscapeTheMatrix vs Бесплатные VPN",
+      sub: "Будьте осторожны — бесплатные VPN часто продают ваши данные, чтобы покрыть свои расходы, ставя вашу конфиденциальность под угрозу.",
+      feature: "Критерий",
+      us: "Escape The Matrix",
+      free: "Бесплатные VPN",
+      warning: "Исследования показывают, что более 70% бесплатных VPN-приложений содержат трекеры третьих сторон. Ваши данные — их товар.",
+      rows: compareRowsRu,
+    },
+    blog: {
+      title: "EscapeTheMatrix blog",
+      sub: "Узнай всё о приватности и безопасности",
+      desc: "Мы создаём понятные статьи, чтобы ты всегда был в курсе.",
+      tagSecurity: "Безопасность",
+      tagLegal: "Право",
+      tagGuide: "Руководство",
+      read: "Читать",
+      articles: [
+        {
+          title: "Безопасен ли публичный Wi-Fi?",
+          desc: "Кофейня, аэропорт, отель — все они предлагают бесплатный Wi-Fi. Но что на самом деле происходит с вашими данными?",
+          readTime: "5 мин",
+        },
+        {
+          title: "Законно ли использование VPN? Законы разных стран",
+          desc: "VPN легален в большинстве стран, но есть исключения. Разбираемся в правовом статусе по всему миру.",
+          readTime: "8 мин",
+        },
+        {
+          title: "Куда установить VPN? Полное руководство по устройствам",
+          desc: "Смартфон, ноутбук, роутер, Smart TV — где и как правильно настроить VPN на каждом устройстве.",
+          readTime: "10 мин",
+        },
+      ],
+    },
+    howto: {
+      title: "Как подключиться?",
+      sub: "Пять простых шагов до полной свободы в сети.",
+      appsTitle: "Поддерживаемые приложения",
+      starNote: "★ = рекомендуем",
+      cta: "Открыть Telegram-бот",
+      ctaSub: "@EscapeTheMatrix_Robot",
+      steps: [
+        {
+          title: "Открой Telegram-бот",
+          desc: "@EscapeTheMatrix_Robot — там всё просто и понятно",
+        },
+        {
+          title: "Выбери тариф",
+          desc: "1 локация за 100₽/мес — один из лучших серверов Европы",
+        },
+        {
+          title: "Оплати",
+          desc: "Карта или СБП — быстро и удобно",
+        },
+        {
+          title: "Получи ссылку",
+          desc: "VLESS-ссылка для импорта в приложение",
+        },
+        {
+          title: "Подключись",
+          desc: "Импортируй в FlClashX / Happ — готово",
+        },
+      ],
     },
     faq: {
       title: "FAQ",
@@ -81,7 +172,7 @@ export const translations = {
         },
         {
           q: "Какая скорость?",
-          a: "Зависит от сквада, но в среднем 1+ Гбит/с. Хватает для 4K стриминга и онлайн-игр.",
+          a: "Зависит от сервера, но в среднем 1+ Гбит/с. Хватает для 4K стриминга и онлайн-игр.",
         },
         {
           q: "Сколько устройств?",
@@ -178,12 +269,70 @@ export const translations = {
         { flag: "🇳🇱", city: "Amsterdam", country: "Netherlands", ping: "~18ms" },
       ],
     },
-    captcha: {
-      title: "Confirm you're human",
-      sub: "Press and hold the button for 3 seconds",
-      hold: "Holding...",
-      start: "Press and hold",
-      verified: "Verified ✓",
+    compare: {
+      title: "EscapeTheMatrix vs free VPNs",
+      sub: "Be cautious — free VPNs often sell your data to cover their costs, putting your privacy at risk.",
+      feature: "Feature",
+      us: "Escape The Matrix",
+      free: "Free VPNs",
+      warning: "Research shows over 70% of free VPN apps contain third-party trackers. Your data is their product.",
+      rows: compareRowsEn,
+    },
+    blog: {
+      title: "EscapeTheMatrix blog",
+      sub: "Learn all about privacy and security",
+      desc: "We create easy-to-read articles to help you stay informed.",
+      tagSecurity: "Security",
+      tagLegal: "Legal",
+      tagGuide: "Guide",
+      read: "Read",
+      articles: [
+        {
+          title: "Is public Wi-Fi safe?",
+          desc: "Coffee shops, airports, hotels — they all offer free Wi-Fi. But what really happens to your data?",
+          readTime: "5 min",
+        },
+        {
+          title: "Is using a VPN legal? Understanding laws around the world",
+          desc: "VPNs are legal in most countries, but there are exceptions. We break down the legal status worldwide.",
+          readTime: "8 min",
+        },
+        {
+          title: "Where to install a VPN? Complete guide about devices and platforms",
+          desc: "Smartphone, laptop, router, Smart TV — how to properly set up a VPN on every device.",
+          readTime: "10 min",
+        },
+      ],
+    },
+    howto: {
+      title: "How to connect?",
+      sub: "Five simple steps to total online freedom.",
+      appsTitle: "Supported apps",
+      starNote: "★ = recommended",
+      cta: "Open Telegram Bot",
+      ctaSub: "@EscapeTheMatrix_Robot",
+      steps: [
+        {
+          title: "Open Telegram Bot",
+          desc: "@EscapeTheMatrix_Robot — simple and clear",
+        },
+        {
+          title: "Choose a plan",
+          desc: "1 location for 100₽/mo — one of Europe's best servers",
+        },
+        {
+          title: "Pay",
+          desc: "Card or crypto — fast and easy",
+        },
+        {
+          title: "Get your link",
+          desc: "VLESS link to import into the app",
+        },
+        {
+          title: "Connect",
+          desc: "Import into FlClashX / Happ — done",
+        },
+      ],
     },
     faq: {
       title: "FAQ",
@@ -235,6 +384,181 @@ export const translations = {
     },
   },
 
+  es: {
+    nav: {
+      profile: "Perfil",
+      connect: "Conectar",
+    },
+    hero: {
+      headline1: "Escapa de la",
+      headline2: "Matriz.",
+      sub: "Zero logs. Zero rastro. Tráfico ilimitado. Tus datos son tu asunto.",
+      cta: "Conectar vía Telegram",
+      ctaSub: "Rápido. Anónimo. Sin registro.",
+    },
+    features: {
+      title: "Por qué nosotros",
+      items: [
+        {
+          icon: "◈",
+          title: "Zero Logs",
+          desc: "Técnicamente no podemos proporcionar lo que no existe. Sin logs, sin IPs, sin datos de tráfico.",
+        },
+        {
+          icon: "◎",
+          title: "VLESS + Reality",
+          desc: "Protocolo moderno. Evita la censura DPI. Funciona en todas partes: Windows, macOS, Linux, iOS, Android.",
+        },
+        {
+          icon: "◬",
+          title: "1+ Gbps",
+          desc: "Velocidad para streaming 4K y juegos online. Sin límites ni throttling.",
+        },
+        {
+          icon: "◆",
+          title: "Cripto y tarjetas",
+          desc: "Paga con criptomoneda, Visa, Mastercard. Rápido y conveniente.",
+        },
+        {
+          icon: "◉",
+          title: "5 dispositivos",
+          desc: "Una suscripción — 5 dispositivos simultáneos. ¿Necesitas más? +49₽ por 5 ranuras extra.",
+        },
+        {
+          icon: "◐",
+          title: "Ilimitado",
+          desc: "Sin límites de tráfico. Nunca. Usa todo lo que necesites.",
+        },
+      ],
+    },
+    pricing: {
+      title: "Precios",
+      sub: "Dos regiones. Un precio. Libertad total.",
+      month: "/ mes",
+      perMonth: "100 ₽",
+      badge: "Ilimitado",
+      features: ["Zero logs", "VLESS + Reality", "5 dispositivos", "1+ Gbps", "Cripto / Tarjetas"],
+      cta: "Conectar",
+      regions: [
+        { flag: "🇫🇮", city: "Helsinki", country: "Finlandia", ping: "~12ms" },
+        { flag: "🇳🇱", city: "Ámsterdam", country: "Países Bajos", ping: "~18ms" },
+      ],
+    },
+    compare: {
+      title: "EscapeTheMatrix vs VPNs gratuitas",
+      sub: "Ten cuidado — las VPNs gratuitas suelen vender tus datos para cubrir sus costos, poniendo en riesgo tu privacidad.",
+      feature: "Característica",
+      us: "Escape The Matrix",
+      free: "VPNs gratuitas",
+      warning: "Estudios muestran que más del 70% de las apps VPN gratuitas contienen rastreadores de terceros. Tus datos son su producto.",
+      rows: compareRowsEs,
+    },
+    blog: {
+      title: "EscapeTheMatrix blog",
+      sub: "Aprende todo sobre privacidad y seguridad",
+      desc: "Creamos artículos fáciles de leer para mantenerte informado.",
+      tagSecurity: "Seguridad",
+      tagLegal: "Legal",
+      tagGuide: "Guía",
+      read: "Leer",
+      articles: [
+        {
+          title: "¿Es seguro el Wi-Fi público?",
+          desc: "Cafeterías, aeropuertos, hoteles — todos ofrecen Wi-Fi gratis. ¿Pero qué pasa realmente con tus datos?",
+          readTime: "5 min",
+        },
+        {
+          title: "¿Es legal usar una VPN? Leyes en todo el mundo",
+          desc: "Las VPNs son legales en la mayoría de países, pero hay excepciones. Analizamos el estatus legal mundial.",
+          readTime: "8 min",
+        },
+        {
+          title: "¿Dónde instalar una VPN? Guía completa de dispositivos",
+          desc: "Smartphone, portátil, router, Smart TV — cómo configurar correctamente una VPN en cada dispositivo.",
+          readTime: "10 min",
+        },
+      ],
+    },
+    howto: {
+      title: "¿Cómo conectarse?",
+      sub: "Cinco pasos simples para la libertad total en línea.",
+      appsTitle: "Aplicaciones compatibles",
+      starNote: "★ = recomendado",
+      cta: "Abrir Bot de Telegram",
+      ctaSub: "@EscapeTheMatrixRobot",
+      steps: [
+        {
+          title: "Abre el Bot de Telegram",
+          desc: "@EscapeTheMatrix_Robot — simple y claro",
+        },
+        {
+          title: "Elige un plan",
+          desc: "1 ubicación por 100₽/mes — uno de los mejores servidores de Europa",
+        },
+        {
+          title: "Paga",
+          desc: "Tarjeta o cripto — rápido y fácil",
+        },
+        {
+          title: "Obtén tu enlace",
+          desc: "Enlace VLESS para importar en la app",
+        },
+        {
+          title: "Conéctate",
+          desc: "Importa en FlClashX / Happ — listo",
+        },
+      ],
+    },
+    faq: {
+      title: "Preguntas frecuentes",
+      items: [
+        {
+          q: "¿De verdad zero logs?",
+          a: "Sí. No almacenamos logs de conexión, direcciones IP ni datos de tráfico. Técnicamente no podemos proporcionar lo que no existe.",
+        },
+        {
+          q: "¿Qué protocolo?",
+          a: "VLESS. Moderno, rápido, seguro. Evita el bloqueo DPI. Funciona en todas las plataformas.",
+        },
+        {
+          q: "¿Qué velocidad?",
+          a: "Depende del servidor, pero promedia 1+ Gbps. Suficiente para streaming 4K y juegos.",
+        },
+        {
+          q: "¿Cuántos dispositivos?",
+          a: "5 dispositivos incluidos en el plan. ¿Necesitas más? +49₽ por 5 ranuras adicionales.",
+        },
+        {
+          q: "¿Política de reembolso?",
+          a: "Si algo no funciona y no podemos resolver el problema — te devolvemos el dinero. Sin preguntas.",
+        },
+      ],
+    },
+    profile: {
+      title: "Iniciar sesión",
+      sub: "Obtén tu clave del bot @EscapeTheMatrix_Robot e ingrésala abajo",
+      placeholder: "Ingresa tu clave de acceso...",
+      btn: "Entrar",
+      loading: "Verificando...",
+      error: "Clave inválida. Por favor verifica e intenta de nuevo.",
+      subLabel: "Suscripción",
+      regionLabel: "Región",
+      devicesLabel: "Dispositivos",
+      expiresLabel: "Vence",
+      statusActive: "Activa",
+      statusInactive: "Inactiva",
+      close: "Cerrar",
+      manage: "Gestionar en el bot",
+    },
+    footer: {
+      tagline: "Escape The Matrix",
+      sub: "Tu libertad en línea.",
+      bot: "Conectar",
+      privacy: "Política de privacidad",
+      terms: "Términos de servicio",
+    },
+  },
+
   de: {
     nav: {
       profile: "Profil",
@@ -271,12 +595,64 @@ export const translations = {
         { flag: "🇳🇱", city: "Amsterdam", country: "Niederlande", ping: "~18ms" },
       ],
     },
-    captcha: {
-      title: "Bestätige, dass du ein Mensch bist",
-      sub: "Drücke und halte den Button 3 Sekunden",
-      hold: "Halten...",
-      start: "Drücken und halten",
-      verified: "Bestätigt ✓",
+    compare: {
+      title: "EscapeTheMatrix vs kostenlose VPNs",
+      sub: "Vorsicht — kostenlose VPNs verkaufen oft Ihre Daten, um ihre Kosten zu decken, und gefährden Ihre Privatsphäre.",
+      feature: "Kriterium",
+      us: "Escape The Matrix",
+      free: "Kostenlose VPNs",
+      warning: "Studien zeigen, dass über 70% der kostenlosen VPN-Apps Drittanbieter-Tracker enthalten. Ihre Daten sind ihr Produkt.",
+      rows: [
+        { feature: "Zero Logs", us: true, free: false },
+        { feature: "Kein Datenverkauf", us: true, free: false },
+        { feature: "Werbefrei", us: true, free: false },
+        { feature: "Unbegrenzte Geschwindigkeit", us: true, free: "Gedrosselt" },
+        { feature: "Unbegrenzter Traffic", us: true, free: "Oft limitiert" },
+        { feature: "Modernes Protokoll (VLESS)", us: true, free: false },
+        { feature: "Verschlüsselte Kanäle", us: true, free: "Teilweise" },
+        { feature: "Support", us: "24/7 Telegram", free: "Keiner" },
+      ],
+    },
+    blog: {
+      title: "EscapeTheMatrix Blog",
+      sub: "Alles über Privatsphäre und Sicherheit",
+      desc: "Wir erstellen leicht lesbare Artikel, damit Sie immer informiert bleiben.",
+      tagSecurity: "Sicherheit",
+      tagLegal: "Recht",
+      tagGuide: "Anleitung",
+      read: "Lesen",
+      articles: [
+        {
+          title: "Ist öffentliches WLAN sicher?",
+          desc: "Cafés, Flughäfen, Hotels — alle bieten kostenloses WLAN. Was passiert wirklich mit Ihren Daten?",
+          readTime: "5 Min",
+        },
+        {
+          title: "Ist ein VPN legal? Gesetze weltweit",
+          desc: "VPNs sind in den meisten Ländern legal, aber es gibt Ausnahmen. Wir klären den rechtlichen Status weltweit.",
+          readTime: "8 Min",
+        },
+        {
+          title: "Wo VPN installieren? Komplette Geräteanleitung",
+          desc: "Smartphone, Laptop, Router, Smart TV — VPN richtig auf jedem Gerät einrichten.",
+          readTime: "10 Min",
+        },
+      ],
+    },
+    howto: {
+      title: "Wie verbinden?",
+      sub: "Fünf einfache Schritte zur totalen Online-Freiheit.",
+      appsTitle: "Unterstützte Apps",
+      starNote: "★ = empfohlen",
+      cta: "Telegram-Bot öffnen",
+      ctaSub: "@EscapeTheMatrix_Robot",
+      steps: [
+        { title: "Telegram-Bot öffnen", desc: "@EscapeTheMatrix_Robot — einfach und klar" },
+        { title: "Tarif wählen", desc: "1 Standort für 100₽/Monat" },
+        { title: "Bezahlen", desc: "Karte oder Krypto — schnell und einfach" },
+        { title: "Link erhalten", desc: "VLESS-Link zum Importieren in die App" },
+        { title: "Verbinden", desc: "In FlClashX / Happ importieren — fertig" },
+      ],
     },
     faq: {
       title: "FAQ",
@@ -337,11 +713,11 @@ export const translations = {
       ],
     },
     pricing: {
-      title: "套餐",
-      sub: "两个节点。统一价格。完全自由。",
+      title: "价格",
+      sub: "两个地区。一个价格。完全自由。",
       month: "/ 月",
       perMonth: "100 ₽",
-      badge: "无限流量",
+      badge: "无限",
       features: ["零日志", "VLESS + Reality", "5台设备", "1+ Gbps", "加密货币 / 银行卡"],
       cta: "立即连接",
       regions: [
@@ -349,43 +725,95 @@ export const translations = {
         { flag: "🇳🇱", city: "阿姆斯特丹", country: "荷兰", ping: "~18ms" },
       ],
     },
-    captcha: {
-      title: "请确认您是人类",
-      sub: "按住按钮3秒",
-      hold: "按住中...",
-      start: "按住",
-      verified: "已验证 ✓",
+    compare: {
+      title: "EscapeTheMatrix vs 免费VPN",
+      sub: "请注意——免费VPN通常通过出售您的数据来覆盖成本，从而危及您的隐私。",
+      feature: "功能",
+      us: "Escape The Matrix",
+      free: "免费VPN",
+      warning: "研究表明，超过70%的免费VPN应用包含第三方追踪器。您的数据就是他们的产品。",
+      rows: [
+        { feature: "零日志", us: true, free: false },
+        { feature: "不出售数据", us: true, free: false },
+        { feature: "无广告", us: true, free: false },
+        { feature: "无限速度", us: true, free: "受限" },
+        { feature: "无限流量", us: true, free: "通常有限" },
+        { feature: "现代协议 (VLESS)", us: true, free: false },
+        { feature: "加密通道", us: true, free: "部分" },
+        { feature: "支持", us: "24/7 Telegram", free: "无" },
+      ],
+    },
+    blog: {
+      title: "EscapeTheMatrix 博客",
+      sub: "了解隐私和安全的一切",
+      desc: "我们创作易读文章，帮助您保持知情。",
+      tagSecurity: "安全",
+      tagLegal: "法律",
+      tagGuide: "指南",
+      read: "阅读",
+      articles: [
+        {
+          title: "公共Wi-Fi安全吗？",
+          desc: "咖啡厅、机场、酒店——都提供免费Wi-Fi。但您的数据究竟发生了什么？",
+          readTime: "5分钟",
+        },
+        {
+          title: "使用VPN合法吗？全球法律解读",
+          desc: "VPN在大多数国家是合法的，但也有例外。我们分析全球法律状态。",
+          readTime: "8分钟",
+        },
+        {
+          title: "在哪里安装VPN？设备和平台完整指南",
+          desc: "智能手机、笔记本、路由器、智能电视——如何在每个设备上正确设置VPN。",
+          readTime: "10分钟",
+        },
+      ],
+    },
+    howto: {
+      title: "如何连接？",
+      sub: "五个简单步骤实现完全在线自由。",
+      appsTitle: "支持的应用",
+      starNote: "★ = 推荐",
+      cta: "打开Telegram机器人",
+      ctaSub: "@EscapeTheMatrix_Robot",
+      steps: [
+        { title: "打开Telegram机器人", desc: "@EscapeTheMatrix_Robot — 简单明了" },
+        { title: "选择套餐", desc: "1个地区每月100₽" },
+        { title: "付款", desc: "银行卡或加密货币 — 快速简便" },
+        { title: "获取链接", desc: "用于导入应用的VLESS链接" },
+        { title: "连接", desc: "导入FlClashX / Happ — 完成" },
+      ],
     },
     faq: {
       title: "常见问题",
       items: [
-        { q: "真的是零日志吗？", a: "是的。我们不存储任何连接日志、IP地址或流量数据。我们在技术上无法提供不存在的东西。" },
-        { q: "使用什么协议？", a: "VLESS。现代、快速、安全。绕过DPI封锁，支持所有平台。" },
-        { q: "速度有多快？", a: "平均1+ Gbps，足以支持4K流媒体和在线游戏。" },
-        { q: "支持多少台设备？", a: "套餐包含5台设备。需要更多？额外5个槽位+49₽。" },
-        { q: "退款政策？", a: "如果出现问题且我们无法解决，将全额退款。无需理由。" },
+        { q: "真的零日志？", a: "是的。我们不存储任何连接日志、IP地址或流量数据。我们在技术上无法提供不存在的东西。" },
+        { q: "使用什么协议？", a: "VLESS。现代、快速、安全。绕过DPI封锁。适用于所有平台：Windows、macOS、Linux、iOS、Android。" },
+        { q: "速度如何？", a: "取决于服务器，但平均1+ Gbps。足以支持4K流媒体和在线游戏。" },
+        { q: "支持多少设备？", a: "套餐包含5台设备。需要更多——额外5个槽位只需+49₽。" },
+        { q: "退款政策？", a: "如果某些功能不起作用且我们无法解决问题——我们将退款。无需理由。" },
       ],
     },
     profile: {
       title: "登录",
-      sub: "从 @EscapeTheMatrix_Robot 获取密钥并在下方输入",
+      sub: "从机器人 @EscapeTheMatrix_Robot 获取密钥并在下方输入",
       placeholder: "输入访问密钥...",
       btn: "登录",
       loading: "验证中...",
-      error: "密钥无效，请检查后重试。",
+      error: "密钥无效。请检查后重试。",
       subLabel: "订阅",
-      regionLabel: "节点",
+      regionLabel: "地区",
       devicesLabel: "设备",
-      expiresLabel: "到期时间",
-      statusActive: "活跃",
-      statusInactive: "未激活",
+      expiresLabel: "到期",
+      statusActive: "有效",
+      statusInactive: "无效",
       close: "关闭",
       manage: "在机器人中管理",
     },
     footer: {
       tagline: "Escape The Matrix",
-      sub: "您的网络自由。",
-      bot: "立即连接",
+      sub: "你的在线自由。",
+      bot: "连接",
       privacy: "隐私政策",
       terms: "服务条款",
     },
