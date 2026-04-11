@@ -16,7 +16,7 @@ export default function Footer({ t }: { t: any }) {
 
           <div className="flex flex-wrap items-center gap-6">
             <a
-              href="https://t.me/EscapeTheMatrix_Robot"
+              href="https://t.me/EscapeTheMatrixVPNBot"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/70 font-mono text-xs tracking-widest hover:text-green-400/60 transition-colors uppercase"

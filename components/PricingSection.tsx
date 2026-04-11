@@ -57,7 +57,7 @@ export default function PricingSection({ t }: { t: any }) {
               </ul>
 
               <a
-                href="https://t.me/EscapeTheMatrix_Robot"
+                href="https://t.me/EscapeTheMatrixVPNBot"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center py-3 border border-white/10 text-white/60 font-mono text-xs tracking-widest uppercase hover:border-green-400/40 hover:text-green-400 transition-all rounded-sm"

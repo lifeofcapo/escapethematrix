@@ -15,8 +15,6 @@ interface ArticlePageClientProps {
 export default function ArticlePageClient({ slug }: ArticlePageClientProps) {
   const [lang, setLang] = useState<Language>("ru");
   const [profileOpen, setProfileOpen] = useState(false);
-
-  // Detect lang from URL search params on mount
   useEffect(() => {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
@@ -58,8 +56,6 @@ export default function ArticlePageClient({ slug }: ArticlePageClientProps) {
           setLang={setLang}
           onProfileOpen={() => setProfileOpen(true)}
         />
-
-        {/* Breadcrumb */}
         <div className="px-6 pt-24 pb-0">
           <div className="max-w-3xl mx-auto">
             <nav aria-label="breadcrumb" className="flex items-center gap-2 font-mono text-xs text-white/25 tracking-widest mb-8">
@@ -74,8 +70,6 @@ export default function ArticlePageClient({ slug }: ArticlePageClientProps) {
 
         <article className="px-6 pb-24" itemScope itemType="https://schema.org/Article">
           <div className="max-w-3xl mx-auto">
-
-            {/* Tag + Meta */}
             <div className="flex items-center gap-4 mb-6">
               <span className={`font-mono text-[10px] tracking-[0.3em] uppercase border px-2 py-1 rounded-full ${tagClass}`}>
                 {article.tag}
@@ -83,24 +77,18 @@ export default function ArticlePageClient({ slug }: ArticlePageClientProps) {
               <span className="text-white/20 font-mono text-[10px] tracking-widest">{article.date}</span>
               <span className="text-white/20 font-mono text-[10px] tracking-widest">{article.readTime}</span>
             </div>
-
-            {/* Title */}
             <h1
               itemProp="headline"
               className="text-2xl md:text-4xl font-mono font-black text-white leading-tight mb-8"
             >
               {article.title}
             </h1>
-
-            {/* Description */}
             <p
               itemProp="description"
               className="text-white/50 font-mono text-base leading-relaxed mb-12 border-l-2 border-green-400/30 pl-4"
             >
               {article.description}
             </p>
-
-            {/* Article body */}
             <div
               itemProp="articleBody"
               className="font-mono text-white/60 space-y-6 max-w-none"
@@ -152,11 +140,9 @@ export default function ArticlePageClient({ slug }: ArticlePageClientProps) {
                 return null;
               })}
             </div>
-
-            {/* CTA */}
             <div className="mt-16 pt-10 border-t border-white/5 flex flex-col sm:flex-row items-start sm:items-center gap-6">
               <a
-                href="https://t.me/EscapeTheMatrix_Robot"
+                href="EscapeTheMatrixVPNBot"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-green-400 text-[#080808] font-mono font-bold text-sm tracking-wider rounded hover:bg-green-300 transition-all"
@@ -176,7 +162,6 @@ export default function ArticlePageClient({ slug }: ArticlePageClientProps) {
           </div>
         </article>
 
-        {/* Schema.org structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

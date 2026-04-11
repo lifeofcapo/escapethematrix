@@ -304,7 +304,7 @@ export const articleContent = {
       content: [
         { type: "intro", text: "VPN можно установить практически на любое устройство, подключённое к интернету. Рассмотрим каждую платформу подробно." },
         { type: "h2", text: "Android" },
-        { type: "p", text: "Для Android лучшие приложения для работы с VLESS-протоколом: FlClashX (рекомендуем) и Happ. Оба доступны в Google Play и на официальных сайтах. После установки достаточно импортировать VLESS-ссылку из Telegram-бота @EscapeTheMatrix_Robot." },
+        { type: "p", text: "Для Android лучшие приложения для работы с VLESS-протоколом: FlClashX (рекомендуем) и Happ. Оба доступны в Google Play и на официальных сайтах. После установки достаточно импортировать VLESS-ссылку из Telegram-бота @EscapeTheMatrixVPNBot." },
         { type: "h2", text: "iOS (iPhone / iPad)" },
         { type: "p", text: "На iOS рекомендуем Happ или Streisand. Доступны в App Store. Импортируйте VLESS-конфиг — и VPN готов к работе." },
         { type: "h2", text: "Windows" },
@@ -318,7 +318,7 @@ export const articleContent = {
         { type: "h2", text: "Smart TV и TV Box" },
         { type: "p", text: "Для Android TV подойдёт приложение на базе ClashX. Альтернативный вариант — настроить VPN на роутере, тогда Smart TV получит защиту автоматически." },
         { type: "h2", text: "Сколько устройств можно подключить" },
-        { type: "p", text: "Одна подписка Escape The Matrix включает 5 одновременных устройств. Если нужно больше — всего +49₽ за ещё 5 слотов. Управление устройствами через @EscapeTheMatrix_Robot." },
+        { type: "p", text: "Одна подписка Escape The Matrix включает 5 одновременных устройств. Если нужно больше — всего +49₽ за ещё 5 слотов. Управление устройствами через @EscapeTheMatrixVPNBot." },
         { type: "conclusion", text: "VPN сегодня — это не только для компьютера. Защитите все свои устройства с одной подпиской Escape The Matrix и наслаждайтесь свободным интернетом везде." }
       ]
     },
@@ -332,7 +332,7 @@ export const articleContent = {
       content: [
         { type: "intro", text: "You can install a VPN on almost any internet-connected device. Let's cover each platform in detail." },
         { type: "h2", text: "Android" },
-        { type: "p", text: "For Android, the best apps for VLESS protocol: FlClashX (recommended) and Happ. Both are available on Google Play and official websites. After installation, just import the VLESS link from the @EscapeTheMatrix_Robot Telegram bot." },
+        { type: "p", text: "For Android, the best apps for VLESS protocol: FlClashX (recommended) and Happ. Both are available on Google Play and official websites. After installation, just import the VLESS link from the @EscapeTheMatrixVPNBot Telegram bot." },
         { type: "h2", text: "iOS (iPhone / iPad)" },
         { type: "p", text: "On iOS we recommend Happ or Streisand. Available on the App Store. Import the VLESS config and the VPN is ready." },
         { type: "h2", text: "Windows" },
@@ -346,7 +346,7 @@ export const articleContent = {
         { type: "h2", text: "Smart TV and TV Box" },
         { type: "p", text: "For Android TV, a ClashX-based app works. Alternative — set up VPN on the router, then Smart TV gets protection automatically." },
         { type: "h2", text: "How many devices can connect" },
-        { type: "p", text: "One Escape The Matrix subscription includes 5 simultaneous devices. Need more — just +49₽ for 5 extra slots. Manage devices through @EscapeTheMatrix_Robot." },
+        { type: "p", text: "One Escape The Matrix subscription includes 5 simultaneous devices. Need more — just +49₽ for 5 extra slots. Manage devices through @EscapeTheMatrixVPNBot." },
         { type: "conclusion", text: "VPN today isn't just for computers. Protect all your devices with one Escape The Matrix subscription and enjoy free internet everywhere." }
       ]
     },
@@ -360,7 +360,7 @@ export const articleContent = {
       content: [
         { type: "intro", text: "Puedes instalar una VPN en casi cualquier dispositivo conectado a internet. Cubramos cada plataforma en detalle." },
         { type: "h2", text: "Android" },
-        { type: "p", text: "Para Android, las mejores apps para el protocolo VLESS: FlClashX (recomendado) y Happ. Disponibles en Google Play. Tras la instalación, importa el enlace VLESS del bot de Telegram @EscapeTheMatrix_Robot." },
+        { type: "p", text: "Para Android, las mejores apps para el protocolo VLESS: FlClashX (recomendado) y Happ. Disponibles en Google Play. Tras la instalación, importa el enlace VLESS del bot de Telegram @EscapeTheMatrixVPNBot." },
         { type: "h2", text: "iOS (iPhone / iPad)" },
         { type: "p", text: "En iOS recomendamos Happ o Streisand. Disponibles en App Store. Importa la configuración VLESS y la VPN estará lista." },
         { type: "h2", text: "Windows" },
@@ -382,7 +382,7 @@ export const articleContent = {
       content: [
         { type: "intro", text: "Sie können ein VPN auf nahezu jedem mit dem Internet verbundenen Gerät installieren. Schauen wir uns jede Plattform im Detail an." },
         { type: "h2", text: "Android" },
-        { type: "p", text: "Für Android sind die besten Apps für das VLESS-Protokoll: FlClashX (empfohlen) und Happ. Beide sind auf Google Play verfügbar. Nach der Installation importieren Sie einfach den VLESS-Link vom Telegram-Bot @EscapeTheMatrix_Robot." },
+        { type: "p", text: "Für Android sind die besten Apps für das VLESS-Protokoll: FlClashX (empfohlen) und Happ. Beide sind auf Google Play verfügbar. Nach der Installation importieren Sie einfach den VLESS-Link vom Telegram-Bot @EscapeTheMatrixVPNBot." },
         { type: "h2", text: "iOS (iPhone / iPad)" },
         { type: "p", text: "Auf iOS empfehlen wir Happ oder Streisand. Im App Store erhältlich. Importieren Sie die VLESS-Konfiguration und das VPN ist betriebsbereit." },
         { type: "h2", text: "Windows" },
@@ -404,7 +404,7 @@ export const articleContent = {
       content: [
         { type: "intro", text: "您可以在几乎任何连接互联网的设备上安装VPN。让我们详细了解每个平台。" },
         { type: "h2", text: "Android" },
-        { type: "p", text: "对于Android，支持VLESS协议的最佳应用：FlClashX（推荐）和Happ。两者都可在Google Play上找到。安装后，只需从Telegram机器人@EscapeTheMatrix_Robot导入VLESS链接。" },
+        { type: "p", text: "对于Android，支持VLESS协议的最佳应用：FlClashX（推荐）和Happ。两者都可在Google Play上找到。安装后，只需从Telegram机器人@EscapeTheMatrixVPNBot导入VLESS链接。" },
         { type: "h2", text: "iOS（iPhone / iPad）" },
         { type: "p", text: "在iOS上，我们推荐Happ或Streisand。可在App Store找到。导入VLESS配置，VPN即可使用。" },
         { type: "h2", text: "Windows" },
@@ -429,7 +429,7 @@ export const privacyTranslations = {
     sections: [
       { h: "1. Общие положения", p: "Escape The Matrix (далее — «Сервис», «мы») не собирает и не хранит персональные данные пользователей. Мы не ведём логи подключений, не фиксируем IP-адреса, не отслеживаем историю посещений и не анализируем трафик пользователей. Наша инфраструктура построена таким образом, чтобы технически исключить возможность сбора подобной информации." },
       { h: "2. Какие данные мы НЕ собираем", list: ["IP-адреса (оригинальные и назначенные)", "Временные метки подключения", "Объём переданного/полученного трафика", "DNS-запросы", "Информация об устройствах и браузерах"] },
-      { h: "3. Данные, необходимые для работы", p: "Единственная информация, которую мы можем иметь — это данные, добровольно предоставленные пользователем через Telegram-бота (@EscapeTheMatrix_Robot) для управления подпиской:", list: ["Telegram ID (для идентификации подписки)", "Username в Telegram (опционально)", "Информация о сроке действия подписки и количестве устройств"], p2: "Эти данные хранятся в зашифрованном виде и используются исключительно для предоставления доступа к сервису." },
+      { h: "3. Данные, необходимые для работы", p: "Единственная информация, которую мы можем иметь — это данные, добровольно предоставленные пользователем через Telegram-бота (@EscapeTheMatrixVPNBot) для управления подпиской:", list: ["Telegram ID (для идентификации подписки)", "Username в Telegram (опционально)", "Информация о сроке действия подписки и количестве устройств"], p2: "Эти данные хранятся в зашифрованном виде и используются исключительно для предоставления доступа к сервису." },
       { h: "4. Платёжная информация", p: "Мы не обрабатываем и не храним платёжные данные. Все платежи проходят через сторонние защищённые шлюзы. Сервис получает только подтверждение факта оплаты и сумму." },
       { h: "5. Использование файлов cookie", p: "Сайт escapethematrix.to не использует собственные cookie для отслеживания. Возможно использование технических cookie для обеспечения работы сессий (например, для запоминания выбранного языка), которые не содержат идентифицирующей информации." },
       { h: "6. Передача данных третьим лицам", p: "Мы не передаём никакие данные третьим лицам, поскольку не располагаем таковыми. Мы не сотрудничаем с рекламными сетями и аналитическими платформами." },
@@ -446,7 +446,7 @@ export const privacyTranslations = {
     sections: [
       { h: "1. General Provisions", p: "Escape The Matrix (hereinafter — \"Service\", \"we\") does not collect or store personal data of users. We do not maintain connection logs, do not record IP addresses, do not track browsing history, and do not analyze user traffic. Our infrastructure is built to technically exclude the possibility of collecting such information." },
       { h: "2. Data We Do NOT Collect", list: ["IP addresses (original and assigned)", "Connection timestamps", "Volume of transmitted/received traffic", "DNS queries", "Device and browser information"] },
-      { h: "3. Data Required for Operation", p: "The only information we may have is data voluntarily provided by the user through the Telegram bot (@EscapeTheMatrix_Robot) to manage their subscription:", list: ["Telegram ID (for subscription identification)", "Telegram username (optional)", "Subscription expiry and device count information"], p2: "This data is stored in encrypted form and used exclusively to provide access to the service." },
+      { h: "3. Data Required for Operation", p: "The only information we may have is data voluntarily provided by the user through the Telegram bot (@EscapeTheMatrixVPNBot) to manage their subscription:", list: ["Telegram ID (for subscription identification)", "Telegram username (optional)", "Subscription expiry and device count information"], p2: "This data is stored in encrypted form and used exclusively to provide access to the service." },
       { h: "4. Payment Information", p: "We do not process or store payment data. All payments go through third-party secure gateways. The service only receives confirmation of payment and the amount." },
       { h: "5. Cookie Usage", p: "The site escapethematrix.to does not use proprietary tracking cookies. Technical session cookies may be used (e.g., to remember the selected language), which contain no identifying information." },
       { h: "6. Third-Party Data Sharing", p: "We do not share any data with third parties because we have none. We do not partner with advertising networks or analytics platforms." },
@@ -463,7 +463,7 @@ export const privacyTranslations = {
     sections: [
       { h: "1. Disposiciones Generales", p: "Escape The Matrix (en adelante, «Servicio», «nosotros») no recopila ni almacena datos personales de los usuarios. No mantenemos registros de conexión, no registramos direcciones IP, no rastreamos el historial de navegación ni analizamos el tráfico de los usuarios." },
       { h: "2. Datos que NO recopilamos", list: ["Direcciones IP (originales y asignadas)", "Marcas de tiempo de conexión", "Volumen de tráfico transmitido/recibido", "Consultas DNS", "Información sobre dispositivos y navegadores"] },
-      { h: "3. Datos Necesarios para el Funcionamiento", p: "La única información que podemos tener son los datos proporcionados voluntariamente por el usuario a través del bot de Telegram (@EscapeTheMatrix_Robot) para gestionar la suscripción:", list: ["ID de Telegram (para identificación de suscripción)", "Nombre de usuario de Telegram (opcional)", "Información sobre la vigencia de la suscripción y el número de dispositivos"], p2: "Estos datos se almacenan de forma cifrada y se utilizan exclusivamente para proporcionar acceso al servicio." },
+      { h: "3. Datos Necesarios para el Funcionamiento", p: "La única información que podemos tener son los datos proporcionados voluntariamente por el usuario a través del bot de Telegram (@EscapeTheMatrixVPNBot) para gestionar la suscripción:", list: ["ID de Telegram (para identificación de suscripción)", "Nombre de usuario de Telegram (opcional)", "Información sobre la vigencia de la suscripción y el número de dispositivos"], p2: "Estos datos se almacenan de forma cifrada y se utilizan exclusivamente para proporcionar acceso al servicio." },
       { h: "4. Información de Pago", p: "No procesamos ni almacenamos datos de pago. Todos los pagos se realizan a través de pasarelas seguras de terceros." },
       { h: "5. Uso de Cookies", p: "El sitio escapethematrix.to no utiliza cookies propias para el rastreo. Se pueden usar cookies técnicas de sesión que no contienen información identificativa." },
       { h: "6. Compartir Datos con Terceros", p: "No compartimos ningún dato con terceros porque no disponemos de ellos. No colaboramos con redes publicitarias ni plataformas analíticas." },
@@ -480,7 +480,7 @@ export const privacyTranslations = {
     sections: [
       { h: "1. Allgemeine Bestimmungen", p: "Escape The Matrix (nachfolgend Dienst, wir) erhebt und speichert keine personenbezogenen Daten der Nutzer. Wir führen keine Verbindungsprotokolle, erfassen keine IP-Adressen, verfolgen keinen Browserverlauf und analysieren keinen Nutzerverkehr." },
       { h: "2. Daten, die wir NICHT erheben", list: ["IP-Adressen (originale und zugewiesene)", "Verbindungszeitstempel", "Volumen des übertragenen/empfangenen Datenverkehrs", "DNS-Anfragen", "Gerät- und Browser-Informationen"] },
-      { h: "3. Für den Betrieb erforderliche Daten", p: "Die einzigen Informationen, die wir haben können, sind Daten, die der Nutzer freiwillig über den Telegram-Bot (@EscapeTheMatrix_Robot) zur Abonnementverwaltung bereitstellt:", list: ["Telegram-ID (zur Abonnement-Identifikation)", "Telegram-Benutzername (optional)", "Informationen über Abonnementlaufzeit und Geräteanzahl"], p2: "Diese Daten werden verschlüsselt gespeichert und ausschließlich zur Bereitstellung des Dienstzugangs verwendet." },
+      { h: "3. Für den Betrieb erforderliche Daten", p: "Die einzigen Informationen, die wir haben können, sind Daten, die der Nutzer freiwillig über den Telegram-Bot (@EscapeTheMatrixVPNBot) zur Abonnementverwaltung bereitstellt:", list: ["Telegram-ID (zur Abonnement-Identifikation)", "Telegram-Benutzername (optional)", "Informationen über Abonnementlaufzeit und Geräteanzahl"], p2: "Diese Daten werden verschlüsselt gespeichert und ausschließlich zur Bereitstellung des Dienstzugangs verwendet." },
       { h: "4. Zahlungsinformationen", p: "Wir verarbeiten oder speichern keine Zahlungsdaten. Alle Zahlungen laufen über sichere Drittanbieter-Gateways." },
       { h: "5. Cookie-Nutzung", p: "Die Website escapethematrix.to verwendet keine eigenen Tracking-Cookies. Technische Session-Cookies ohne identifizierende Informationen können verwendet werden." },
       { h: "6. Weitergabe von Daten an Dritte", p: "Wir geben keine Daten an Dritte weiter, weil wir keine haben. Wir arbeiten nicht mit Werbenetzwerken oder Analyseplattformen zusammen." },
@@ -497,7 +497,7 @@ export const privacyTranslations = {
     sections: [
       { h: "1. 总则", p: "Escape The Matrix（以下简称`服务`、`我们`）不收集或存储用户个人数据。我们不维护连接日志，不记录IP地址，不跟踪浏览历史，不分析用户流量。我们的基础设施在技术上排除了收集此类信息的可能性。" },
       { h: "2. 我们不收集的数据", list: ["IP地址（原始和分配的）", "连接时间戳", "传输/接收流量的量", "DNS查询", "设备和浏览器信息"] },
-      { h: "3. 运营所需数据", p: "我们可能拥有的唯一信息是用户通过Telegram机器人（@EscapeTheMatrix_Robot）自愿提供的用于管理订阅的数据：", list: ["Telegram ID（用于订阅识别）", "Telegram用户名（可选）", "订阅有效期和设备数量信息"], p2: "这些数据以加密形式存储，仅用于提供服务访问。" },
+      { h: "3. 运营所需数据", p: "我们可能拥有的唯一信息是用户通过Telegram机器人（@EscapeTheMatrixVPNBot）自愿提供的用于管理订阅的数据：", list: ["Telegram ID（用于订阅识别）", "Telegram用户名（可选）", "订阅有效期和设备数量信息"], p2: "这些数据以加密形式存储，仅用于提供服务访问。" },
       { h: "4. 支付信息", p: "我们不处理或存储支付数据。所有支付通过第三方安全网关进行。服务仅接收付款确认和金额。" },
       { h: "5. Cookie使用", p: "网站escapethematrix.to不使用自己的跟踪Cookie。可能使用不含识别信息的技术会话Cookie（例如，记住所选语言）。" },
       { h: "6. 向第三方共享数据", p: "我们不向第三方共享任何数据，因为我们没有。我们不与广告网络或分析平台合作。" },
@@ -520,7 +520,7 @@ export const termsTranslations = {
       { h: "2. Описание услуги", p: "Сервис предоставляет доступ к зашифрованному VPN-туннелю с использованием протокола VLESS + Reality. Услуга предоставляется на условиях подписки. Пользователь получает доступ к серверам в Хельсинки и Амстердаме." },
       { h: "3. Обязанности пользователя", p: "Пользователь обязуется:", list: ["Не использовать Сервис для совершения противоправных действий, включая распространение вредоносного ПО, фишинг, спам, DDoS-атаки, мошенничество.", "Не предпринимать попыток взлома или нарушения нормальной работы Сервиса.", "Не передавать свои учетные данные третьим лицам."] },
       { h: "4. Отказ от ответственности", p: "Сервис предоставляется «как есть». Мы не несем ответственности за:", list: ["Действия пользователя в сети при использовании VPN.", "Временную недоступность сервиса по форс-мажорным причинам.", "Ущерб от использования или невозможности использования Сервиса.", "Контент сайтов, к которым пользователь получает доступ через VPN."] },
-      { h: "5. Политика возврата", p: "Если в течение 24 часов с момента оплаты Сервис не работает по техническим причинам и наша поддержка не смогла решить проблему — осуществляем полный возврат средств. Для запроса обратитесь в @EscapeTheMatrix_Robot." },
+      { h: "5. Политика возврата", p: "Если в течение 24 часов с момента оплаты Сервис не работает по техническим причинам и наша поддержка не смогла решить проблему — осуществляем полный возврат средств. Для запроса обратитесь в @EscapeTheMatrixVPNBot." },
       { h: "6. Блокировка аккаунта", p: "Мы оставляем за собой право приостановить услуги в случае нарушения настоящих Условий или подозрения в злоупотреблении (спам, сетевые атаки)." },
       { h: "7. Изменение условий", p: "Сервис может изменять настоящие Условия в любое время. Актуальная версия всегда доступна по адресу escapethematrix.to/terms." },
       { h: "8. Применимое право", p: "Отношения сторон регулируются законодательством юрисдикции, в которой зарегистрирован Сервис. Все споры решаются путём переговоров." },
@@ -536,7 +536,7 @@ export const termsTranslations = {
       { h: "2. Service Description", p: "The Service provides access to an encrypted VPN tunnel using the VLESS + Reality protocol. The service is provided on a subscription basis. The user gets access to servers in Helsinki and Amsterdam." },
       { h: "3. User Obligations", p: "The user agrees to:", list: ["Not use the Service for illegal activities, including distributing malware, phishing, spam, DDoS attacks, fraud.", "Not attempt to hack or disrupt the normal operation of the Service.", "Not share credentials with third parties."] },
       { h: "4. Disclaimer", p: "The Service is provided \"as is\". We are not responsible for:", list: ["User actions on the network while using VPN.", "Temporary service unavailability due to force majeure.", "Damage from using or inability to use the Service.", "Content of sites accessed through the VPN."] },
-      { h: "5. Refund Policy", p: "If within 24 hours of payment the Service doesn't work for technical reasons and our support couldn't resolve the issue — we provide a full refund. Request via @EscapeTheMatrix_Robot." },
+      { h: "5. Refund Policy", p: "If within 24 hours of payment the Service doesn't work for technical reasons and our support couldn't resolve the issue — we provide a full refund. Request via @EscapeTheMatrixVPNBot." },
       { h: "6. Account Blocking", p: "We reserve the right to suspend services in case of violation of these Terms or suspected abuse (spam, network attacks)." },
       { h: "7. Changes to Terms", p: "The Service may change these Terms at any time. The current version is always available at escapethematrix.to/terms." },
       { h: "8. Applicable Law", p: "The parties' relationship is governed by the laws of the jurisdiction where the Service is registered. All disputes are resolved through negotiation." },
@@ -552,7 +552,7 @@ export const termsTranslations = {
       { h: "2. Descripción del Servicio", p: "El Servicio proporciona acceso a un túnel VPN cifrado usando el protocolo VLESS + Reality. El servicio se proporciona por suscripción. El usuario obtiene acceso a servidores en Helsinki y Ámsterdam." },
       { h: "3. Obligaciones del Usuario", p: "El usuario se compromete a:", list: ["No usar el Servicio para actividades ilegales, incluyendo distribución de malware, phishing, spam, ataques DDoS, fraude.", "No intentar hackear ni interrumpir el funcionamiento normal del Servicio.", "No compartir credenciales con terceros."] },
       { h: "4. Descargo de Responsabilidad", p: "El Servicio se proporciona «tal cual». No somos responsables de:", list: ["Acciones del usuario en la red mientras usa VPN.", "Indisponibilidad temporal del servicio por causas de fuerza mayor.", "Daños por uso o imposibilidad de uso del Servicio.", "Contenido de sitios a los que el usuario accede a través de VPN."] },
-      { h: "5. Política de Reembolso", p: "Si dentro de las 24 horas posteriores al pago el Servicio no funciona por razones técnicas y nuestro soporte no pudo resolver el problema — realizamos un reembolso completo. Solicítalo en @EscapeTheMatrix_Robot." },
+      { h: "5. Política de Reembolso", p: "Si dentro de las 24 horas posteriores al pago el Servicio no funciona por razones técnicas y nuestro soporte no pudo resolver el problema — realizamos un reembolso completo. Solicítalo en @EscapeTheMatrixVPNBot." },
       { h: "6. Bloqueo de Cuenta", p: "Nos reservamos el derecho de suspender servicios en caso de violación de estos Términos o sospecha de abuso." },
       { h: "7. Cambios en los Términos", p: "El Servicio puede cambiar estos Términos en cualquier momento. La versión actual siempre está disponible en escapethematrix.to/terms." },
       { h: "8. Ley Aplicable", p: "La relación de las partes se rige por las leyes de la jurisdicción donde está registrado el Servicio. Todas las disputas se resuelven mediante negociación." },
@@ -568,7 +568,7 @@ export const termsTranslations = {
       { h: "2. Dienstbeschreibung", p: "Der Dienst bietet Zugang zu einem verschlüsselten VPN-Tunnel mit dem VLESS + Reality-Protokoll. Der Dienst wird auf Abonnementbasis bereitgestellt. Der Nutzer erhält Zugang zu Servern in Helsinki und Amsterdam." },
       { h: "3. Nutzerpflichten", p: "Der Nutzer verpflichtet sich:", list: ["Den Dienst nicht für illegale Aktivitäten zu nutzen, einschließlich Verbreitung von Malware, Phishing, Spam, DDoS-Angriffe, Betrug.", "Keine Versuche zu unternehmen, den Dienst zu hacken oder seinen normalen Betrieb zu stören.", "Zugangsdaten nicht an Dritte weiterzugeben."] },
       { h: "4. Haftungsausschluss", p: "Der Dienst wird «wie besehen» bereitgestellt. Wir haften nicht für:", list: ["Handlungen des Nutzers im Netz bei der VPN-Nutzung.", "Vorübergehende Nichtverfügbarkeit des Dienstes aus höherer Gewalt.", "Schäden durch Nutzung oder Nichtnutzung des Dienstes.", "Inhalte von Websites, auf die der Nutzer über VPN zugreift."] },
-      { h: "5. Rückerstattungsrichtlinie", p: "Wenn der Dienst innerhalb von 24 Stunden nach der Zahlung aus technischen Gründen nicht funktioniert und unser Support das Problem nicht lösen konnte — erstatten wir den vollen Betrag. Anfrage über @EscapeTheMatrix_Robot." },
+      { h: "5. Rückerstattungsrichtlinie", p: "Wenn der Dienst innerhalb von 24 Stunden nach der Zahlung aus technischen Gründen nicht funktioniert und unser Support das Problem nicht lösen konnte — erstatten wir den vollen Betrag. Anfrage über @EscapeTheMatrixVPNBot." },
       { h: "6. Kontosperrung", p: "Wir behalten uns das Recht vor, Dienste bei Verstoß gegen diese Bedingungen oder Verdacht auf Missbrauch zu sperren." },
       { h: "7. Änderung der Bedingungen", p: "Der Dienst kann diese Bedingungen jederzeit ändern. Die aktuelle Version ist immer unter escapethematrix.to/terms verfügbar." },
       { h: "8. Anwendbares Recht", p: "Die Beziehung der Parteien unterliegt dem Recht der Jurisdiktion, in der der Dienst registriert ist. Alle Streitigkeiten werden durch Verhandlungen gelöst." },
@@ -584,7 +584,7 @@ export const termsTranslations = {
       { h: "2. 服务描述", p: "该服务提供使用VLESS + Reality协议的加密VPN隧道访问。服务以订阅方式提供。用户可访问赫尔辛基和阿姆斯特丹的服务器。" },
       { h: "3. 用户义务", p: "用户同意：", list: ["不将服务用于非法活动，包括分发恶意软件、钓鱼、垃圾邮件、DDoS攻击、欺诈。", "不尝试入侵或中断服务的正常运行。", "不与第三方共享凭证。"] },
       { h: "4. 免责声明", p: "服务按`原样`提供。我们不对以下情况负责：", list: ["用户使用VPN时在网络上的行为。", "由不可抗力原因导致的服务临时不可用。", "使用或无法使用服务造成的损害。", "用户通过VPN访问的网站内容。"] },
-      { h: "5. 退款政策", p: "如果付款后24小时内服务因技术原因无法正常工作且我们的支持无法解决问题——我们提供全额退款。通过@EscapeTheMatrix_Robot请求。" },
+      { h: "5. 退款政策", p: "如果付款后24小时内服务因技术原因无法正常工作且我们的支持无法解决问题——我们提供全额退款。通过@EscapeTheMatrixVPNBot请求。" },
       { h: "6. 账户封禁", p: "我们保留在违反本条款或怀疑滥用（垃圾邮件、网络攻击）的情况下暂停服务的权利。" },
       { h: "7. 条款变更", p: "服务可随时更改本条款。当前版本始终可在escapethematrix.to/terms获取。" },
       { h: "8. 适用法律", p: "双方关系受服务注册所在司法管辖区的法律管辖。所有争议通过谈判解决。" },
@@ -658,9 +658,9 @@ export const translations = {
       appsTitle: "Поддерживаемые приложения",
       starNote: "★ = рекомендуем",
       cta: "Открыть Telegram-бот",
-      ctaSub: "@EscapeTheMatrix_Robot",
+      ctaSub: "@EscapeTheMatrixVPNBot",
       steps: [
-        { title: "Открой Telegram-бот", desc: "@EscapeTheMatrix_Robot — там всё просто и понятно" },
+        { title: "Открой Telegram-бот", desc: "@EscapeTheMatrixVPNBot — там всё просто и понятно" },
         { title: "Выбери тариф", desc: "1 локация за 100₽/мес — один из лучших серверов Европы" },
         { title: "Оплати", desc: "Карта или СБП — быстро и удобно" },
         { title: "Получи ссылку", desc: "VLESS-ссылка для импорта в приложение" },
@@ -679,7 +679,7 @@ export const translations = {
     },
     profile: {
       title: "Войти в профиль",
-      sub: "Получи ключ в боте @EscapeTheMatrix_Robot и введи его ниже",
+      sub: "Получи ключ в боте @EscapeTheMatrixVPNBot и введи его ниже",
       placeholder: "Введи ключ доступа...",
       btn: "Войти",
       loading: "Проверяем...",
@@ -764,9 +764,9 @@ export const translations = {
       appsTitle: "Supported apps",
       starNote: "★ = recommended",
       cta: "Open Telegram Bot",
-      ctaSub: "@EscapeTheMatrix_Robot",
+      ctaSub: "@EscapeTheMatrixVPNBot",
       steps: [
-        { title: "Open Telegram Bot", desc: "@EscapeTheMatrix_Robot — simple and clear" },
+        { title: "Open Telegram Bot", desc: "@EscapeTheMatrixVPNBot — simple and clear" },
         { title: "Choose a plan", desc: "1 location for 100₽/mo — one of Europe's best servers" },
         { title: "Pay", desc: "Card or crypto — fast and easy" },
         { title: "Get your link", desc: "VLESS link to import into the app" },
@@ -785,7 +785,7 @@ export const translations = {
     },
     profile: {
       title: "Sign In",
-      sub: "Get your key from @EscapeTheMatrix_Robot and enter it below",
+      sub: "Get your key from @EscapeTheMatrixVPNBot and enter it below",
       placeholder: "Enter your access key...",
       btn: "Sign In",
       loading: "Checking...",
@@ -870,9 +870,9 @@ export const translations = {
       appsTitle: "Aplicaciones compatibles",
       starNote: "★ = recomendado",
       cta: "Abrir Bot de Telegram",
-      ctaSub: "@EscapeTheMatrixRobot",
+      ctaSub: "@EscapeTheMatrixVPNBot",
       steps: [
-        { title: "Abre el Bot de Telegram", desc: "@EscapeTheMatrix_Robot — simple y claro" },
+        { title: "Abre el Bot de Telegram", desc: "@EscapeTheMatrixVPNBot — simple y claro" },
         { title: "Elige un plan", desc: "1 ubicación por 100₽/mes" },
         { title: "Paga", desc: "Tarjeta o cripto — rápido y fácil" },
         { title: "Obtén tu enlace", desc: "Enlace VLESS para importar en la app" },
@@ -891,7 +891,7 @@ export const translations = {
     },
     profile: {
       title: "Iniciar sesión",
-      sub: "Obtén tu clave del bot @EscapeTheMatrix_Robot e ingrésala abajo",
+      sub: "Obtén tu clave del bot @EscapeTheMatrixVPNBot e ingrésala abajo",
       placeholder: "Ingresa tu clave de acceso...",
       btn: "Entrar",
       loading: "Verificando...",
@@ -985,9 +985,9 @@ export const translations = {
       appsTitle: "Unterstützte Apps",
       starNote: "★ = empfohlen",
       cta: "Telegram-Bot öffnen",
-      ctaSub: "@EscapeTheMatrix_Robot",
+      ctaSub: "@EscapeTheMatrixVPNBot",
       steps: [
-        { title: "Telegram-Bot öffnen", desc: "@EscapeTheMatrix_Robot — einfach und klar" },
+        { title: "Telegram-Bot öffnen", desc: "@EscapeTheMatrixVPNBot — einfach und klar" },
         { title: "Tarif wählen", desc: "1 Standort für 100₽/Monat" },
         { title: "Bezahlen", desc: "Karte oder Krypto — schnell und einfach" },
         { title: "Link erhalten", desc: "VLESS-Link zum Importieren in die App" },
@@ -1006,7 +1006,7 @@ export const translations = {
     },
     profile: {
       title: "Anmelden",
-      sub: "Erhalte deinen Schlüssel vom Bot @EscapeTheMatrix_Robot",
+      sub: "Erhalte deinen Schlüssel vom Bot @EscapeTheMatrixVPNBot",
       placeholder: "Zugriffsschlüssel eingeben...",
       btn: "Anmelden",
       loading: "Prüfen...",
@@ -1100,9 +1100,9 @@ export const translations = {
       appsTitle: "支持的应用",
       starNote: "★ = 推荐",
       cta: "打开Telegram机器人",
-      ctaSub: "@EscapeTheMatrix_Robot",
+      ctaSub: "@EscapeTheMatrixVPNBot",
       steps: [
-        { title: "打开Telegram机器人", desc: "@EscapeTheMatrix_Robot — 简单明了" },
+        { title: "打开Telegram机器人", desc: "@EscapeTheMatrixVPNBot — 简单明了" },
         { title: "选择套餐", desc: "1个地区每月100₽" },
         { title: "付款", desc: "银行卡或加密货币 — 快速简便" },
         { title: "获取链接", desc: "用于导入应用的VLESS链接" },
@@ -1121,7 +1121,7 @@ export const translations = {
     },
     profile: {
       title: "登录",
-      sub: "从机器人 @EscapeTheMatrix_Robot 获取密钥并在下方输入",
+      sub: "从机器人 @EscapeTheMatrixVPNBot 获取密钥并在下方输入",
       placeholder: "输入访问密钥...",
       btn: "登录",
       loading: "验证中...",

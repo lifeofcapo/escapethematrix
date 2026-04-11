@@ -112,7 +112,7 @@ export default function ProfileModal({ t, onClose }: ProfileModalProps) {
         {phase === "input" && (
           <div className="p-6 flex flex-col gap-5">
             <p className="text-white/40 font-mono text-xs leading-relaxed">
-              {t.profile.sub ?? "Получите токен в боте @EscapeTheMatrix_Robot и введите его ниже."}
+              {t.profile.sub ?? "Получите токен в боте @EscapeTheMatrixVPNBot и введите его ниже."}
             </p>
 
             <div className="flex flex-col gap-3">
@@ -143,7 +143,7 @@ export default function ProfileModal({ t, onClose }: ProfileModalProps) {
 
             <div className="text-center">
               <a
-                href="https://t.me/EscapeTheMatrix_Robot"
+                href="https://t.me/EscapeTheMatrixVPNBot"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/20 font-mono text-[10px] tracking-wider hover:text-green-400/60 transition-colors"
@@ -223,7 +223,7 @@ export default function ProfileModal({ t, onClose }: ProfileModalProps) {
             )}
             <div className="flex gap-3 pt-1">
               <a
-                href="https://t.me/EscapeTheMatrix_Robot"
+                href="https://t.me/EscapeTheMatrixVPNBot"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 text-center py-3 border border-green-400/25 text-green-400/80 font-mono text-xs tracking-widest uppercase hover:border-green-400/50 hover:text-green-400 transition-all rounded-sm"

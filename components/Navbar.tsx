@@ -78,7 +78,7 @@ export default function Navbar({ t, lang, setLang, onProfileOpen }: NavbarProps)
             {t.nav.profile}
           </button>
           <a
-            href="https://t.me/EscapeTheMatrix_Robot"
+            href="https://t.me/EscapeTheMatrixVPNBot"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2 border border-green-400/40 text-green-400 font-mono text-sm tracking-wider uppercase hover:bg-green-400/10 hover:border-green-400/70 transition-all rounded-sm"

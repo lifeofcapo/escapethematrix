@@ -48,7 +48,7 @@ export default function PrivacyClient() {
                   {section.bot && (
                     <p>
                       <a
-                        href="https://t.me/EscapeTheMatrix_Bot"
+                        href="https://t.me/EscapeTheMatrixVPNBot"
                         className="text-green-400 hover:underline ml-1"
                       >
                         @EscapeTheMatrix_Bot

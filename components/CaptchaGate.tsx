@@ -45,7 +45,6 @@ export default function CaptchaGate({ onPassed }: CaptchaGateProps) {
   const [phase, setPhase] = useState<"scanning" | "success" | "blocked">("scanning");
   const [loadProgress, setLoadProgress] = useState(0);
   const [statusLine, setStatusLine] = useState("Initializing...");
-  // Initialize with empty array to avoid SSR/client hydration mismatch
   const [grid, setGrid] = useState<string[]>([]);
   const [glitchIndex, setGlitchIndex] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);

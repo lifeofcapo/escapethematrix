@@ -8,7 +8,7 @@ export default function HowToSection({ t }: { t: any }) {
       num: "01",
       title: howto.steps[0].title,
       desc: howto.steps[0].desc,
-      highlight: "@EscapeTheMatrix_Robot",
+      highlight: "@EscapeTheMatrixVPNBot",
     },
     {
       num: "02",
@@ -110,7 +110,7 @@ export default function HowToSection({ t }: { t: any }) {
         </div>
         <div className="mt-16 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <a
-            href="https://t.me/EscapeTheMatrix_Robot"
+            href="https://t.me/EscapeTheMatrixVPNBot"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-green-400 text-[#080808] font-mono font-bold text-sm tracking-wider rounded hover:bg-green-300 transition-all"
