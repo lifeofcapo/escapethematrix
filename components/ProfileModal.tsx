@@ -25,10 +25,8 @@ interface ProfileData {
 }
 
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "https://api.escapethematrix.to";
-
 async function verifyToken(token: string): Promise<ProfileData> {
-  const res = await fetch(`${API_BASE}/verify`, {
+  const res = await fetch("/api/verify", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ token }),
