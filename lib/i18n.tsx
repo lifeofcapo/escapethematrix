@@ -419,7 +419,6 @@ export const articleContent = {
   }
 };
 
-// Privacy policy translations for all languages
 export const privacyTranslations = {
   ru: {
     title: "Политика конфиденциальности",
@@ -625,9 +624,12 @@ export const translations = {
       features: ["Zero logs", "VLESS + Reality", "5 устройств", "1+ Гбит/с", "Крипта / Карты / СБП"],
       cta: "Подключить",
       regions: [
-        { flag: "🇫🇮", city: "Хельсинки", country: "Финляндия", ping: "~12ms" },
-        { flag: "🇳🇱", city: "Амстердам", country: "Нидерланды", ping: "~18ms" },
+        { flag: "🇫🇮", city: "Хельсинки", country: "Финляндия", ping: "~62ms" },
+        { flag: "🇳🇱", city: "Амстердам", country: "Нидерланды", ping: "~66ms" },
       ],
+    },
+    payment: {
+      title: "Способы оплаты"
     },
     compare: {
       title: "EscapeTheMatrix vs Бесплатные VPN",
@@ -731,9 +733,12 @@ export const translations = {
       features: ["Zero logs", "VLESS + Reality", "5 devices", "1+ Gbps", "Crypto / Cards"],
       cta: "Connect",
       regions: [
-        { flag: "🇫🇮", city: "Helsinki", country: "Finland", ping: "~12ms" },
-        { flag: "🇳🇱", city: "Amsterdam", country: "Netherlands", ping: "~18ms" },
+        { flag: "🇫🇮", city: "Helsinki", country: "Finland", ping: "~62ms" },
+        { flag: "🇳🇱", city: "Amsterdam", country: "Netherlands", ping: "~68ms" },
       ],
+    },
+    payment: {
+      title: "Payment methods"
     },
     compare: {
       title: "EscapeTheMatrix vs free VPNs",
@@ -837,9 +842,12 @@ export const translations = {
       features: ["Zero logs", "VLESS + Reality", "5 dispositivos", "1+ Gbps", "Cripto / Tarjetas"],
       cta: "Conectar",
       regions: [
-        { flag: "🇫🇮", city: "Helsinki", country: "Finlandia", ping: "~12ms" },
-        { flag: "🇳🇱", city: "Ámsterdam", country: "Países Bajos", ping: "~18ms" },
+        { flag: "🇫🇮", city: "Helsinki", country: "Finlandia", ping: "~62ms" },
+        { flag: "🇳🇱", city: "Ámsterdam", country: "Países Bajos", ping: "~68ms" },
       ],
+    },
+    payment: {
+      title: "Métodos de pago"
     },
     compare: {
       title: "EscapeTheMatrix vs VPNs gratuitas",
@@ -943,9 +951,12 @@ export const translations = {
       features: ["Zero Logs", "VLESS + Reality", "5 Geräte", "1+ Gbps", "Krypto / Karten"],
       cta: "Verbinden",
       regions: [
-        { flag: "🇫🇮", city: "Helsinki", country: "Finnland", ping: "~12ms" },
-        { flag: "🇳🇱", city: "Amsterdam", country: "Niederlande", ping: "~18ms" },
+        { flag: "🇫🇮", city: "Helsinki", country: "Finnland", ping: "~62ms" },
+        { flag: "🇳🇱", city: "Amsterdam", country: "Niederlande", ping: "~68ms" },
       ],
+    },
+    payment: {
+      title: "Zahlungsmethoden"
     },
     compare: {
       title: "EscapeTheMatrix vs kostenlose VPNs",
@@ -1058,9 +1069,12 @@ export const translations = {
       features: ["零日志", "VLESS + Reality", "5台设备", "1+ Gbps", "加密货币 / 银行卡"],
       cta: "立即连接",
       regions: [
-        { flag: "🇫🇮", city: "赫尔辛基", country: "芬兰", ping: "~12ms" },
-        { flag: "🇳🇱", city: "阿姆斯特丹", country: "荷兰", ping: "~18ms" },
+        { flag: "🇫🇮", city: "赫尔辛基", country: "芬兰", ping: "~62ms" },
+        { flag: "🇳🇱", city: "阿姆斯特丹", country: "荷兰", ping: "~68ms" },
       ],
+    },
+    payment: {
+      title: "支付方式"
     },
     compare: {
       title: "EscapeTheMatrix vs 免费VPN",

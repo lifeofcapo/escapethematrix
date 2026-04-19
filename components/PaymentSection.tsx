@@ -1,6 +1,6 @@
 "use client";
 
-export default function PaymentSection() {
+export default function PaymentSection({ t }: { t: any }) {
   const payments = [
     {
       id: "visa",
@@ -55,8 +55,9 @@ export default function PaymentSection() {
   ];
 
   return (
-    <section className="py-4 px-6 border-t border-b border-white/5 bg-white/[0.01]">
+    <section className="py-8 px-6 ">
       <div className="max-w-6xl mx-auto">
+        <p className="text-center text-white/80 font-mono text-m tracking-widest uppercase mb-6">Способы оплаты:</p>
         <div className="flex items-center justify-center gap-8 flex-wrap">
         {payments.map((p) => (
             <div

@@ -1,24 +1,9 @@
-/**
- * app/api/miniapp/profile/route.ts
- *
- * Принимает initData от Telegram WebApp, верифицирует HMAC-подпись,
- * извлекает tg_id и возвращает профиль пользователя из БД.
- *
- * Безопасность:
- * - Подпись проверяется по алгоритму Telegram (HMAC-SHA256)
- * - initData принимается только из тела запроса, не из query-параметров
- * - Токен бота никогда не передаётся клиенту
- * - Проверяется свежесть данных (не старше 5 минут)
- */
 
 import { NextRequest, NextResponse } from "next/server";
 import { createHmac } from "crypto";
 
 const BOT_TOKEN = process.env.BOT_TOKEN!;
-// Опционально: URL вашего Python API (если профиль отдаёт отдельный сервис)
 const INTERNAL_API = process.env.INTERNAL_API_URL ?? "http://localhost:8000";
-
-// ─── Верификация подписи Telegram ────────────────────────────────────────────
 
 function verifyTelegramInitData(initData: string): {
   ok: boolean;
@@ -31,19 +16,16 @@ function verifyTelegramInitData(initData: string): {
   const hash = params.get("hash");
   if (!hash) return { ok: false };
 
-  // auth_date не старше 5 минут
   const authDate = parseInt(params.get("auth_date") ?? "0", 10);
   const now = Math.floor(Date.now() / 1000);
   if (now - authDate > 300) return { ok: false };
 
-  // Строим data-check-string: все поля кроме hash, отсортированные, через \n
   params.delete("hash");
   const checkString = Array.from(params.entries())
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([k, v]) => `${k}=${v}`)
     .join("\n");
 
-  // HMAC-SHA256(data, HMAC-SHA256("WebAppData", bot_token))
   const secretKey = createHmac("sha256", "WebAppData")
     .update(BOT_TOKEN)
     .digest();

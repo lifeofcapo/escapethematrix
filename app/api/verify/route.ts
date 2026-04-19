@@ -29,15 +29,13 @@ export async function POST(req: NextRequest) {
 
   const { token } = body;
 
-  // ProfileModal передаёт поле "token" — это и есть profile_key
+  // ProfileModal передаёт поле "token" это profile_key
   if (!token || token.length < 8) {
     return NextResponse.json({ error: "Invalid key" }, { status: 400 });
   }
 
   try {
     const db = getPool();
-
-    // 1. Найти пользователя по ключу
     const userResult = await db.query(
       `SELECT id, username, full_name, language, balance, created_at
        FROM users WHERE profile_key = $1`,
@@ -49,8 +47,6 @@ export async function POST(req: NextRequest) {
     }
 
     const user = userResult.rows[0];
-
-    // 2. Активная подписка
     const subResult = await db.query(
       `SELECT plan, devices_limit, sub_link, started_at, expires_at
        FROM subscriptions
@@ -62,7 +58,6 @@ export async function POST(req: NextRequest) {
     const sub = subResult.rows[0] ?? null;
     const now = new Date();
 
-    // 3. Формат ответа под ProfileData (ProfileModal.tsx)
     const configs = sub
       ? [
           {
@@ -85,7 +80,7 @@ export async function POST(req: NextRequest) {
           : "active"
         : "inactive",
       expires_at: sub?.expires_at ?? null,
-      devices_used: 0,   // реальное значение — через xui API, пока заглушка
+      devices_used: 0,   // реальное значение — через xui API
       devices_max: sub?.devices_limit ?? 0,
       configs,
     });
