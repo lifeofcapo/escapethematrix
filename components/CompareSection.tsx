@@ -1,6 +1,8 @@
 "use client";
 
-export default function CompareSection({ t }: { t: any }) {
+import { TranslationSet } from "@/lib/i18n";
+
+export default function CompareSection({ t }: { t: TranslationSet }) {
   const compareData = t.compare;
 
   return (

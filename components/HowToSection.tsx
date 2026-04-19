@@ -1,40 +1,15 @@
 "use client";
 
-export default function HowToSection({ t }: { t: any }) {
+import { TranslationSet } from "@/lib/i18n";
+
+export default function HowToSection({ t }: { t: TranslationSet }) {
   const howto = t.howto;
 
-  const steps = [
-    {
-      num: "01",
-      title: howto.steps[0].title,
-      desc: howto.steps[0].desc,
-      highlight: "@EscapeTheMatrixVPNBot",
-    },
-    {
-      num: "02",
-      title: howto.steps[1].title,
-      desc: howto.steps[1].desc,
-      highlight: null,
-    },
-    {
-      num: "03",
-      title: howto.steps[2].title,
-      desc: howto.steps[2].desc,
-      highlight: null,
-    },
-    {
-      num: "04",
-      title: howto.steps[3].title,
-      desc: howto.steps[3].desc,
-      highlight: null,
-    },
-    {
-      num: "05",
-      title: howto.steps[4].title,
-      desc: howto.steps[4].desc,
-      highlight: null,
-    },
-  ];
+  const steps = howto.steps.map((step: { title: string; desc: string }, i: number) => ({
+    num: String(i + 1).padStart(2, "0"),
+    title: step.title,
+    desc: step.desc,
+  }));
 
   const apps = [
     { platform: "Android", icon: "▲", recommended: "FlClashX", others: ["Happ"] },

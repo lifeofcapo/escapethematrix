@@ -12,7 +12,7 @@ interface ProfileData {
   username?: string;
   subscription: string;       // "active" | "inactive" | "expired"
   expires_at: string;         // ISO date
-  balance: number;            // в рублях
+  balance: number;            // RUB
   devices_used: number;
   devices_max: number;
   configs: {
@@ -52,6 +52,15 @@ export default function ProfileModal({ t, onClose }: ProfileModalProps) {
     return () => window.removeEventListener("keydown", handler);
   }, [onClose]);
 
+  // Очищаем токен при закрытии
+  const handleClose = () => {
+    setToken("");
+    setError("");
+    setPhase("input");
+    setProfile(null);
+    onClose();
+  };
+
   const handleLogin = async () => {
     if (!token.trim()) return;
     setError("");
@@ -86,7 +95,7 @@ export default function ProfileModal({ t, onClose }: ProfileModalProps) {
     : "—";
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={onClose}>
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={handleClose}>
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
 
       <div
@@ -101,7 +110,7 @@ export default function ProfileModal({ t, onClose }: ProfileModalProps) {
             </div>
           </div>
           <button
-            onClick={onClose}
+            onClick={handleClose}
             className="text-white/30 hover:text-white/70 font-mono text-lg transition-colors"
           >
             ✕
@@ -146,7 +155,7 @@ export default function ProfileModal({ t, onClose }: ProfileModalProps) {
                 rel="noopener noreferrer"
                 className="text-white/20 font-mono text-[10px] tracking-wider hover:text-green-400/60 transition-colors"
               >
-                Получить токен →
+                {t.profile.getToken ?? "Получить токен →"}
               </a>
             </div>
           </div>
@@ -163,19 +172,19 @@ export default function ProfileModal({ t, onClose }: ProfileModalProps) {
           <div className="p-6 flex flex-col gap-5 max-h-[80vh] overflow-y-auto">
             <div className="grid grid-cols-2 gap-3">
               <div className="border border-white/6 rounded-sm p-4 bg-white/[0.02]">
-                <div className="text-white/25 font-mono text-[10px] tracking-widest uppercase mb-1">Подписка</div>
+                <div className="text-white/25 font-mono text-[10px] tracking-widest uppercase mb-1">{t.profile.subLabel}</div>
                 <div className={`font-mono text-sm font-bold ${statusColor}`}>{statusLabel}</div>
               </div>
               <div className="border border-white/6 rounded-sm p-4 bg-white/[0.02]">
-                <div className="text-white/25 font-mono text-[10px] tracking-widest uppercase mb-1">Баланс</div>
+                <div className="text-white/25 font-mono text-[10px] tracking-widest uppercase mb-1">{t.profile.balanceLabel ?? "Баланс"}</div>
                 <div className="font-mono text-sm font-bold text-white/80">{profile.balance} ₽</div>
               </div>
               <div className="border border-white/6 rounded-sm p-4 bg-white/[0.02]">
-                <div className="text-white/25 font-mono text-[10px] tracking-widest uppercase mb-1">Истекает</div>
+                <div className="text-white/25 font-mono text-[10px] tracking-widest uppercase mb-1">{t.profile.expiresLabel}</div>
                 <div className="font-mono text-xs text-white/60">{expiresFormatted}</div>
               </div>
               <div className="border border-white/6 rounded-sm p-4 bg-white/[0.02]">
-                <div className="text-white/25 font-mono text-[10px] tracking-widest uppercase mb-1">Устройства</div>
+                <div className="text-white/25 font-mono text-[10px] tracking-widest uppercase mb-1">{t.profile.devicesLabel}</div>
                 <div className="font-mono text-sm text-white/80">
                   <span className="text-green-400">{profile.devices_used}</span>
                   <span className="text-white/30"> / {profile.devices_max}</span>
@@ -185,7 +194,7 @@ export default function ProfileModal({ t, onClose }: ProfileModalProps) {
             {profile.configs.length > 0 && (
               <div>
                 <div className="text-[10px] font-mono tracking-[0.4em] text-white/25 uppercase mb-3">
-                  — Серверы и конфиги
+                  — {t.profile.serversLabel ?? "Серверы и конфиги"}
                 </div>
                 <div className="flex flex-col gap-3">
                   {profile.configs.map((cfg, i) => (
@@ -211,7 +220,7 @@ export default function ProfileModal({ t, onClose }: ProfileModalProps) {
                           onClick={() => copyToClipboard(cfg.vless_link, `vless-${i}`)}
                           className="px-3 py-2 border border-white/8 text-white/30 font-mono text-[10px] hover:border-green-400/30 hover:text-green-400 transition-all rounded-sm whitespace-nowrap"
                         >
-                          {copied === `vless-${i}` ? "✓ Скопировано" : "Копировать"}
+                          {copied === `vless-${i}` ? (t.profile.copied ?? "✓ Скопировано") : (t.profile.copy ?? "Копировать")}
                         </button>
                       </div>
                     </div>

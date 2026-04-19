@@ -55,7 +55,7 @@ export default function PaymentSection({ t }: { t: any }) {
   ];
 
   return (
-    <section className="py-8 px-6 ">
+    <section className="py-8 px-6">
       <div className="max-w-6xl mx-auto">
         <p className="text-center text-white/80 font-mono text-m tracking-widest uppercase mb-6">Способы оплаты:</p>
         <div className="flex items-center justify-center gap-8 flex-wrap">
@@ -70,7 +70,12 @@ export default function PaymentSection({ t }: { t: any }) {
                 alt={p.label}
                 className="h-8 w-auto object-contain"
                 loading="lazy"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = "none";
+                  (e.target as HTMLImageElement).nextElementSibling?.classList.remove("hidden");
+                }}
             />
+            <span className="hidden text-white/30 font-mono text-[10px]">{p.label}</span>
             </div>
         ))}
         </div>

@@ -1,4 +1,5 @@
 export type Language = "ru" | "en" | "es" | "de" | "zh";
+export type TranslationSet = typeof translations[Language];
 
 const compareRowsRu = [
   { feature: "Zero Logs", us: true, free: false },
@@ -419,6 +420,7 @@ export const articleContent = {
   }
 };
 
+// Privacy policy translations for all languages
 export const privacyTranslations = {
   ru: {
     title: "Политика конфиденциальности",
@@ -624,12 +626,12 @@ export const translations = {
       features: ["Zero logs", "VLESS + Reality", "5 устройств", "1+ Гбит/с", "Крипта / Карты / СБП"],
       cta: "Подключить",
       regions: [
-        { flag: "🇫🇮", city: "Хельсинки", country: "Финляндия", ping: "~62ms" },
-        { flag: "🇳🇱", city: "Амстердам", country: "Нидерланды", ping: "~66ms" },
+        { flag: "🇫🇮", city: "Хельсинки", country: "Финляндия", ping: "~12ms" },
+        { flag: "🇳🇱", city: "Амстердам", country: "Нидерланды", ping: "~18ms" },
       ],
     },
     payment: {
-      title: "Способы оплаты"
+      title: "Способы Оплаты"
     },
     compare: {
       title: "EscapeTheMatrix vs Бесплатные VPN",
@@ -694,6 +696,11 @@ export const translations = {
       statusInactive: "Неактивна",
       close: "Закрыть",
       manage: "Управление в боте",
+      balanceLabel: "Баланс",
+      serversLabel: "Серверы и конфиги",
+      copy: "Копировать",
+      copied: "✓ Скопировано",
+      getToken: "Получить токен →",
     },
     footer: {
       tagline: "Escape The Matrix",
@@ -733,12 +740,12 @@ export const translations = {
       features: ["Zero logs", "VLESS + Reality", "5 devices", "1+ Gbps", "Crypto / Cards"],
       cta: "Connect",
       regions: [
-        { flag: "🇫🇮", city: "Helsinki", country: "Finland", ping: "~62ms" },
-        { flag: "🇳🇱", city: "Amsterdam", country: "Netherlands", ping: "~68ms" },
+        { flag: "🇫🇮", city: "Helsinki", country: "Finland", ping: "~12ms" },
+        { flag: "🇳🇱", city: "Amsterdam", country: "Netherlands", ping: "~18ms" },
       ],
     },
     payment: {
-      title: "Payment methods"
+      title: "Payment Methods"
     },
     compare: {
       title: "EscapeTheMatrix vs free VPNs",
@@ -803,6 +810,11 @@ export const translations = {
       statusInactive: "Inactive",
       close: "Close",
       manage: "Manage in bot",
+      balanceLabel: "Balance",
+      serversLabel: "Servers & Configs",
+      copy: "Copy",
+      copied: "✓ Copied",
+      getToken: "Get token →",
     },
     footer: {
       tagline: "Escape The Matrix",
@@ -842,8 +854,8 @@ export const translations = {
       features: ["Zero logs", "VLESS + Reality", "5 dispositivos", "1+ Gbps", "Cripto / Tarjetas"],
       cta: "Conectar",
       regions: [
-        { flag: "🇫🇮", city: "Helsinki", country: "Finlandia", ping: "~62ms" },
-        { flag: "🇳🇱", city: "Ámsterdam", country: "Países Bajos", ping: "~68ms" },
+        { flag: "🇫🇮", city: "Helsinki", country: "Finlandia", ping: "~12ms" },
+        { flag: "🇳🇱", city: "Ámsterdam", country: "Países Bajos", ping: "~18ms" },
       ],
     },
     payment: {
@@ -912,6 +924,11 @@ export const translations = {
       statusInactive: "Inactiva",
       close: "Cerrar",
       manage: "Gestionar en el bot",
+      balanceLabel: "Saldo",
+      serversLabel: "Servidores y configs",
+      copy: "Copiar",
+      copied: "✓ Copiado",
+      getToken: "Obtener token →",
     },
     footer: {
       tagline: "Escape The Matrix",
@@ -951,8 +968,8 @@ export const translations = {
       features: ["Zero Logs", "VLESS + Reality", "5 Geräte", "1+ Gbps", "Krypto / Karten"],
       cta: "Verbinden",
       regions: [
-        { flag: "🇫🇮", city: "Helsinki", country: "Finnland", ping: "~62ms" },
-        { flag: "🇳🇱", city: "Amsterdam", country: "Niederlande", ping: "~68ms" },
+        { flag: "🇫🇮", city: "Helsinki", country: "Finnland", ping: "~12ms" },
+        { flag: "🇳🇱", city: "Amsterdam", country: "Niederlande", ping: "~18ms" },
       ],
     },
     payment: {
@@ -1030,6 +1047,11 @@ export const translations = {
       statusInactive: "Inaktiv",
       close: "Schließen",
       manage: "Im Bot verwalten",
+      balanceLabel: "Guthaben",
+      serversLabel: "Server & Configs",
+      copy: "Kopieren",
+      copied: "✓ Kopiert",
+      getToken: "Token holen →",
     },
     footer: {
       tagline: "Escape The Matrix",
@@ -1069,8 +1091,8 @@ export const translations = {
       features: ["零日志", "VLESS + Reality", "5台设备", "1+ Gbps", "加密货币 / 银行卡"],
       cta: "立即连接",
       regions: [
-        { flag: "🇫🇮", city: "赫尔辛基", country: "芬兰", ping: "~62ms" },
-        { flag: "🇳🇱", city: "阿姆斯特丹", country: "荷兰", ping: "~68ms" },
+        { flag: "🇫🇮", city: "赫尔辛基", country: "芬兰", ping: "~12ms" },
+        { flag: "🇳🇱", city: "阿姆斯特丹", country: "荷兰", ping: "~18ms" },
       ],
     },
     payment: {
@@ -1148,6 +1170,11 @@ export const translations = {
       statusInactive: "无效",
       close: "关闭",
       manage: "在机器人中管理",
+      balanceLabel: "余额",
+      serversLabel: "服务器和配置",
+      copy: "复制",
+      copied: "✓ 已复制",
+      getToken: "获取令牌 →",
     },
     footer: {
       tagline: "Escape The Matrix",

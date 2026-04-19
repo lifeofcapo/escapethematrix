@@ -1,6 +1,8 @@
 "use client";
 
-export default function PricingSection({ t }: { t: any }) {
+import { TranslationSet } from "@/lib/i18n";
+
+export default function PricingSection({ t }: { t: TranslationSet }) {
   return (
     <section className="py-32 px-6 relative">
       <div className="max-w-6xl mx-auto">

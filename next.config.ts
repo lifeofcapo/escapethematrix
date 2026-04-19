@@ -7,10 +7,8 @@ const nextConfig: NextConfig = {
         // Accept Telegram to integrate Mini App page in iframe
         source: "/miniapp",
         headers: [
-          { key: "X-Frame-Options", value: "ALLOWALL" },
-          {
-            key: "Content-Security-Policy",
-            value: "frame-ancestors *",
+          { key: "Content-Security-Policy",
+            value: "frame-ancestors https://web.telegram.org",
           },
         ],
       },

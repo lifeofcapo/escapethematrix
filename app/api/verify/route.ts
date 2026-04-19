@@ -1,4 +1,3 @@
-
 import { NextRequest, NextResponse } from "next/server";
 import { Pool } from "pg";
 
@@ -14,6 +13,10 @@ function getPool(): Pool {
           ? { rejectUnauthorized: false }
           : false,
       max: 5,
+    });
+    pool.on("error", (err) => {
+      console.error("Unexpected DB pool error:", err);
+      pool = null; // force reconnect on next request
     });
   }
   return pool;

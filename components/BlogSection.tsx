@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { TranslationSet } from "@/lib/i18n";
 
-export default function BlogSection({ t, lang }: { t: any; lang: string }) {
+export default function BlogSection({ t, lang }: { t: TranslationSet; lang: string }) {
   const blog = t.blog;
 
   const articles = [

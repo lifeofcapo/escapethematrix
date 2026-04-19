@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { TranslationSet } from "@/lib/i18n";
 
-export default function FAQSection({ t }: { t: any }) {
+export default function FAQSection({ t }: { t: TranslationSet }) {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
@@ -38,7 +39,7 @@ export default function FAQSection({ t }: { t: any }) {
 
               <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  open === i ? "max-h-48 pb-6" : "max-h-0"
+                  open === i ? "max-h-96 pb-6" : "max-h-0"
                 }`}
               >
                 <p className="text-white/35 font-mono text-base leading-relaxed tracking-wide text-center max-w-xl mx-auto">

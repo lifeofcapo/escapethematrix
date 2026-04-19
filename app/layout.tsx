@@ -1,5 +1,14 @@
 import type { Metadata } from "next";
+import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  subsets: ["latin", "cyrillic"],
+  display: "swap",
+  variable: "--font-ibm-plex-mono",
+});
 
 export const metadata: Metadata = {
   title: "Escape The Matrix — VPN",
@@ -12,6 +21,7 @@ export const metadata: Metadata = {
     siteName: "Escape The Matrix",
     locale: "ru_RU",
     type: "website",
+    images: ["/og-image.png"],
   },
   twitter: {
     card: "summary_large_image",
@@ -28,9 +38,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // TODO: set lang dynamically via middleware based on user locale for proper SEO
   return (
-    <html lang="ru" className="dark">
-      <body>{children}</body>
+    <html lang="ru" className={`dark ${ibmPlexMono.variable}`}>
+      <body className={ibmPlexMono.className}>{children}</body>
     </html>
   );
 }
