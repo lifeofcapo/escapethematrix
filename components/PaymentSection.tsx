@@ -57,7 +57,7 @@ export default function PaymentSection({ t }: { t: any }) {
   return (
     <section className="py-8 px-6">
       <div className="max-w-6xl mx-auto">
-        <p className="text-center text-white/80 font-mono text-m tracking-widest uppercase mb-6">Способы оплаты:</p>
+        <p className="text-center text-white/80 font-mono text-m tracking-widest uppercase mb-6">{t.payment.title}</p>
         <div className="flex items-center justify-center gap-8 flex-wrap">
         {payments.map((p) => (
             <div

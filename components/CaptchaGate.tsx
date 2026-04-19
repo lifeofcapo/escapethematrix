@@ -53,18 +53,18 @@ export default function CaptchaGate({ onPassed }: CaptchaGateProps) {
           if (data.success) {
             onPassed();
           } else {
-            setErrorMsg("Проверка не пройдена. Попробуйте ещё раз.");
+            setErrorMsg("Check haven't found. Try one more time.");
             setPhase("error");
             (window as any).turnstile?.reset(widgetIdRef.current);
           }
         } catch {
-          setErrorMsg("Ошибка соединения. Попробуйте ещё раз.");
+          setErrorMsg("Connection failed. Try one more time.");
           setPhase("error");
           (window as any).turnstile?.reset(widgetIdRef.current);
         }
       },
       "error-callback": () => {
-        setErrorMsg("Не удалось загрузить проверку. Обновите страницу.");
+        setErrorMsg("Unavailable to load page. Try to refresh the page.");
         setPhase("error");
       },
     });
@@ -88,10 +88,10 @@ export default function CaptchaGate({ onPassed }: CaptchaGateProps) {
             — Access Verification —
           </div>
           <div className="text-white/40 font-mono text-sm tracking-wide">
-            {phase === "loading" && "Загрузка проверки..."}
-            {phase === "ready" && "Подтвердите, что вы человек"}
-            {phase === "verifying" && "Проверка..."}
-            {phase === "error" && "Ошибка проверки"}
+            {phase === "loading" && "Loading..."}
+            {phase === "ready" && "Accepting, that you're human"}
+            {phase === "verifying" && "Checking..."}
+            {phase === "error" && "Checking Failed"}
           </div>
         </div>
         <div
@@ -105,7 +105,7 @@ export default function CaptchaGate({ onPassed }: CaptchaGateProps) {
 
         {phase === "verifying" && (
           <div className="text-white/30 font-mono text-xs tracking-widest uppercase animate-pulse">
-            Верификация токена...
+            Token Verification...
           </div>
         )}
 

@@ -68,7 +68,7 @@ export default function HeroSection({ t }: { t: any }) {
             </svg>
             {t.hero.cta}
           </a>
-          <span className="text-white/25 font-mono text-xs tracking-widest">
+          <span className="text-white/75 font-mono text-xs tracking-widest">
             {t.hero.ctaSub}
           </span>
         </div>

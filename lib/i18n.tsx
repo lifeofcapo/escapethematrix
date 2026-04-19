@@ -601,7 +601,7 @@ export const translations = {
     },
     hero: {
       headline1: "Выйди из",
-      headline2: "Системы.",
+      headline2: "Системы",
       sub: "Zero logs. Zero trace. Безлимитный трафик. Твой трафик — твоё дело.",
       cta: "Подключиться в Telegram",
       ctaSub: "Быстро. Анонимно. Без регистраций.",
@@ -715,7 +715,7 @@ export const translations = {
     nav: { profile: "Profile", connect: "Connect" },
     hero: {
       headline1: "Escape The",
-      headline2: "Matrix.",
+      headline2: "Matrix",
       sub: "Zero logs. Zero trace. Unlimited traffic. Your data is your business.",
       cta: "Connect via Telegram",
       ctaSub: "Fast. Anonymous. No registration.",
@@ -829,7 +829,7 @@ export const translations = {
     nav: { profile: "Perfil", connect: "Conectar" },
     hero: {
       headline1: "Escapa de la",
-      headline2: "Matriz.",
+      headline2: "Matriz",
       sub: "Zero logs. Zero rastro. Tráfico ilimitado. Tus datos son tu asunto.",
       cta: "Conectar vía Telegram",
       ctaSub: "Rápido. Anónimo. Sin registro.",
@@ -943,7 +943,7 @@ export const translations = {
     nav: { profile: "Profil", connect: "Verbinden" },
     hero: {
       headline1: "Entkомme der",
-      headline2: "Matrix.",
+      headline2: "Matrix",
       sub: "Zero Logs. Zero Spuren. Unbegrenzter Traffic. Deine Daten gehören dir.",
       cta: "Über Telegram verbinden",
       ctaSub: "Schnell. Anonym. Ohne Registrierung.",
