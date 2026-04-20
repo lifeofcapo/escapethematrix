@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400", "700"],
@@ -41,7 +42,10 @@ export default function RootLayout({
   // TODO: set lang dynamically via middleware based on user locale for proper SEO
   return (
     <html lang="ru" className={`dark ${ibmPlexMono.variable}`}>
-      <body className={ibmPlexMono.className}>{children}</body>
+      <body className={ibmPlexMono.className}>
+        {children}
+        <Analytics />
+        </body>
     </html>
   );
 }
