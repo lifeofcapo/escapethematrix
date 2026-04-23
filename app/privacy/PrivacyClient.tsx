@@ -51,7 +51,7 @@ export default function PrivacyClient() {
                         href="https://t.me/EscapeTheMatrixVPNBot"
                         className="text-green-400 hover:underline ml-1"
                       >
-                        @EscapeTheMatrix_Bot
+                        @EscapeTheMatrixVPNBot
                       </a>
                     </p>
                   )}
