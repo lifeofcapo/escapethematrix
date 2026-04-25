@@ -28,8 +28,9 @@ export async function POST(req: NextRequest) {
   console.log("Webhook event type:", event.type);
   console.log("Webhook event object:", JSON.stringify(event.object));
 
-  if (event.type !== "payment.succeeded") {
-    console.log("Skipping event type:", event.type);
+  // ЮKassa шлёт type="notification", статус платежа внутри event.object.status
+  if (event.object?.status !== "succeeded") {
+    console.log("Skipping, payment status:", event.object?.status);
     return NextResponse.json({ ok: true });
   }
 
