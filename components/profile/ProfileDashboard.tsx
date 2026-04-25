@@ -414,14 +414,14 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
         </div>
       </main>
 
-      {/* Payment Modal */}
-      {showPayment && (
-        <PaymentModal
-          balance={profile.balance}
-          lang={lang}
-          onClose={() => setShowPayment(false)}
-        />
-      )}
+    {showPayment && (
+      <PaymentModal
+        balance={profile.balance}
+        tgId={profile.tg_id}
+        lang={lang}
+        onClose={() => setShowPayment(false)}
+      />
+    )}
     </div>
   );
 }
