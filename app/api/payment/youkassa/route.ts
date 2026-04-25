@@ -1,11 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 import { randomUUID } from "crypto";
 
-const SHOP_ID = process.env.YOKASSA_SHOP_ID!;
-const SECRET_KEY = process.env.YOKASSA_SECRET_KEY!;
+const SHOP_ID = process.env.YOOKASSA_SHOP_ID;     
+const SECRET_KEY = process.env.YOOKASSA_SECRET_KEY;
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.escapethematrix.to";
 
 export async function POST(req: NextRequest) {
+  // Проверяем наличие переменных окружения
+  if (!SHOP_ID || !SECRET_KEY) {
+    console.error("YooKassa: missing env vars", {
+      hasShopId: !!SHOP_ID,
+      hasSecretKey: !!SECRET_KEY,
+      // Для отладки — показываем первые 4 символа если есть
+      shopIdPreview: SHOP_ID ? SHOP_ID.slice(0, 4) + "..." : "MISSING",
+    });
+    return NextResponse.json(
+      { error: "Payment not configured. Check YOOKASSA_SHOP_ID and YOOKASSA_SECRET_KEY env vars." },
+      { status: 500 }
+    );
+  }
+
   let body: { amount?: number };
   try {
     body = await req.json();
@@ -15,14 +29,29 @@ export async function POST(req: NextRequest) {
 
   const amount = body.amount;
   if (!amount || amount < 100) {
-    return NextResponse.json({ error: "Minimum amount is 100 RUB" }, { status: 400 });
-  }
-
-  if (!SHOP_ID || !SECRET_KEY) {
-    return NextResponse.json({ error: "Payment not configured" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Minimum amount is 100 RUB" },
+      { status: 400 }
+    );
   }
 
   const idempotenceKey = randomUUID();
+  const credentials = Buffer.from(`${SHOP_ID}:${SECRET_KEY}`).toString("base64");
+
+  const requestBody = {
+    amount: {
+      value: amount.toFixed(2),
+      currency: "RUB",
+    },
+    confirmation: {
+      type: "redirect",
+      return_url: `${SITE_URL}/successful-payment`,
+    },
+    capture: true,
+    description: `Пополнение баланса EscapeTheMatrix — ${amount} ₽`,
+  };
+
+  console.log("YooKassa request:", JSON.stringify(requestBody));
 
   try {
     const res = await fetch("https://api.yookassa.ru/v3/payments", {
@@ -30,33 +59,38 @@ export async function POST(req: NextRequest) {
       headers: {
         "Content-Type": "application/json",
         "Idempotence-Key": idempotenceKey,
-        Authorization:
-          "Basic " + Buffer.from(`${SHOP_ID}:${SECRET_KEY}`).toString("base64"),
+        Authorization: `Basic ${credentials}`,
       },
-      body: JSON.stringify({
-        amount: {
-          value: amount.toFixed(2),
-          currency: "RUB",
-        },
-        confirmation: {
-          type: "redirect",
-          return_url: `${SITE_URL}/profile?payment=success`,
-        },
-        capture: true,
-        description: `Пополнение баланса EscapeTheMatrix — ${amount} ₽`,
-        metadata: {
-          source: "website",
-        },
-      }),
+      body: JSON.stringify(requestBody),
     });
 
+    const responseText = await res.text();
+    console.log("YooKassa raw response:", res.status, responseText);
+
     if (!res.ok) {
-      const err = await res.text();
-      console.error("YooKassa error:", err);
-      return NextResponse.json({ error: "Payment creation failed" }, { status: 502 });
+      return NextResponse.json(
+        { error: "YooKassa payment creation failed", detail: responseText },
+        { status: 502 }
+      );
     }
 
-    const data = await res.json();
+    let data: any;
+    try {
+      data = JSON.parse(responseText);
+    } catch {
+      return NextResponse.json(
+        { error: "Invalid JSON from YooKassa" },
+        { status: 502 }
+      );
+    }
+
+    if (!data.confirmation?.confirmation_url) {
+      console.error("YooKassa: no confirmation_url in response:", data);
+      return NextResponse.json(
+        { error: "No payment URL in response", detail: data },
+        { status: 502 }
+      );
+    }
 
     return NextResponse.json({
       payment_id: data.id,
