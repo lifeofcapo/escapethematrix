@@ -15,10 +15,9 @@ interface NavbarProps {
   t: any;
   lang: Language;
   setLang: (l: Language) => void;
-  onProfileOpen: () => void;
 }
 
-export default function Navbar({ t, lang, setLang, onProfileOpen }: NavbarProps) {
+export default function Navbar({ t, lang, setLang }: NavbarProps) {
   const [langOpen, setLangOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -71,12 +70,12 @@ export default function Navbar({ t, lang, setLang, onProfileOpen }: NavbarProps)
               </div>
             )}
           </div>
-          <button
-            onClick={onProfileOpen}
+          <a
+            href="https:/www.escapethematrix.to/profile"
             className="px-5 py-2 border border-white/10 text-white/60 font-mono text-sm tracking-wider uppercase hover:border-green-400/40 hover:text-green-400 transition-all rounded-sm"
           >
             {t.nav.profile}
-          </button>
+          </a>
           <a
             href="https://t.me/EscapeTheMatrixVPNBot"
             target="_blank"

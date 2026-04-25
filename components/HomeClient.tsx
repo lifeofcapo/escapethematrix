@@ -10,7 +10,6 @@ import CompareSection from "../components/CompareSection";
 import BlogSection from "../components/BlogSection";
 import HowToSection from "../components/HowToSection";
 import FAQSection from "../components/FAQSection";
-import ProfileModal from "../components/ProfileModal";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CaptchaGate from "../components/CaptchaGate";
@@ -33,7 +32,6 @@ export default function HomeClient() {
           t={t}
           lang={lang}
           setLang={setLang}
-          onProfileOpen={() => setProfileOpen(true)}
         />
         <HeroSection t={t} />
         <FeaturesSection t={t} />
@@ -44,9 +42,6 @@ export default function HomeClient() {
         <BlogSection t={t} lang={lang} />
         <FAQSection t={t} />
         <Footer t={t} />
-        {profileOpen && (
-          <ProfileModal t={t} onClose={() => setProfileOpen(false)} />
-        )}
       </main>
     </>
   );
