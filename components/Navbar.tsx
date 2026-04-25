@@ -71,7 +71,7 @@ export default function Navbar({ t, lang, setLang }: NavbarProps) {
             )}
           </div>
           <a
-            href="https:/www.escapethematrix.to/profile"
+            href="/profile"
             className="px-5 py-2 border border-white/10 text-white/60 font-mono text-sm tracking-wider uppercase hover:border-green-400/40 hover:text-green-400 transition-all rounded-sm"
           >
             {t.nav.profile}
