@@ -6,7 +6,6 @@ import { translations, articleContent, Language } from "../../lib/i18n";
 import Navbar from "../../components/Navbar";
 import FAQSection from "../../components/FAQSection";
 import Footer from "../../components/Footer";
-import ProfileModal from "../../components/ProfileModal";
 
 interface ArticlePageClientProps {
   slug: "public-wifi-safe" | "vpn-legal" | "vpn-devices";
@@ -54,7 +53,6 @@ export default function ArticlePageClient({ slug }: ArticlePageClientProps) {
           t={t}
           lang={lang}
           setLang={setLang}
-          onProfileOpen={() => setProfileOpen(true)}
         />
         <div className="px-6 pt-24 pb-0">
           <div className="max-w-3xl mx-auto">
@@ -192,10 +190,6 @@ export default function ArticlePageClient({ slug }: ArticlePageClientProps) {
 
         <FAQSection t={t} />
         <Footer t={t} />
-
-        {profileOpen && (
-          <ProfileModal t={t} onClose={() => setProfileOpen(false)} />
-        )}
       </main>
     </>
   );

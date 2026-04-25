@@ -5,7 +5,6 @@ import { translations, termsTranslations, Language } from "../../lib/i18n";
 import Navbar from "../../components/Navbar";
 import FAQSection from "../../components/FAQSection";
 import Footer from "../../components/Footer";
-import ProfileModal from "../../components/ProfileModal";
 
 export default function TermsClient() {
   const [lang, setLang] = useState<Language>("ru");
@@ -22,7 +21,6 @@ export default function TermsClient() {
           t={t}
           lang={lang}
           setLang={setLang}
-          onProfileOpen={() => setProfileOpen(true)}
         />
 
         <article className="px-6 py-24">
@@ -53,10 +51,6 @@ export default function TermsClient() {
 
         <FAQSection t={t} />
         <Footer t={t} />
-
-        {profileOpen && (
-          <ProfileModal t={t} onClose={() => setProfileOpen(false)} />
-        )}
       </main>
     </>
   );
