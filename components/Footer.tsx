@@ -49,7 +49,7 @@ export default function Footer({ t }: { t: any }) {
             </a>
 
             <a
-              href="https://t.me/EscapeTheMatrix_Robot"
+              href="https://t.me/EscapeTheMatrixVPNbot"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram bot"
