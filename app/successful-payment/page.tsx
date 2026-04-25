@@ -8,6 +8,8 @@ export default function SuccessfulPaymentPage() {
   const [count, setCount] = useState(5);
 
   useEffect(() => {
+    sessionStorage.removeItem("profile_session");
+
     const interval = setInterval(() => {
       setCount(c => {
         if (c <= 1) {
