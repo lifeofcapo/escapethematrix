@@ -6,12 +6,15 @@ const SECRET_KEY = process.env.YOOKASSA_SECRET_KEY;
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.escapethematrix.to";
 
 export async function POST(req: NextRequest) {
-  // Проверяем наличие переменных окружения
+  console.log("YooKassa env check:", {
+    hasShopId: !!process.env.YOOKASSA_SHOP_ID,
+    hasSecretKey: !!process.env.YOOKASSA_SECRET_KEY,
+    shopIdLen: process.env.YOOKASSA_SHOP_ID?.length,
+  });
   if (!SHOP_ID || !SECRET_KEY) {
     console.error("YooKassa: missing env vars", {
       hasShopId: !!SHOP_ID,
       hasSecretKey: !!SECRET_KEY,
-      // Для отладки — показываем первые 4 символа если есть
       shopIdPreview: SHOP_ID ? SHOP_ID.slice(0, 4) + "..." : "MISSING",
     });
     return NextResponse.json(
