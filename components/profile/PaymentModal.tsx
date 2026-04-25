@@ -92,11 +92,12 @@ const QUICK_AMOUNTS = [100, 300, 500, 1000, 2000];
 
 interface Props {
   balance: number;
+  tgId: number;
   lang: Lang;
   onClose: () => void;
 }
 
-export default function PaymentModal({ balance, lang, onClose }: Props) {
+export default function PaymentModal({ balance, tgId, lang, onClose }: Props) {
   const t = T[lang];
   const [method, setMethod] = useState<"yookassa" | "crypto">("yookassa");
   const [amount, setAmount] = useState("");
@@ -129,7 +130,7 @@ export default function PaymentModal({ balance, lang, onClose }: Props) {
         const res = await fetch("/api/payment/crypto", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ amount: num, currency: cryptoCurrency }),
+          body: JSON.stringify({ amount: num, currency: cryptoCurrency, tg_id: tgId }),
         });
         if (!res.ok) throw new Error();
         const data = await res.json();
@@ -154,10 +155,7 @@ export default function PaymentModal({ balance, lang, onClose }: Props) {
         className="relative w-full max-w-md bg-[#080808] border border-white/10 rounded-sm shadow-2xl overflow-hidden"
         onClick={e => e.stopPropagation()}
       >
-        {/* Top accent */}
         <div className="h-px w-full bg-gradient-to-r from-transparent via-green-400/40 to-transparent" />
-
-        {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/5">
           <div>
             <div className="text-[10px] font-mono tracking-[0.4em] text-green-400/50 uppercase">
@@ -176,7 +174,6 @@ export default function PaymentModal({ balance, lang, onClose }: Props) {
         </div>
 
         <div className="p-6 flex flex-col gap-5">
-          {/* Method selector */}
           <div>
             <div className="text-white/30 font-mono text-[10px] tracking-widest uppercase mb-2">{t.method}</div>
             <div className="grid grid-cols-2 gap-2">
@@ -196,8 +193,6 @@ export default function PaymentModal({ balance, lang, onClose }: Props) {
               ))}
             </div>
           </div>
-
-          {/* Crypto currency selector */}
           {method === "crypto" && (
             <div>
               <div className="text-white/30 font-mono text-[10px] tracking-widest uppercase mb-2">{t.selectCrypto}</div>
@@ -221,15 +216,11 @@ export default function PaymentModal({ balance, lang, onClose }: Props) {
               <p className="text-white/20 font-mono text-[10px] mt-2">{t.cryptoNote}</p>
             </div>
           )}
-
-          {/* Amount */}
           <div>
             <div className="flex items-center justify-between mb-2">
               <div className="text-white/30 font-mono text-[10px] tracking-widest uppercase">{t.amount}</div>
               <div className="text-white/20 font-mono text-[10px]">{t.minAmount}</div>
             </div>
-
-            {/* Quick amounts */}
             <div className="flex gap-1.5 mb-2 flex-wrap">
               {QUICK_AMOUNTS.map(a => (
                 <button
@@ -259,15 +250,11 @@ export default function PaymentModal({ balance, lang, onClose }: Props) {
               <span className="absolute right-4 top-1/2 -translate-y-1/2 font-mono text-white/25 text-sm">₽</span>
             </div>
           </div>
-
-          {/* Error */}
           {error && (
             <div className="text-red-400/70 font-mono text-xs border border-red-400/15 px-3 py-2 rounded-sm bg-red-400/5">
               ⊗ {error}
             </div>
           )}
-
-          {/* Actions */}
           <div className="flex gap-3">
             <button
               onClick={onClose}
