@@ -1,41 +1,29 @@
 import { NextRequest, NextResponse } from "next/server";
 import { randomUUID } from "crypto";
 
-const SHOP_ID = process.env.YOOKASSA_SHOP_ID;     
+const SHOP_ID = process.env.YOOKASSA_SHOP_ID;
 const SECRET_KEY = process.env.YOOKASSA_SECRET_KEY;
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.escapethematrix.to";
 
 export async function POST(req: NextRequest) {
-  console.log("YooKassa env check:", {
-    hasShopId: !!process.env.YOOKASSA_SHOP_ID,
-    hasSecretKey: !!process.env.YOOKASSA_SECRET_KEY,
-    shopIdLen: process.env.YOOKASSA_SHOP_ID?.length,
-  });
   if (!SHOP_ID || !SECRET_KEY) {
-    console.error("YooKassa: missing env vars", {
-      hasShopId: !!SHOP_ID,
-      hasSecretKey: !!SECRET_KEY,
-      shopIdPreview: SHOP_ID ? SHOP_ID.slice(0, 4) + "..." : "MISSING",
-    });
     return NextResponse.json(
-      { error: "Payment not configured. Check YOOKASSA_SHOP_ID and YOOKASSA_SECRET_KEY env vars." },
+      { error: "Payment not configured" },
       { status: 500 }
     );
   }
 
-  let body: { amount?: number };
+  let body: { amount?: number; tg_id?: number };
   try {
     body = await req.json();
   } catch {
     return NextResponse.json({ error: "Invalid body" }, { status: 400 });
   }
 
-  const amount = body.amount;
+  const { amount, tg_id } = body;
+
   if (!amount || amount < 100) {
-    return NextResponse.json(
-      { error: "Minimum amount is 100 RUB" },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "Minimum amount is 100 RUB" }, { status: 400 });
   }
 
   const idempotenceKey = randomUUID();
@@ -52,6 +40,10 @@ export async function POST(req: NextRequest) {
     },
     capture: true,
     description: `Пополнение баланса EscapeTheMatrix — ${amount} ₽`,
+    //webhook использует для начисления баланса tg_id
+    metadata: { 
+      tg_id: tg_id ? String(tg_id) : "",
+    },
   };
 
   console.log("YooKassa request:", JSON.stringify(requestBody));
@@ -77,20 +69,11 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    let data: any;
-    try {
-      data = JSON.parse(responseText);
-    } catch {
-      return NextResponse.json(
-        { error: "Invalid JSON from YooKassa" },
-        { status: 502 }
-      );
-    }
+    const data = JSON.parse(responseText);
 
     if (!data.confirmation?.confirmation_url) {
-      console.error("YooKassa: no confirmation_url in response:", data);
       return NextResponse.json(
-        { error: "No payment URL in response", detail: data },
+        { error: "No payment URL in response" },
         { status: 502 }
       );
     }

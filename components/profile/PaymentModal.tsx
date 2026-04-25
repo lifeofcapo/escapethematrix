@@ -119,7 +119,7 @@ export default function PaymentModal({ balance, tgId, lang, onClose }: Props) {
         const res = await fetch("/api/payment/yookassa", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ amount: num }),
+          body: JSON.stringify({ amount: num, tg_id: tgId }),
         });
         if (!res.ok) throw new Error();
         const data = await res.json();
