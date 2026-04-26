@@ -1,142 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { translations } from "@/lib/i18n";
 import PaymentModal from "./PaymentModal";
 import VpnClientsSection from "./VpnClientsSection";
 
 const LANGS = ["ru", "en", "de", "zh"] as const;
-type Lang = typeof LANGS[number];
-
-const T = {
-  ru: {
-    greeting: "Добро пожаловать",
-    status: "Статус подписки",
-    active: "Активна",
-    inactive: "Неактивна",
-    expired: "Истекла",
-    expires: "Истекает",
-    balance: "Баланс",
-    devices: "Устройства",
-    traffic: "Трафик",
-    daysLeft: (n: number) => `${n} дн. осталось`,
-    expiresSoon: (n: number) => `⚠ Подписка истекает через ${n} дней`,
-    expiresToday: "⚠ Подписка истекает сегодня!",
-    topup: "Пополнить",
-    renew: "Продлить",
-    configs: "Конфигурации",
-    copy: "Копировать",
-    copied: "✓ Скопировано",
-    clients: "VPN-клиенты",
-    logout: "Выйти",
-    refresh: "Обновить",
-    region: "Регион",
-    server: "Сервер",
-    ping: "Пинг",
-    noSub: "У вас нет активной подписки",
-    getSub: "Получить подписку в боте →",
-    used: "использовано",
-    of: "из",
-    rub: "₽",
-    key: "Ключ профиля",
-    manage: "Управление в боте",
-  },
-  en: {
-    greeting: "Welcome back",
-    status: "Subscription",
-    active: "Active",
-    inactive: "Inactive",
-    expired: "Expired",
-    expires: "Expires",
-    balance: "Balance",
-    devices: "Devices",
-    traffic: "Traffic",
-    daysLeft: (n: number) => `${n} days left`,
-    expiresSoon: (n: number) => `⚠ Subscription expires in ${n} days`,
-    expiresToday: "⚠ Subscription expires today!",
-    topup: "Top up",
-    renew: "Renew",
-    configs: "Configurations",
-    copy: "Copy",
-    copied: "✓ Copied",
-    clients: "VPN clients",
-    logout: "Logout",
-    refresh: "Refresh",
-    region: "Region",
-    server: "Server",
-    ping: "Ping",
-    noSub: "You have no active subscription",
-    getSub: "Get subscription in bot →",
-    used: "used",
-    of: "of",
-    rub: "₽",
-    key: "Profile key",
-    manage: "Manage in bot",
-  },
-  de: {
-    greeting: "Willkommen zurück",
-    status: "Abonnement",
-    active: "Aktiv",
-    inactive: "Inaktiv",
-    expired: "Abgelaufen",
-    expires: "Läuft ab",
-    balance: "Guthaben",
-    devices: "Geräte",
-    traffic: "Traffic",
-    daysLeft: (n: number) => `Noch ${n} Tage`,
-    expiresSoon: (n: number) => `⚠ Abonnement läuft in ${n} Tagen ab`,
-    expiresToday: "⚠ Abonnement läuft heute ab!",
-    topup: "Aufladen",
-    renew: "Verlängern",
-    configs: "Konfigurationen",
-    copy: "Kopieren",
-    copied: "✓ Kopiert",
-    clients: "VPN-Clients",
-    logout: "Abmelden",
-    refresh: "Aktualisieren",
-    region: "Region",
-    server: "Server",
-    ping: "Ping",
-    noSub: "Kein aktives Abonnement",
-    getSub: "Abonnement im Bot holen →",
-    used: "genutzt",
-    of: "von",
-    rub: "₽",
-    key: "Profilschlüssel",
-    manage: "Im Bot verwalten",
-  },
-  zh: {
-    greeting: "欢迎回来",
-    status: "订阅状态",
-    active: "有效",
-    inactive: "未激活",
-    expired: "已过期",
-    expires: "到期",
-    balance: "余额",
-    devices: "设备",
-    traffic: "流量",
-    daysLeft: (n: number) => `剩余 ${n} 天`,
-    expiresSoon: (n: number) => `⚠ 订阅将在 ${n} 天后到期`,
-    expiresToday: "⚠ 订阅今天到期！",
-    topup: "充值",
-    renew: "续订",
-    configs: "配置",
-    copy: "复制",
-    copied: "✓ 已复制",
-    clients: "VPN 客户端",
-    logout: "退出",
-    refresh: "刷新",
-    region: "地区",
-    server: "服务器",
-    ping: "延迟",
-    noSub: "您没有有效订阅",
-    getSub: "在机器人中获取订阅 →",
-    used: "已用",
-    of: "/",
-    rub: "₽",
-    key: "个人密钥",
-    manage: "在机器人中管理",
-  },
-};
+type ProfileLang = typeof LANGS[number];
 
 interface ProfileData {
   tg_id: number;
@@ -168,15 +38,14 @@ function daysUntil(dateStr: string | null): number | null {
 }
 
 export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props) {
-  const [lang, setLang] = useState<Lang>("ru");
+  const [lang, setLang] = useState<ProfileLang>("ru");
   const [copied, setCopied] = useState<string | null>(null);
   const [showPayment, setShowPayment] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
-  const t = T[lang];
+  const t = translations[lang].profile;
 
   const days = daysUntil(profile.expires_at);
-  const showWarning =
-    profile.subscription === "active" && days !== null && days <= 7;
+  const showWarning = profile.subscription === "active" && days !== null && days <= 7;
 
   const statusColor =
     profile.subscription === "active" ? "text-green-400" :
@@ -208,17 +77,14 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
 
   return (
     <div className="min-h-screen bg-[#050505] text-white relative">
-      {/* Background grid */}
       <div className="fixed inset-0 opacity-[0.025] pointer-events-none"
         style={{
           backgroundImage: "linear-gradient(#00ff88 1px, transparent 1px), linear-gradient(90deg, #00ff88 1px, transparent 1px)",
           backgroundSize: "40px 40px"
         }}
       />
-      {/* Top glow */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-green-500/5 blur-[100px] pointer-events-none" />
 
-      {/* Header */}
       <header className="relative border-b border-white/6 px-6 py-4 flex items-center justify-between max-w-5xl mx-auto">
         <a href="/" className="text-white/25 font-mono text-[10px] tracking-[0.4em] hover:text-green-400/60 transition-colors uppercase">
           ← escapethematrix.to
@@ -229,7 +95,6 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
         </div>
 
         <div className="flex items-center gap-3">
-          {/* Lang switcher */}
           <div className="flex gap-1">
             {LANGS.map(l => (
               <button
@@ -266,7 +131,6 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
       </header>
 
       <main className="relative max-w-5xl mx-auto px-4 py-8 flex flex-col gap-6">
-        {/* Greeting */}
         <div>
           <div className="font-mono text-white/25 text-xs tracking-widest uppercase mb-1">{t.greeting}</div>
           <h1 className="font-mono text-xl text-white/70">
@@ -274,13 +138,10 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
           </h1>
         </div>
 
-        {/* ⚠ Expiry warning */}
         {showWarning && days !== null && (
           <div className="border border-amber-400/30 bg-amber-400/5 rounded-sm px-4 py-3 font-mono text-xs text-amber-400/80 flex items-center gap-2">
             <span className="text-lg">⚠</span>
-            <span>
-              {days === 0 ? t.expiresToday : t.expiresSoon(days)}
-            </span>
+            <span>{days === 0 ? t.expiresToday : t.expiresSoon(days)}</span>
             <button
               onClick={() => setShowPayment(true)}
               className="ml-auto px-3 py-1 border border-amber-400/40 text-amber-400 text-[10px] tracking-widest uppercase hover:bg-amber-400/10 transition-all rounded-sm"
@@ -290,9 +151,7 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
           </div>
         )}
 
-        {/* Stats grid */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {/* Subscription status */}
           <div className="border border-white/6 bg-white/[0.02] rounded-sm p-4 col-span-2 sm:col-span-1">
             <div className="text-white/25 font-mono text-[10px] tracking-widest uppercase mb-2">{t.status}</div>
             <div className={`font-mono text-lg font-bold ${statusColor}`}>{statusLabel}</div>
@@ -301,19 +160,16 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
             )}
           </div>
 
-          {/* Expires */}
           <div className="border border-white/6 bg-white/[0.02] rounded-sm p-4">
             <div className="text-white/25 font-mono text-[10px] tracking-widest uppercase mb-2">{t.expires}</div>
             <div className="font-mono text-sm text-white/60 leading-tight">{expiresFormatted}</div>
           </div>
 
-          {/* Balance */}
           <div className="border border-white/6 bg-white/[0.02] rounded-sm p-4">
             <div className="text-white/25 font-mono text-[10px] tracking-widest uppercase mb-2">{t.balance}</div>
             <div className="font-mono text-lg font-bold text-white/80">{profile.balance} {t.rub}</div>
           </div>
 
-          {/* Devices */}
           <div className="border border-white/6 bg-white/[0.02] rounded-sm p-4">
             <div className="text-white/25 font-mono text-[10px] tracking-widest uppercase mb-2">{t.devices}</div>
             <div className="font-mono text-lg">
@@ -331,7 +187,6 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
           </div>
         </div>
 
-        {/* Payment actions */}
         <div className="flex gap-3 flex-wrap">
           <button
             onClick={() => setShowPayment(true)}
@@ -343,85 +198,76 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
             href="https://t.me/EscapeTheMatrixVPNBot"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 border border-white/10 text-white/40 font-mono text-xs tracking-[0.3em] uppercase hover:border-white/25 hover:text-white/60 transition-all rounded-sm"
+            className="px-6 py-3 border border-white/8 text-white/30 font-mono text-xs tracking-[0.3em] uppercase hover:border-white/20 hover:text-white/50 transition-all rounded-sm"
           >
             {t.manage}
           </a>
         </div>
 
-        {/* Configs */}
         {profile.configs.length > 0 ? (
           <div>
             <div className="text-[10px] font-mono tracking-[0.4em] text-white/25 uppercase mb-3">
               — {t.configs}
             </div>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2">
               {profile.configs.map((cfg, i) => (
-                <div key={i} className="border border-white/6 bg-white/[0.02] rounded-sm p-4">
+                <div key={i} className="border border-white/6 bg-white/[0.015] rounded-sm p-4">
                   <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-3">
-                      <span className="text-2xl">{cfg.flag}</span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl">{cfg.flag}</span>
                       <div>
-                        <div className="font-mono text-sm text-white/80 font-bold">{cfg.city}</div>
-                        <div className="font-mono text-[10px] text-white/30 uppercase tracking-wider">{cfg.region}</div>
+                        <div className="font-mono text-white/60 text-xs font-bold">{cfg.city}</div>
+                        <div className="font-mono text-white/25 text-[10px]">{cfg.ping}</div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                      <span className="font-mono text-[10px] text-white/35">{cfg.ping}</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <code className="flex-1 bg-black/50 border border-white/5 rounded-sm px-3 py-2 font-mono text-[10px] text-white/25 truncate">
-                      {cfg.vless_link}
-                    </code>
                     <button
                       onClick={() => copyToClipboard(cfg.vless_link, `cfg-${i}`)}
-                      className="shrink-0 px-4 py-2 border border-white/8 text-white/30 font-mono text-[10px] hover:border-green-400/30 hover:text-green-400 transition-all rounded-sm whitespace-nowrap"
+                      className={`px-3 py-1.5 border font-mono text-[10px] tracking-wider transition-all rounded-sm ${
+                        copied === `cfg-${i}`
+                          ? "border-green-400/40 text-green-400"
+                          : "border-white/8 text-white/30 hover:border-green-400/25 hover:text-green-400/70"
+                      }`}
                     >
                       {copied === `cfg-${i}` ? t.copied : t.copy}
                     </button>
                   </div>
+                  <code className="block bg-black/40 border border-white/5 rounded-sm px-3 py-2 text-[10px] text-white/30 truncate font-mono">
+                    {cfg.vless_link}
+                  </code>
                 </div>
               ))}
             </div>
           </div>
         ) : (
-          <div className="border border-white/6 bg-white/[0.015] rounded-sm p-8 text-center">
-            <div className="text-white/20 font-mono text-sm mb-3">{t.noSub}</div>
+          <div className="border border-white/5 rounded-sm p-6 text-center">
+            <div className="text-white/25 font-mono text-sm mb-3">{t.noSub}</div>
             <a
               href="https://t.me/EscapeTheMatrixVPNBot"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-green-400/50 font-mono text-xs hover:text-green-400 transition-colors"
+              className="text-green-400/60 font-mono text-xs hover:text-green-400 transition-colors"
             >
               {t.getSub}
             </a>
           </div>
         )}
 
-        {/* VPN Clients */}
-        <VpnClientsSection lang={lang} />
-
-        {/* Footer */}
-        <div className="border-t border-white/5 pt-4 flex items-center justify-between">
-          <div className="font-mono text-[10px] text-white/15 tracking-wider">
-            ID: {profile.tg_id}
+        <div>
+          <div className="text-[10px] font-mono tracking-[0.4em] text-white/25 uppercase mb-3">
+            — {t.clients}
           </div>
-          <div className="font-mono text-[10px] text-white/15">
-            escapethematrix.to
-          </div>
+          <VpnClientsSection lang={lang} />
         </div>
       </main>
 
-    {showPayment && (
-      <PaymentModal
-        balance={profile.balance}
-        tgId={profile.tg_id}
-        lang={lang}
-        onClose={() => setShowPayment(false)}
-      />
-    )}
+      {showPayment && (
+        <PaymentModal
+          lang={lang}
+          balance={profile.balance}
+          tgId={profile.tg_id}
+          onClose={() => setShowPayment(false)}
+        />
+      )}
     </div>
   );
 }

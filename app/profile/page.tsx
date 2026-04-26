@@ -8,30 +8,14 @@ export default function ProfilePage() {
   const [profileData, setProfileData] = useState<any>(null);
   const [sessionKey, setSessionKey] = useState<string | null>(null);
 
-  useEffect(() => {
-    // Restore session from sessionStorage (not localStorage — клиринг при закрытии вкладки)
-    const saved = sessionStorage.getItem("profile_session");
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        setProfileData(parsed.data);
-        setSessionKey(parsed.key);
-      } catch {
-        sessionStorage.removeItem("profile_session");
-      }
-    }
-  }, []);
-
   const handleLogin = (data: any, key: string) => {
     setProfileData(data);
     setSessionKey(key);
-    sessionStorage.setItem("profile_session", JSON.stringify({ data, key }));
   };
 
   const handleLogout = () => {
     setProfileData(null);
     setSessionKey(null);
-    sessionStorage.removeItem("profile_session");
   };
 
   const handleRefresh = async () => {
@@ -45,7 +29,6 @@ export default function ProfilePage() {
       if (res.ok) {
         const data = await res.json();
         setProfileData(data);
-        sessionStorage.setItem("profile_session", JSON.stringify({ data, key: sessionKey }));
       }
     } catch {}
   };
