@@ -7,27 +7,73 @@ interface CaptchaGateProps {
 }
 
 const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "YOUR_TURNSTILE_SITE_KEY";
+const STORAGE_KEY = "captcha_passed";
+const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 часа
 
 export default function CaptchaGate({ onPassed }: CaptchaGateProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
   const [phase, setPhase] = useState<"loading" | "ready" | "verifying" | "error">("loading");
   const [errorMsg, setErrorMsg] = useState("");
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
+    // Проверяем кэш при монтировании
+    const cached = localStorage.getItem(STORAGE_KEY);
+    if (cached) {
+      try {
+        const { timestamp } = JSON.parse(cached);
+        if (Date.now() - timestamp < CACHE_DURATION) {
+          onPassed();
+          return;
+        }
+      } catch {}
+    }
+
     // Load Turnstile script if not already loaded
     if (!(window as any).turnstile) {
-      const script = document.createElement("script");
-      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-      script.async = true;
-      script.defer = true;
-      script.onload = () => renderWidget();
-      document.head.appendChild(script);
+      const scriptId = 'turnstile-script';
+      if (!document.getElementById(scriptId)) {
+        const script = document.createElement("script");
+        script.id = scriptId;
+        script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+        script.async = true;
+        script.defer = true;
+        
+        // Таймаут на загрузку скрипта
+        timeoutRef.current = setTimeout(() => {
+          setErrorMsg("Script loading timeout. Please refresh the page.");
+          setPhase("error");
+        }, 10000);
+
+        script.onload = () => {
+          if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = null;
+          }
+          renderWidget();
+        };
+        
+        script.onerror = () => {
+          if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = null;
+          }
+          setErrorMsg("Failed to load verification. Please try again.");
+          setPhase("error");
+        };
+        
+        document.head.appendChild(script);
+      }
     } else {
       renderWidget();
     }
 
     return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
       if (widgetIdRef.current !== null) {
         try { (window as any).turnstile?.remove(widgetIdRef.current); } catch {}
       }
@@ -43,28 +89,59 @@ export default function CaptchaGate({ onPassed }: CaptchaGateProps) {
       theme: "dark",
       callback: async (token: string) => {
         setPhase("verifying");
+        
+        // Создаем AbortController для таймаута на верификацию
+        const abortController = new AbortController();
+        const timeoutId = setTimeout(() => {
+          abortController.abort();
+        }, 10000); // 10 секунд на проверку
+
         try {
           const res = await fetch("/api/turnstile-verify", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ token }),
+            signal: abortController.signal,
           });
+
+          clearTimeout(timeoutId);
+          
+          if (!res.ok) {
+            throw new Error("Verification failed");
+          }
+
           const data = await res.json();
+          
           if (data.success) {
+            // Сохраняем в localStorage для кэширования
+            localStorage.setItem(STORAGE_KEY, JSON.stringify({
+              timestamp: Date.now()
+            }));
             onPassed();
           } else {
-            setErrorMsg("Check haven't found. Try one more time.");
+            setErrorMsg("Verification failed. Try again.");
             setPhase("error");
             (window as any).turnstile?.reset(widgetIdRef.current);
           }
-        } catch {
-          setErrorMsg("Connection failed. Try one more time.");
+        } catch (err: any) {
+          clearTimeout(timeoutId);
+          
+          if (err.name === "AbortError") {
+            setErrorMsg("Verification timeout. Please try again.");
+          } else {
+            setErrorMsg("Connection failed. Please check your internet.");
+          }
+          
           setPhase("error");
           (window as any).turnstile?.reset(widgetIdRef.current);
         }
       },
       "error-callback": () => {
-        setErrorMsg("Unavailable to load page. Try to refresh the page.");
+        setErrorMsg("Failed to load verification. Please refresh the page.");
+        setPhase("error");
+      },
+      "expired-callback": () => {
+        setErrorMsg("Verification expired. Please try again.");
         setPhase("error");
       },
     });
@@ -89,9 +166,9 @@ export default function CaptchaGate({ onPassed }: CaptchaGateProps) {
           </div>
           <div className="text-white/40 font-mono text-sm tracking-wide">
             {phase === "loading" && "Loading..."}
-            {phase === "ready" && "Accepting, that you're human"}
+            {phase === "ready" && "Verify you are human"}
             {phase === "verifying" && "Checking..."}
-            {phase === "error" && "Checking Failed"}
+            {phase === "error" && "Verification Failed"}
           </div>
         </div>
         <div
@@ -110,8 +187,24 @@ export default function CaptchaGate({ onPassed }: CaptchaGateProps) {
         )}
 
         {phase === "error" && (
-          <div className="text-red-400/70 font-mono text-xs border border-red-400/20 px-4 py-2 rounded-sm bg-red-400/5 text-center">
-            ⊗ {errorMsg}
+          <div className="flex flex-col items-center gap-3">
+            <div className="text-red-400/70 font-mono text-xs border border-red-400/20 px-4 py-2 rounded-sm bg-red-400/5 text-center">
+              ⊗ {errorMsg}
+            </div>
+            <button
+              onClick={() => {
+                setPhase("loading");
+                setErrorMsg("");
+                if ((window as any).turnstile) {
+                  renderWidget();
+                } else {
+                  window.location.reload();
+                }
+              }}
+              className="text-green-400/70 font-mono text-xs hover:text-green-400 transition-colors"
+            >
+              ⟳ Try Again
+            </button>
           </div>
         )}
       </div>
