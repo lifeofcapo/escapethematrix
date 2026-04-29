@@ -36,13 +36,15 @@ export default function Navbar({ t, lang, setLang }: NavbarProps) {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#080808]/90 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+
+        {/* Logo */}
         <a href="/" className="flex-shrink-0">
           <Image
             src="/logo.png"
             alt="Escape The Matrix"
-            width={64}
-            height={64}
-            className="h-8 w-8 object-contain"
+            width={44}
+            height={44}
+            className="h-11 w-11 object-contain"
             priority
           />
         </a>
@@ -90,7 +92,7 @@ export default function Navbar({ t, lang, setLang }: NavbarProps) {
           </div>
           <a
             href="/profile"
-            className="hidden xs:flex px-3 sm:px-5 py-2 border border-white/10 text-white/60 font-mono text-xs sm:text-sm tracking-wider uppercase hover:border-green-400/40 hover:text-green-400 transition-all rounded-sm"
+            className="flex items-center px-3 sm:px-5 py-2 border border-white/10 text-white/60 font-mono text-xs sm:text-sm tracking-wider uppercase hover:border-green-400/40 hover:text-green-400 transition-all rounded-sm whitespace-nowrap"
           >
             {t.nav.profile}
           </a>
@@ -98,7 +100,7 @@ export default function Navbar({ t, lang, setLang }: NavbarProps) {
             href="https://t.me/EscapeTheMatrixVPNBot"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 sm:px-5 py-2 border border-green-400/40 text-green-400 font-mono text-xs sm:text-sm tracking-wider uppercase hover:bg-green-400/10 hover:border-green-400/70 transition-all rounded-sm whitespace-nowrap"
+            className="flex items-center px-3 sm:px-5 py-2 border border-green-400/40 text-green-400 font-mono text-xs sm:text-sm tracking-wider uppercase hover:bg-green-400/10 hover:border-green-400/70 transition-all rounded-sm whitespace-nowrap"
           >
             <span className="hidden sm:inline">{t.nav.connect}</span>
             <span className="sm:hidden">TG</span>

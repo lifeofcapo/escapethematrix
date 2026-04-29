@@ -18,7 +18,6 @@ export default function HeroSection({ t }: { t: any }) {
     const drops: number[] = Array(cols).fill(1);
     const chars = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホ01";
 
-    let frame = 0;
     const draw = () => {
       ctx.fillStyle = "rgba(8,8,8,0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -31,7 +30,6 @@ export default function HeroSection({ t }: { t: any }) {
         if (drops[i] * 20 > canvas.height && Math.random() > 0.975) drops[i] = 0;
         drops[i]++;
       }
-      frame++;
     };
 
     const interval = setInterval(draw, 50);
@@ -46,16 +44,29 @@ export default function HeroSection({ t }: { t: any }) {
       />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
       <div className="absolute inset-0 bg-radial-gradient pointer-events-none" />
+
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <h1 className="text-[clamp(3rem,10vw,7rem)] font-black leading-[0.9] tracking-tight mb-6">
-          <span className="block text-white/20 font-mono text-[0.5em] tracking-[0.3em] uppercase mb-2">
+        <h1 className="mb-6 leading-none">
+          <span className="block text-white/20 font-mono text-[clamp(0.75rem,2.5vw,1.1rem)] tracking-[0.35em] uppercase mb-3">
             {t.hero.headline1}
           </span>
-          <span className="block text-white glitch-text">{t.hero.headline2}</span>
+          <span
+            className="block text-white"
+            style={{
+              fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif",
+              fontSize: "clamp(5rem,18vw,12rem)",
+              letterSpacing: "0.04em",
+              lineHeight: 1,
+            }}
+          >
+            {t.hero.headline2}
+          </span>
         </h1>
+
         <p className="text-white/40 font-mono text-sm md:text-base tracking-wider max-w-lg mx-auto mb-10 leading-relaxed">
           {t.hero.sub}
         </p>
+
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="https://t.me/EscapeTheMatrixVPNBot"
@@ -72,6 +83,7 @@ export default function HeroSection({ t }: { t: any }) {
             {t.hero.ctaSub}
           </span>
         </div>
+
         <div className="mt-20 flex flex-wrap items-center justify-center gap-8 md:gap-16">
           {[
             { val: "100₽", label: "/мес" },
@@ -88,6 +100,7 @@ export default function HeroSection({ t }: { t: any }) {
           ))}
         </div>
       </div>
+
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
         <div className="w-px h-8 bg-gradient-to-b from-transparent to-white/20" />
       </div>

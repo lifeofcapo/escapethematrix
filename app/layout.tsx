@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono } from "next/font/google";
+import { IBM_Plex_Mono, Bebas_Neue } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400", "700"],
@@ -9,6 +9,13 @@ const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin", "cyrillic"],
   display: "swap",
   variable: "--font-ibm-plex-mono",
+});
+
+const bebasNeue = Bebas_Neue({
+  weight: ["400"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-bebas",
 });
 
 export const metadata: Metadata = {
@@ -34,18 +41,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  // TODO: set lang dynamically via middleware based on user locale for proper SEO
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className={`dark ${ibmPlexMono.variable}`}>
+    <html lang="ru" className={`dark ${ibmPlexMono.variable} ${bebasNeue.variable}`}>
       <body className={ibmPlexMono.className}>
         {children}
         <Analytics />
-        </body>
+      </body>
     </html>
   );
 }
