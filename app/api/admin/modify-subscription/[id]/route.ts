@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { verifyAdminToken, unauthorizedResponse, getPool } from "../../../../lib/admin-auth";
+import { verifyAdminToken, unauthorizedResponse, getPool } from "../../../../../lib/admin-auth";
 
 // PATCH - modify subscription (extend, change expires_at, deactivate)
 export async function PATCH(

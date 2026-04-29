@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { verifyAdminToken, unauthorizedResponse, getPool } from "../../../../lib/admin-auth";
+import { verifyAdminToken, unauthorizedResponse, getPool } from "../../../../../lib/admin-auth";
 
 export async function PATCH(
   req: NextRequest,
