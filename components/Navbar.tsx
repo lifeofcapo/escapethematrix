@@ -40,8 +40,8 @@ export default function Navbar({ t, lang, setLang }: NavbarProps) {
           <Image
             src="/logo.png"
             alt="Escape The Matrix"
-            width={32}
-            height={32}
+            width={64}
+            height={64}
             className="h-8 w-8 object-contain"
             priority
           />
