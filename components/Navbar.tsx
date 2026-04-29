@@ -38,7 +38,7 @@ export default function Navbar({ t, lang, setLang }: NavbarProps) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
         <a href="/" className="flex-shrink-0">
           <Image
-            src="/og-image.png"
+            src="/logo.png"
             alt="Escape The Matrix"
             width={32}
             height={32}
