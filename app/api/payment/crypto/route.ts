@@ -12,7 +12,6 @@ const VALID_CURRENCIES = [
 ];
 
 export async function POST(req: NextRequest) {
-  // Проверяем наличие переменных окружения
   if (!CRYPTOCLOUD_API_KEY || !CRYPTOCLOUD_SHOP_ID) {
     console.error("CryptoCloud: missing env vars", {
       hasKey: !!CRYPTOCLOUD_API_KEY,
@@ -61,8 +60,6 @@ export async function POST(req: NextRequest) {
     },
   };
 
-  console.log("CryptoCloud request:", JSON.stringify(requestBody));
-
   try {
     const res = await fetch("https://api.cryptocloud.plus/v2/invoice/create", {
       method: "POST",
@@ -74,7 +71,6 @@ export async function POST(req: NextRequest) {
     });
 
     const responseText = await res.text();
-    console.log("CryptoCloud raw response:", res.status, responseText);
 
     if (!res.ok) {
       return NextResponse.json(
