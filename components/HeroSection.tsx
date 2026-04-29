@@ -47,16 +47,24 @@ export default function HeroSection({ t }: { t: any }) {
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <h1 className="mb-6 leading-none">
-          <span className="block text-white/20 font-mono text-[clamp(0.75rem,2.5vw,1.1rem)] tracking-[0.35em] uppercase mb-3">
+          <span
+            className="block text-white/90"
+            style={{
+              fontFamily: "var(--font-anton), 'Anton', sans-serif",
+              fontSize: "clamp(4rem,15vw,10rem)",
+              letterSpacing: "0.04em",
+              lineHeight: 1.05,
+            }}
+          >
             {t.hero.headline1}
           </span>
           <span
-            className="block text-white"
+            className="block text-green-400"
             style={{
-              fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif",
-              fontSize: "clamp(5rem,18vw,12rem)",
+              fontFamily: "var(--font-anton), 'Anton', sans-serif",
+              fontSize: "clamp(4rem,15vw,10rem)",
               letterSpacing: "0.04em",
-              lineHeight: 1,
+              lineHeight: 1.05,
             }}
           >
             {t.hero.headline2}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Bebas_Neue } from "next/font/google";
+import { IBM_Plex_Mono, Anton } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -11,11 +11,11 @@ const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-ibm-plex-mono",
 });
 
-const bebasNeue = Bebas_Neue({
+const anton = Anton({
   weight: ["400"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-bebas",
+  variable: "--font-anton",
 });
 
 export const metadata: Metadata = {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className={`dark ${ibmPlexMono.variable} ${bebasNeue.variable}`}>
+    <html lang="ru" className={`dark ${ibmPlexMono.variable} ${anton.variable}`}>
       <body className={ibmPlexMono.className}>
         {children}
         <Analytics />
