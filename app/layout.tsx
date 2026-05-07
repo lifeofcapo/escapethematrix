@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono, Anton } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { SessionProvider } from "next-auth/react";
 
 const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400", "700"],
@@ -45,7 +46,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ru" className={`dark ${ibmPlexMono.variable} ${anton.variable}`}>
       <body className={ibmPlexMono.className}>
-        {children}
+        <SessionProvider>
+          {children}
+        </SessionProvider>
         <Analytics />
       </body>
     </html>

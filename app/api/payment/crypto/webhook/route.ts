@@ -22,8 +22,6 @@ export async function POST(req: NextRequest) {
   } catch {
     return NextResponse.json({ error: "Invalid body" }, { status: 400 });
   }
-
-  // CryptoCloud v2 webhook: status "success" когда оплачено
   if (event.status !== "success") {
     return NextResponse.json({ ok: true });
   }

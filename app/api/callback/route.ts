@@ -30,18 +30,17 @@ export async function POST(req: NextRequest) { // CryptoCloud шлёт POST на
 
   console.log("CryptoCloud callback:", JSON.stringify(event));
 
-  // CryptoCloud v2: status "success" когда оплачено
+  // CryptoCloud v2: status "success" when paid
   const status = event.status ?? event.invoice_status;
   if (status !== "success" && status !== "paid") {
-    // Не успешно - просто отвечаем OK
     return NextResponse.json({ ok: true });
   }
 
   const invoiceId: string = event.invoice_id ?? event.uuid ?? "";
-  const orderId: string = event.order_id ?? ""; // order_id мы задавали как "web_{tgId}_{timestamp}"
+  const orderId: string = event.order_id ?? ""; // order_id already set as "web_{tgId}_{timestamp}"
   const tgIdMatch = orderId.match(/web_(\d+)_/);
   const tgId = tgIdMatch ? parseInt(tgIdMatch[1]) : null;
-  const amountRub = parseFloat( // Сумма в рублях (CryptoCloud возвращает amount_in_local_currency или amount)
+  const amountRub = parseFloat( // sum in rub (CryptoCloud returns amount_in_local_currency or amount)
     event.amount_in_local_currency ?? event.amount ?? "0"
   );
 
@@ -52,7 +51,7 @@ export async function POST(req: NextRequest) { // CryptoCloud шлёт POST на
 
   if (!tgId) {
     console.warn("CryptoCloud callback: no tg_id in order_id:", orderId);
-    return NextResponse.json({ ok: true }); // не знаем кому начислить
+    return NextResponse.json({ ok: true }); // if dont know to whom top up
   }
 
   try {
@@ -86,7 +85,7 @@ export async function POST(req: NextRequest) { // CryptoCloud шлёт POST на
   return NextResponse.json({ ok: true });
 }
 
-// CryptoCloud иногда шлёт GET для проверки доступности endpoint
+// CryptoCloud sometimes send GET for checking availability endpoint
 export async function GET() {
   return NextResponse.json({ status: "ok", service: "escapethematrix" });
 }
