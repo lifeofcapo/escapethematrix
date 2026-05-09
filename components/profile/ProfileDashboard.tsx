@@ -42,7 +42,7 @@ const VPN_CLIENTS = [
     platforms: ["Android", "Windows", "macOS", "Linux"],
     icon: "◈",
     accent: "#4ade80",
-    badge: { ru: "★ Рекомендуем", en: "★ Recommended", de: "★ Empfohlen", zh: "★ 推荐" },
+    badge: { ru: "Рекомендуем", en: "Recommended", de: "Empfohlen", zh: "推荐" },
     links: [
       { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.follow.clash.x" },
       { label: "GitHub", url: "https://github.com/chen08209/FlClashX/releases/latest" },
@@ -408,10 +408,10 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
       <header className="relative border-b border-white/6 px-6 py-4">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <a href="/" className="text-white/25 font-mono text-xs tracking-[0.4em] hover:text-green-400/60 transition-colors uppercase">
-            ← escapethematrix.to
+            escapethematrix.to
           </a>
           <div className="text-xs font-mono tracking-[0.5em] text-green-400/40 uppercase hidden sm:block">
-            ◈ {t.greeting}
+            {t.greeting}
           </div>
           <div className="flex items-center gap-2">
             <div className="flex gap-1">

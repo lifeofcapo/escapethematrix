@@ -37,7 +37,7 @@ export default function NotFound() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#080808] text-white flex flex-col overflow-x-hidden">
+    <main className="min-h-screen bg-[#020202] text-white flex flex-col overflow-x-hidden">
       <div className="noise-overlay" />
 
       <Navbar t={t} lang={lang} setLang={setLang} />
