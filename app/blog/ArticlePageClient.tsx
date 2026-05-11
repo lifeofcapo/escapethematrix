@@ -173,16 +173,16 @@ export default function ArticlePageClient({ slug }: ArticlePageClientProps) {
               "author": {
                 "@type": "Organization",
                 "name": "Escape The Matrix",
-                "url": "https://escapethematrix.to"
+                "url": "https://www.escapethematrix.to"
               },
               "publisher": {
                 "@type": "Organization",
                 "name": "Escape The Matrix",
-                "url": "https://escapethematrix.to"
+                "url": "https://www.escapethematrix.to"
               },
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": `https://escapethematrix.to/blog/${slug}`
+                "@id": `https://www.escapethematrix.to/blog/${slug}`
               }
             })
           }}

@@ -5,7 +5,12 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
+        allow: [
+          '/',
+          '/blog',
+          '/privacy',
+          '/terms',
+        ],
         disallow: [
           '/admin/',       
           '/api/',       
@@ -13,6 +18,7 @@ export default function robots(): MetadataRoute.Robots {
           '/profile/*',    
           '/failed-payment/', 
           '/successful-payment/', 
+          '/_next/static/media/',
         ],
       },
     ],

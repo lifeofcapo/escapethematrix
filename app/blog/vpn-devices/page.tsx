@@ -5,17 +5,26 @@ export const metadata: Metadata = {
   title: "Where to Install a VPN? Complete Device Guide — Escape The Matrix",
   description:
     "How to install a VPN on Android, iOS, Windows, macOS, Linux, router, and Smart TV. Step-by-step guide for all devices and platforms.",
-  metadataBase: new URL("https://escapethematrix.to"),
+  metadataBase: new URL("https://www.escapethematrix.to"),
   alternates: {
-    canonical: "https://escapethematrix.to/blog/vpn-devices",
+    canonical: "https://www.escapethematrix.to/blog/vpn-devices",
+    languages: {
+      "ru": "https://www.escapethematrix.to/blog/vpn-devices?lang=ru",
+      "en": "https://www.escapethematrix.to/blog/vpn-devices",
+      "de": "https://www.escapethematrix.to/blog/vpn-devices?lang=de",
+      "es": "https://www.escapethematrix.to/blog/vpn-devices?lang=es",
+      "zh": "https://www.escapethematrix.to/blog/vpn-devices?lang=zh",
+      "x-default": "https://www.escapethematrix.to/blog/vpn-devices",
+    },
   },
   openGraph: {
     title: "Where to Install a VPN? Complete Device Guide",
     description:
       "Install VPN on Android, iOS, Windows, macOS, Linux, router, Smart TV — full guide for all devices.",
-    url: "https://escapethematrix.to/blog/vpn-devices",
+    url: "https://www.escapethematrix.to/blog/vpn-devices",
     siteName: "Escape The Matrix",
     type: "article",
+    images: ["/og-image.png"],
   },
   twitter: {
     card: "summary_large_image",

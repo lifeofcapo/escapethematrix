@@ -5,17 +5,26 @@ export const metadata: Metadata = {
   title: "Is Public Wi-Fi Safe? How to Protect Your Data — Escape The Matrix",
   description:
     "Coffee shops, airports, hotels — public Wi-Fi is everywhere but dangerous. Learn about MITM attacks, evil twin hotspots, and how a VPN protects you.",
-  metadataBase: new URL("https://escapethematrix.to"),
+  metadataBase: new URL("https://www.escapethematrix.to"),
   alternates: {
-    canonical: "https://escapethematrix.to/blog/public-wifi-safe",
+    canonical: "https://www.escapethematrix.to/blog/public-wifi-safe",
+    languages: {
+      "ru": "https://www.escapethematrix.to/blog/public-wifi-safe?lang=ru",
+      "en": "https://www.escapethematrix.to/blog/public-wifi-safe",
+      "de": "https://www.escapethematrix.to/blog/public-wifi-safe?lang=de",
+      "es": "https://www.escapethematrix.to/blog/public-wifi-safe?lang=es",
+      "zh": "https://www.escapethematrix.to/blog/public-wifi-safe?lang=zh",
+      "x-default": "https://www.escapethematrix.to/blog/public-wifi-safe",
+    },
   },
   openGraph: {
     title: "Is Public Wi-Fi Safe? How to Protect Your Data",
     description:
       "Learn how public Wi-Fi puts your data at risk and how to stay protected with a VPN.",
-    url: "https://escapethematrix.to/blog/public-wifi-safe",
+    url: "https://www.escapethematrix.to/blog/public-wifi-safe",
     siteName: "Escape The Matrix",
     type: "article",
+    images: ["/og-image.png"],
   },
   twitter: {
     card: "summary_large_image",

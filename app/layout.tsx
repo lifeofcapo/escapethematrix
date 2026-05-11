@@ -22,11 +22,11 @@ const anton = Anton({
 export const metadata: Metadata = {
   title: "Escape The Matrix — VPN",
   description: "Zero logs. Zero trace. VLESS + Reality. Helsinki & Amsterdam. 100₽/мес.",
-  metadataBase: new URL("https://escapethematrix.to"),
+  metadataBase: new URL("https://www.escapethematrix.to"),
   openGraph: {
-    title: "Escape The Matrix — VPN",
-    description: "Zero logs. Zero trace. Unlimited. 100₽/мес.",
-    url: "https://escapethematrix.to",
+    title: "EscapeTheMatrix — VPN",
+    description: "Без рекламы и слежки. Unlimited. 100₽/m.",
+    url: "https://www.escapethematrix.to",
     siteName: "Escape The Matrix",
     locale: "ru_RU",
     type: "website",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Escape The Matrix — VPN",
+    title: "EscapeTheMatrix — VPN",
     description: "Zero logs. Zero trace. Unlimited. 100₽/мес.",
   },
   icons: {

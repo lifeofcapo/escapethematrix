@@ -5,17 +5,26 @@ export const metadata: Metadata = {
   title: "Is Using a VPN Legal? Laws Around the World — Escape The Matrix",
   description:
     "VPNs are legal in most countries, but banned or restricted in some. Learn the legal status of VPNs in Russia, China, UAE, EU, US and more.",
-  metadataBase: new URL("https://escapethematrix.to"),
+  metadataBase: new URL("https://www.escapethematrix.to"),
   alternates: {
-    canonical: "https://escapethematrix.to/blog/vpn-legal",
+    canonical: "https://www.escapethematrix.to/blog/vpn-legal",
+    languages: {
+      "ru": "https://www.escapethematrix.to/blog/vpn-legal?lang=ru",
+      "en": "https://www.escapethematrix.to/blog/vpn-legal",
+      "de": "https://www.escapethematrix.to/blog/vpn-legal?lang=de",
+      "es": "https://www.escapethematrix.to/blog/vpn-legal?lang=es",
+      "zh": "https://www.escapethematrix.to/blog/vpn-legal?lang=zh",
+      "x-default": "https://www.escapethematrix.to/blog/vpn-legal",
+    },
   },
   openGraph: {
     title: "Is Using a VPN Legal? Laws Around the World",
     description:
       "Full overview of VPN legality in different countries — from fully legal to restricted or banned.",
-    url: "https://escapethematrix.to/blog/vpn-legal",
+    url: "https://www.escapethematrix.to/blog/vpn-legal",
     siteName: "Escape The Matrix",
     type: "article",
+    images: ["/og-image.png"],
   },
   twitter: {
     card: "summary_large_image",
