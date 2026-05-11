@@ -10,6 +10,9 @@ export default function robots(): MetadataRoute.Robots {
           '/blog',
           '/privacy',
           '/terms',
+          '/blog/public-wifi-safe',
+          '/blog/vpn-legal',
+          '/blog/vpn-devices',
         ],
         disallow: [
           '/admin/',       

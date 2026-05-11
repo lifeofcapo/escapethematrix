@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ArticlePageClient from "../ArticlePageClient";
 
 export const metadata: Metadata = {
-  title: "Is Public Wi-Fi Safe? How to Protect Your Data — Escape The Matrix",
+  title: "Is Public Wi-Fi Safe? How to Protect Your Data — EscapeTheMatrix",
   description:
     "Coffee shops, airports, hotels — public Wi-Fi is everywhere but dangerous. Learn about MITM attacks, evil twin hotspots, and how a VPN protects you.",
   metadataBase: new URL("https://www.escapethematrix.to"),
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description:
       "Learn how public Wi-Fi puts your data at risk and how to stay protected with a VPN.",
     url: "https://www.escapethematrix.to/blog/public-wifi-safe",
-    siteName: "Escape The Matrix",
+    siteName: "EscapeTheMatrix",
     type: "article",
     images: ["/og-image.png"],
   },

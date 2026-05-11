@@ -3,9 +3,9 @@ import PrivacyClient from "./PrivacyClient";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Privacy Policy — Escape The Matrix VPN | Zero Logs",
+    title: "Privacy Policy — EscapeTheMatrix VPN | Zero Logs",
     description:
-      "Escape The Matrix VPN Privacy Policy. We collect zero user data — no logs, no IPs, no traffic records. Your privacy is fully protected.",
+      "EscapeTheMatrix VPN Privacy Policy. We collect zero user data — no logs, no IPs, no traffic records. Your privacy is fully protected.",
     metadataBase: new URL("https://www.escapethematrix.to"),
     alternates: {
       canonical: "https://www.escapethematrix.to/privacy",
@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: "Privacy Policy — Escape The Matrix VPN",
+      title: "Privacy Policy — EscapeTheMatrix VPN",
       description: "Zero logs. Zero data. Read our full privacy policy.",
       url: "https://www.escapethematrix.to/privacy",
       siteName: "Escape The Matrix",

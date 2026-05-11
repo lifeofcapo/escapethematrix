@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     canonical: "https://www.escapethematrix.to",
   },
   openGraph: {
-    title: "Escape The Matrix — VPN без логов | VLESS + Reality",
+    title: "EscapeTheMatrix — VPN без логов | VLESS + Reality",
     description:
       "Zero logs. Zero trace. VLESS + Reality. Серверы в Хельсинки и Амстердаме. От 100₽/мес.",
     url: "https://www.escapethematrix.to",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Escape The Matrix — VPN без логов",
+    title: "EscapeTheMatrix — VPN без логов",
     description: "Zero logs. Zero trace. VLESS + Reality. От 100₽/мес.",
   },
   keywords: [

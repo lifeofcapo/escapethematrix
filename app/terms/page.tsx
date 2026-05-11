@@ -3,9 +3,9 @@ import TermsClient from "./TermsClient";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Terms of Service — Escape The Matrix VPN",
+    title: "Terms of Service — EscapeTheMatrix VPN",
     description:
-      "Terms of Service for Escape The Matrix VPN. Understand your rights and obligations when using our service.",
+      "Terms of Service for EscapeTheMatrix VPN. Understand your rights and obligations when using our service.",
     metadataBase: new URL("https://www.escapethematrix.to"),
     alternates: {
       canonical: "https://www.escapethematrix.to/terms",
@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: "Terms of Service — Escape The Matrix VPN",
+      title: "Terms of Service — EscapeTheMatrix VPN",
       description: "Terms of Service for Escape The Matrix VPN.",
       url: "https://www.escapethematrix.to/terms",
       siteName: "Escape The Matrix",
