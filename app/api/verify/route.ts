@@ -104,6 +104,12 @@ export async function POST(req: NextRequest) {
       ? Math.max(...subs.map((s) => s.devices_limit ?? 0))
       : 0;
 
+    const referralResult = await db.query(
+      `SELECT COUNT(*) as count FROM users WHERE referred_by = $1`,
+      [user.id]
+    );
+    const referralsCount = parseInt(referralResult.rows[0].count);
+
     return NextResponse.json({
       tg_id: user.id,
       username: user.username ?? null,
@@ -113,6 +119,8 @@ export async function POST(req: NextRequest) {
       devices_used: 0,
       devices_max: devicesMax,
       configs,
+      referrals: referralsCount,
+      bot_username: "EscapeTheMatrixVPNBot",
     });
   } catch (err) {
     console.error("DB error:", err);

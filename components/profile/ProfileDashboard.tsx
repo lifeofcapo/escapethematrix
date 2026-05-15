@@ -15,6 +15,8 @@ interface ProfileData {
   balance: number;
   devices_used: number;
   devices_max: number;
+  referrals?: number;
+  bot_username?: string;
   configs: {
     region: string;
     city: string;
@@ -356,6 +358,7 @@ function SubscriptionModal({
 export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props) {
   const [lang, setLang] = useState<ProfileLang>("ru");
   const [copied, setCopied] = useState<string | null>(null);
+  const [copiedRef, setCopiedRef] = useState(false);  
   const [showPayment, setShowPayment] = useState(false);
   const [showSubscription, setShowSubscription] = useState(false);
   const [subMode, setSubMode] = useState<"buy" | "renew">("buy");
@@ -394,7 +397,8 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
 
   const openBuy = () => { setSubMode("buy"); setShowSubscription(true); };
   const openRenew = () => { setSubMode("renew"); setShowSubscription(true); };
-
+  const refLink = `https://t.me/${profile.bot_username ?? "EscapeTheMatrixVPNBot"}?start=${profile.tg_id}`;
+  const refCount = profile.referrals ?? 0;
   return (
     <div className="min-h-screen bg-[#050505] text-white relative">
       <div
@@ -576,7 +580,46 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
             </button>
           </div>
         )}
-
+        <div>
+          <div className="text-xs font-mono tracking-[0.4em] text-white/25 uppercase mb-4">
+            — {lang === "ru" ? "Реферальная программа" : lang === "de" ? "Empfehlungsprogramm" : lang === "zh" ? "推荐计划" : "Referral program"}
+          </div>
+          <div className="border border-white/6 bg-white/[0.015] rounded-sm p-5 flex flex-col gap-4">
+            <p className="font-mono text-xs text-white/40 leading-relaxed">
+              {lang === "ru"
+                ? "Приглашайте друзей и получайте 25% от каждого их пополнения баланса."
+                : lang === "de"
+                ? "Laden Sie Freunde ein und erhalten Sie 25% von jeder ihrer Aufladungen."
+                : lang === "zh"
+                ? "邀请朋友，每次充值获得 25% 返佣。"
+                : "Invite friends and earn 25% of every balance top-up they make."}
+            </p>
+            <div className="flex items-center gap-3">
+              <code className="flex-1 bg-black/40 border border-white/8 rounded-sm px-4 py-2.5 text-xs text-green-400/70 font-mono truncate">
+                {refLink}
+              </code>
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(refLink).then(() => {
+                    setCopiedRef(true);
+                    setTimeout(() => setCopiedRef(false), 2000);
+                  });
+                }}
+                className={`px-4 py-2.5 border font-mono text-xs tracking-wider transition-all rounded-sm flex-shrink-0 ${
+                  copiedRef
+                    ? "border-green-400/40 text-green-400 bg-green-400/5"
+                    : "border-white/8 text-white/35 hover:border-green-400/30 hover:text-green-400/80"
+                }`}
+              >
+                {copiedRef ? t.copied : t.copy}
+              </button>
+            </div>
+            <div className="font-mono text-xs text-white/25">
+              👥 {lang === "ru" ? `Приглашено: ` : lang === "de" ? "Eingeladen: " : lang === "zh" ? "已邀请：" : "Invited: "}
+              <span className="text-white/60 font-bold">{refCount}</span>
+            </div>
+          </div>
+        </div>
         <div>
           <div className="text-xs font-mono tracking-[0.4em] text-white/25 uppercase mb-5">
             — {t.clients}
