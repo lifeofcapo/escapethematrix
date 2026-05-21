@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+app/admin/
+app/admin/**
+components/admin/
+components/admin/**
+app/api/admin/
+app/api/admin/**
+lib/admin-auth.ts

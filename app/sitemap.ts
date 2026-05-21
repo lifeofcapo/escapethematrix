@@ -1,9 +1,8 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://escapethematrix.to'
+  const baseUrl = 'https://www.escapethematrix.to'
   
-  // Основные страницы
   const routes = [
     {
       url: baseUrl,
@@ -15,23 +14,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/privacy`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: 0.3,
+      priority: 0.5,
     },
     {
       url: `${baseUrl}/terms`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/profile`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.5,
     },
   ]
 
-  // Блог-статьи
   const blogPosts = [
     {
       url: `${baseUrl}/blog/public-wifi-safe`,
@@ -52,6 +44,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
   ]
-
   return [...routes, ...blogPosts]
 }

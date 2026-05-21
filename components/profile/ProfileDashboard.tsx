@@ -490,17 +490,13 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
           <div className="border border-white/6 bg-white/[0.02] rounded-sm p-5">
             <div className="text-white/30 font-mono text-xs tracking-widest uppercase mb-2">{t.devices}</div>
             <div className="font-mono text-xl">
-              <span className="text-green-400 font-bold">{profile.devices_used}</span>
-              <span className="text-white/25 text-base"> / {profile.devices_max}</span>
+              <span className="text-green-400 font-bold">{profile.devices_max}</span>
             </div>
-            {profile.devices_max > 0 && (
-              <div className="mt-2.5 h-1 bg-white/5 rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-green-400/50 rounded-full transition-all"
-                  style={{ width: `${Math.min(100, (profile.devices_used / profile.devices_max) * 100)}%` }}
-                />
-              </div>
-            )}
+            <div className="font-mono text-[10px] text-white/25 mt-1">
+              {lang === "ru" ? "доступных устройств" :
+              lang === "de" ? "verfügbare Geräte" :
+              lang === "zh" ? "个可用设备" : "devices available"}
+            </div>
           </div>
         </div>
 

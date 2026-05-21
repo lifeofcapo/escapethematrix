@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   title: "Escape The Matrix — VPN",
   description: "Zero logs. Zero trace. VLESS + Reality. Helsinki & Amsterdam. 100₽/мес.",
   metadataBase: new URL("https://www.escapethematrix.to"),
+  alternates: {
+    canonical: "https://www.escapethematrix.to",
+  },
   openGraph: {
     title: "EscapeTheMatrix — VPN",
     description: "Без рекламы и слежки. Unlimited. 100₽/m.",
