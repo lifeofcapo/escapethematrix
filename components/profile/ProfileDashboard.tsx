@@ -5,6 +5,7 @@ import { translations } from "@/lib/i18n";
 import PaymentModal from "./PaymentModal";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { signOut } from "next-auth/react";
 
 import {
   Language,
@@ -73,6 +74,61 @@ const VPN_CLIENTS: VPNClient[] = [
   },
 
   {
+    name: "FlClashX",
+    platforms: [
+      "Android",
+      "Windows",
+      "macOS",
+      "Linux",
+      "Android TV",
+    ],
+    icon: "⬢",
+    accent: "#22c55e",
+    badge: {
+      ru: "Рекомендуем",
+      en: "Recommended",
+      es: "Recomendado",
+      de: "Empfohlen",
+      zh: "推荐",
+    },
+    links: [
+      {
+        label: "GitHub Releases",
+        url: "https://github.com/pluralplay/FlClashX/releases/latest",
+      },
+
+      {
+        label: "macOS ARM64",
+        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClash-darwin-arm64.dmg",
+      },
+      {
+        label: "macOS AMD64",
+        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClash-darwin-amd64.dmg",
+      },
+
+      {
+        label: "Windows",
+        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClash-windows-amd64-setup.exe",
+      },
+
+      {
+        label: "Linux AppImage",
+        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClash-linux-amd64.AppImage",
+      },
+
+      {
+        label: "Android APK",
+        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/app-release.apk",
+      },
+
+      {
+        label: "Android TV Guide",
+        url: "https://club.dns-shop.ru/blog/t-132-televizoryi/43999-failyi-apk-dlya-umnyih-televizorov-na-android/?utm_referrer=https%3A%2F%2Fwww.google.com%2F",
+      },
+    ],
+  },
+
+  {
     name: "Incy",
     platforms: ["iOS", "Android", "macOS"],
     icon: "◈",
@@ -124,61 +180,6 @@ const VPN_CLIENTS: VPNClient[] = [
       {
         label: "App Store",
         url: "https://apps.apple.com/us/app/clash-mi/id6744321968",
-      },
-    ],
-  },
-
-  {
-    name: "FlClashX",
-    platforms: [
-      "Android",
-      "Windows",
-      "macOS",
-      "Linux",
-      "Android TV",
-    ],
-    icon: "⬢",
-    accent: "#22c55e",
-    badge: {
-      ru: "Рекомендуем",
-      en: "Recommended",
-      es: "Recomendado",
-      de: "Empfohlen",
-      zh: "推荐",
-    },
-    links: [
-      {
-        label: "GitHub Releases",
-        url: "https://github.com/pluralplay/FlClashX/releases/latest",
-      },
-
-      {
-        label: "macOS ARM64",
-        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClash-darwin-arm64.dmg",
-      },
-      {
-        label: "macOS AMD64",
-        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClash-darwin-amd64.dmg",
-      },
-
-      {
-        label: "Windows",
-        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClash-windows-amd64-setup.exe",
-      },
-
-      {
-        label: "Linux AppImage",
-        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClash-linux-amd64.AppImage",
-      },
-
-      {
-        label: "Android APK",
-        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/app-release.apk",
-      },
-
-      {
-        label: "Android TV Guide",
-        url: "https://club.dns-shop.ru/blog/t-132-televizoryi/43999-failyi-apk-dlya-umnyih-televizorov-na-android/?utm_referrer=https%3A%2F%2Fwww.google.com%2F",
       },
     ],
   },
@@ -456,6 +457,22 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
     await onRefresh();
     setTimeout(() => setRefreshing(false), 800);
   };
+  
+  const handleLogout = async () => {
+  try {
+    localStorage.removeItem("profile_key");
+
+    sessionStorage.clear();
+
+    await signOut({
+      redirect: false,
+    });
+
+    window.location.href = "/profile";
+  } catch (err) {
+    console.error(err);
+  }
+};
 
   const openBuy = () => { setSubMode("buy"); setShowSubscription(true); };
   const openRenew = () => { setSubMode("renew"); setShowSubscription(true); };
@@ -475,8 +492,8 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
         t={translations[lang]}
         lang={lang}
         setLang={setLang}
-        isAuthenticated
-        onLogout={onLogout}
+        isAuthenticated={true}
+        onLogout={handleLogout}
       />
 
       <main className="relative max-w-5xl mx-auto px-4 py-10 flex flex-col gap-8">
