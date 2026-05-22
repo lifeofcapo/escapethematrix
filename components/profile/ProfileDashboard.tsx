@@ -63,12 +63,12 @@ const VPN_CLIENTS: VPNClient[] = [
         url: "https://play.google.com/store/apps/details?id=com.happproxy&pli=1",
       },
       {
-        label: "Android TV Guide (RU)",
-        url: "https://www.happ.su/main/ru/faq/android-tv",
+        label: "Windows (x64)",
+        url: "https://github.com/Happ-proxy/happ-desktop/releases/latest/download/setup-Happ.x64.exe",
       },
       {
-        label: "Android TV Guide (EN)",
-        url: "https://www.happ.su/main/faq/android-tv",
+        label: "Linux Debian",
+        url: "https://github.com/Happ-proxy/happ-desktop/releases/latest/download/Happ.linux.x64.deb",
       },
     ],
   },
@@ -161,7 +161,7 @@ const VPN_CLIENTS: VPNClient[] = [
     links: [
       {
         label: "iOS",
-        url: "https://sub.rem2.magazintebetebe.ru/4L9G4JabygRH1kKU",
+        url: "https://apps.apple.com/us/app/v2raytun/id6476628951",
       },
       {
         label: "Google Play",
@@ -496,7 +496,7 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
         onLogout={handleLogout}
       />
 
-      <main className="relative max-w-5xl mx-auto px-4 py-10 flex flex-col gap-8">
+      <main className="relative max-w-5xl mx-auto px-4 pt-28 pb-10 flex flex-col gap-8">
         <div>
           <div className="font-mono text-white/30 text-sm tracking-widest uppercase mb-1">{t.greeting}</div>
           <h1 className="font-mono text-2xl text-white/75">
@@ -691,12 +691,6 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        <div className="text-center">
-          <div className="text-[10px] font-mono text-white/10 tracking-[0.3em] uppercase">
-            Escape The Matrix VPN © 2026
           </div>
         </div>
       </main>
