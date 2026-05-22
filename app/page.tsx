@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HomeClient from "../components/HomeClient";
+import HomeClient from "../components/home/HomeClient";
 
 export const metadata: Metadata = {
   title: "EscapeTheMatrix — VPN без логов | VLESS + Reality",

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { Language } from "@/lib/i18n";
+import { Language, NavbarProps } from "@/lib/types";
 
 const LANGS: { code: Language; label: string; flag: string }[] = [
   { code: "ru", label: "Русский", flag: "🇷🇺" },
@@ -10,12 +10,6 @@ const LANGS: { code: Language; label: string; flag: string }[] = [
   { code: "de", label: "Deutsch", flag: "🇩🇪" },
   { code: "zh", label: "中文", flag: "🇨🇳" },
 ];
-
-interface NavbarProps {
-  t: any;
-  lang: Language;
-  setLang: (l: Language) => void;
-}
 
 export default function Navbar({ t, lang, setLang }: NavbarProps) {
   const [langOpen, setLangOpen] = useState(false);

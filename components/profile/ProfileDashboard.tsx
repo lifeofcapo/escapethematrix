@@ -3,28 +3,17 @@
 import { useState } from "react";
 import { translations } from "@/lib/i18n";
 import PaymentModal from "./PaymentModal";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-const LANGS = ["ru", "en", "de", "zh"] as const;
-type ProfileLang = typeof LANGS[number];
+import {
+  Language,
+  ProfileData,
+  SubscriptionPlan,
+  VPNClient,
+} from "@/lib/types";
 
-interface ProfileData {
-  tg_id: number;
-  username?: string;
-  subscription: "active" | "inactive" | "expired";
-  expires_at: string | null;
-  balance: number;
-  devices_used: number;
-  devices_max: number;
-  referrals?: number;
-  bot_username?: string;
-  configs: {
-    region: string;
-    city: string;
-    flag: string;
-    vless_link: string;
-    ping: string;
-  }[];
-}
+const LANGS: Language[] = ["ru", "en", "es", "de", "zh"];
 
 interface Props {
   profile: ProfileData;
@@ -38,73 +27,218 @@ function daysUntil(dateStr: string | null): number | null {
   return Math.ceil(diff / (1000 * 60 * 60 * 24));
 }
 
-const VPN_CLIENTS = [
-  {
-    name: "FlClashX",
-    platforms: ["Android", "Windows", "macOS", "Linux"],
-    icon: "◈",
-    accent: "#4ade80",
-    badge: { ru: "Рекомендуем", en: "Recommended", de: "Empfohlen", zh: "推荐" },
-    links: [
-      { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.follow.clash.x" },
-      { label: "GitHub", url: "https://github.com/chen08209/FlClashX/releases/latest" },
-    ],
-  },
+const VPN_CLIENTS: VPNClient[] = [
   {
     name: "Happ",
-    platforms: ["Android", "iOS", "Windows"],
+    platforms: [
+      "iOS",
+      "Android",
+      "Windows",
+      "macOS",
+      "Linux",
+      "Android TV",
+      "Apple TV",
+    ],
     icon: "◆",
     accent: "#60a5fa",
-    badge: null,
+    badge: {
+      ru: "Рекомендуем",
+      en: "Recommended",
+      es: "Recomendado",
+      de: "Empfohlen",
+      zh: "推荐",
+    },
     links: [
-      { label: "App Store", url: "https://apps.apple.com/app/happ-proxy-utility/id6504287480" },
-      { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.happproxy" },
+      {
+        label: "App Store (RU)",
+        url: "https://apps.apple.com/ru/app/happ-proxy-utility-plus/id6746188973",
+      },
+      {
+        label: "App Store (Global)",
+        url: "https://apps.apple.com/us/app/happ-proxy-utility/id6504287215",
+      },
+      {
+        label: "Google Play",
+        url: "https://play.google.com/store/apps/details?id=com.happproxy&pli=1",
+      },
+      {
+        label: "Android TV Guide (RU)",
+        url: "https://www.happ.su/main/ru/faq/android-tv",
+      },
+      {
+        label: "Android TV Guide (EN)",
+        url: "https://www.happ.su/main/faq/android-tv",
+      },
     ],
   },
+
   {
-    name: "Streisand",
-    platforms: ["iOS", "macOS"],
-    icon: "◉",
-    accent: "#c084fc",
-    badge: null,
+    name: "Incy",
+    platforms: ["iOS", "Android", "macOS"],
+    icon: "◈",
+    accent: "#4ade80",
+    badge: {
+      ru: "Новый",
+      en: "New",
+      es: "Nuevo",
+      de: "Neu",
+      zh: "新",
+    },
     links: [
-      { label: "App Store", url: "https://apps.apple.com/app/streisand/id6450534064" },
+      {
+        label: "App Store",
+        url: "https://apps.apple.com/ru/app/incy/id6756943388",
+      },
+      {
+        label: "Google Play",
+        url: "https://play.google.com/store/apps/details?id=llc.itdev.incy&hl=ru&pli=1",
+      },
     ],
   },
+
   {
-    name: "Clash Verge",
-    platforms: ["Windows", "macOS", "Linux"],
-    icon: "◐",
-    accent: "#f97316",
-    badge: null,
-    links: [
-      { label: "GitHub", url: "https://github.com/clash-verge-rev/clash-verge-rev/releases/latest" },
-    ],
-  },
-  {
-    name: "V2rayNG",
-    platforms: ["Android"],
+    name: "V2RayTun",
+    platforms: ["iOS", "Android"],
     icon: "▲",
     accent: "#34d399",
     badge: null,
     links: [
-      { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.v2ray.ang" },
-      { label: "GitHub APK", url: "https://github.com/2dust/v2rayNG/releases/latest" },
+      {
+        label: "iOS",
+        url: "https://sub.rem2.magazintebetebe.ru/4L9G4JabygRH1kKU",
+      },
+      {
+        label: "Google Play",
+        url: "https://play.google.com/store/apps/details?id=com.v2raytun.android",
+      },
     ],
   },
+
   {
-    name: "Streisand / NekoBox",
-    platforms: ["Android", "Linux"],
+    name: "ClashMi",
+    platforms: ["iOS"],
+    icon: "◉",
+    accent: "#c084fc",
+    badge: null,
+    links: [
+      {
+        label: "App Store",
+        url: "https://apps.apple.com/us/app/clash-mi/id6744321968",
+      },
+    ],
+  },
+
+  {
+    name: "FlClashX",
+    platforms: [
+      "Android",
+      "Windows",
+      "macOS",
+      "Linux",
+      "Android TV",
+    ],
+    icon: "⬢",
+    accent: "#22c55e",
+    badge: {
+      ru: "Рекомендуем",
+      en: "Recommended",
+      es: "Recomendado",
+      de: "Empfohlen",
+      zh: "推荐",
+    },
+    links: [
+      {
+        label: "GitHub Releases",
+        url: "https://github.com/pluralplay/FlClashX/releases/latest",
+      },
+
+      {
+        label: "macOS ARM64",
+        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClash-darwin-arm64.dmg",
+      },
+      {
+        label: "macOS AMD64",
+        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClash-darwin-amd64.dmg",
+      },
+
+      {
+        label: "Windows",
+        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClash-windows-amd64-setup.exe",
+      },
+
+      {
+        label: "Linux AppImage",
+        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClash-linux-amd64.AppImage",
+      },
+
+      {
+        label: "Android APK",
+        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/app-release.apk",
+      },
+
+      {
+        label: "Android TV Guide",
+        url: "https://club.dns-shop.ru/blog/t-132-televizoryi/43999-failyi-apk-dlya-umnyih-televizorov-na-android/?utm_referrer=https%3A%2F%2Fwww.google.com%2F",
+      },
+    ],
+  },
+
+  {
+    name: "NekoBox",
+    platforms: ["Android"],
     icon: "◬",
     accent: "#fb923c",
     badge: null,
     links: [
-      { label: "GitHub", url: "https://github.com/MatsuriDayo/NekoBoxForAndroid/releases/latest" },
+      {
+        label: "GitHub",
+        url: "https://github.com/MatsuriDayo/NekoBoxForAndroid/releases/latest",
+      },
+    ],
+  },
+
+  {
+    name: "NekoRay",
+    platforms: ["Windows", "Linux"],
+    icon: "◐",
+    accent: "#f97316",
+    badge: {
+      ru: "Продвинутый",
+      en: "Advanced",
+      es: "Avanzado",
+      de: "Erweitert",
+      zh: "高级",
+    },
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/MatsuriDayo/nekoray/releases/latest",
+      },
+    ],
+  },
+
+  {
+    name: "Streisand",
+    platforms: ["iOS", "macOS"],
+    icon: "✦",
+    accent: "#818cf8",
+    badge: {
+      ru: "iPhone",
+      en: "iPhone",
+      es: "iPhone",
+      de: "iPhone",
+      zh: "iPhone",
+    },
+    links: [
+      {
+        label: "App Store",
+        url: "https://apps.apple.com/app/streisand/id6450534064",
+      },
     ],
   },
 ];
 
-const PLANS: Record<ProfileLang, { label: string; price: string; days: number; desc: string }[]> = {
+const PLANS: Record<Language, SubscriptionPlan[]> = {
   ru: [
     { label: "1 месяц", price: "100 ₽", days: 30, desc: "Финляндия или Нидерланды" },
     { label: "3 месяца", price: "270 ₽", days: 90, desc: "Скидка 10%" },
@@ -116,6 +250,12 @@ const PLANS: Record<ProfileLang, { label: string; price: string; days: number; d
     { label: "3 months", price: "270 ₽", days: 90, desc: "10% discount" },
     { label: "6 months", price: "500 ₽", days: 180, desc: "17% discount" },
     { label: "1 year", price: "900 ₽", days: 365, desc: "25% discount" },
+  ],
+  es: [
+    { label: "1 mes", price: "100 ₽", days: 30, desc: "Finlandia o Países Bajos" },
+    { label: "3 meses", price: "270 ₽", days: 90, desc: "10% de descuento" },
+    { label: "6 meses", price: "500 ₽", days: 180, desc: "17% de descuento" },
+    { label: "1 año", price: "900 ₽", days: 365, desc: "25% de descuento" },
   ],
   de: [
     { label: "1 Monat", price: "100 ₽", days: 30, desc: "Finnland oder Niederlande" },
@@ -131,88 +271,10 @@ const PLANS: Record<ProfileLang, { label: string; price: string; days: number; d
   ],
 };
 
-const UI: Record<ProfileLang, {
-  buyTitle: string; renewTitle: string; selectPlan: string;
-  balance: string; notEnough: string; buyBtn: string; renewBtn: string;
-  topupFirst: string; clients: string; configs: string; noSub: string;
-  getSub: string; greeting: string; status: string; active: string;
-  expired: string; inactive: string; expires: string; daysLeft: (n: number) => string;
-  expiresSoon: (n: number) => string; expiresToday: string; devices: string;
-  copy: string; copied: string; topup: string; logout: string; refresh: string;
-  manage: string; renew: string; rub: string; key: string; purchaseOk: string;
-  purchaseProcessing: string; insufficientBalance: string;
-  selectRegion: string; regionFi: string; regionNl: string;
-}> = {
-  ru: {
-    buyTitle: "Купить подписку", renewTitle: "Продлить подписку", selectPlan: "Выберите план",
-    balance: "Баланс", notEnough: "Недостаточно средств", buyBtn: "Купить за",
-    renewBtn: "Продлить за", topupFirst: "Пополнить баланс →",
-    clients: "VPN клиенты", configs: "Конфигурации", noSub: "Нет активной подписки",
-    getSub: "Получить подписку →", greeting: "личный кабинет", status: "Статус",
-    active: "Активна", expired: "Истекла", inactive: "Неактивна",
-    expires: "Истекает", daysLeft: (n) => `ещё ${n} дн.`,
-    expiresSoon: (n) => `⚠ Подписка истекает через ${n} дн.`, expiresToday: "⚠ Подписка истекает сегодня",
-    devices: "Устройства", copy: "Копировать", copied: "✓ Скопировано",
-    topup: "Пополнить", logout: "Выйти", refresh: "Обновить", manage: "Управление в боте",
-    renew: "Продлить", rub: "₽", key: "Ключ профиля",
-    purchaseOk: "✓ Подписка активирована", purchaseProcessing: "Обработка...",
-    insufficientBalance: "Пополните баланс для покупки",
-    selectRegion: "Выберите регион", regionFi: "🇫🇮 Финляндия", regionNl: "🇳🇱 Нидерланды",
-  },
-  en: {
-    buyTitle: "Buy subscription", renewTitle: "Renew subscription", selectPlan: "Choose plan",
-    balance: "Balance", notEnough: "Insufficient funds", buyBtn: "Buy for",
-    renewBtn: "Renew for", topupFirst: "Top up balance →",
-    clients: "VPN clients", configs: "Configs", noSub: "No active subscription",
-    getSub: "Get subscription →", greeting: "personal account", status: "Status",
-    active: "Active", expired: "Expired", inactive: "Inactive",
-    expires: "Expires", daysLeft: (n) => `${n} days left`,
-    expiresSoon: (n) => `⚠ Subscription expires in ${n} days`, expiresToday: "⚠ Subscription expires today",
-    devices: "Devices", copy: "Copy", copied: "✓ Copied",
-    topup: "Top up", logout: "Logout", refresh: "Refresh", manage: "Manage in bot",
-    renew: "Renew", rub: "₽", key: "Profile key",
-    purchaseOk: "✓ Subscription activated", purchaseProcessing: "Processing...",
-    insufficientBalance: "Top up balance to purchase",
-    selectRegion: "Select region", regionFi: "🇫🇮 Finland", regionNl: "🇳🇱 Netherlands",
-  },
-  de: {
-    buyTitle: "Abonnement kaufen", renewTitle: "Abonnement verlängern", selectPlan: "Plan wählen",
-    balance: "Guthaben", notEnough: "Unzureichendes Guthaben", buyBtn: "Kaufen für",
-    renewBtn: "Verlängern für", topupFirst: "Guthaben aufladen →",
-    clients: "VPN-Clients", configs: "Konfigurationen", noSub: "Kein aktives Abonnement",
-    getSub: "Abonnement erhalten →", greeting: "persönliches Konto", status: "Status",
-    active: "Aktiv", expired: "Abgelaufen", inactive: "Inaktiv",
-    expires: "Läuft ab", daysLeft: (n) => `noch ${n} Tage`,
-    expiresSoon: (n) => `⚠ Abonnement läuft in ${n} Tagen ab`, expiresToday: "⚠ Abonnement läuft heute ab",
-    devices: "Geräte", copy: "Kopieren", copied: "✓ Kopiert",
-    topup: "Aufladen", logout: "Abmelden", refresh: "Aktualisieren", manage: "Im Bot verwalten",
-    renew: "Verlängern", rub: "₽", key: "Profilschlüssel",
-    purchaseOk: "✓ Abonnement aktiviert", purchaseProcessing: "Verarbeitung...",
-    insufficientBalance: "Guthaben aufladen zum Kaufen",
-    selectRegion: "Region wählen", regionFi: "🇫🇮 Finnland", regionNl: "🇳🇱 Niederlande",
-  },
-  zh: {
-    buyTitle: "购买订阅", renewTitle: "续订", selectPlan: "选择套餐",
-    balance: "余额", notEnough: "余额不足", buyBtn: "购买",
-    renewBtn: "续订", topupFirst: "充值 →",
-    clients: "VPN客户端", configs: "配置", noSub: "没有有效订阅",
-    getSub: "获取订阅 →", greeting: "个人中心", status: "状态",
-    active: "有效", expired: "已过期", inactive: "未激活",
-    expires: "到期", daysLeft: (n) => `剩余${n}天`,
-    expiresSoon: (n) => `⚠ 订阅将在${n}天后到期`, expiresToday: "⚠ 订阅今天到期",
-    devices: "设备", copy: "复制", copied: "✓ 已复制",
-    topup: "充值", logout: "退出", refresh: "刷新", manage: "在机器人管理",
-    renew: "续订", rub: "₽", key: "个人密钥",
-    purchaseOk: "✓ 订阅已激活", purchaseProcessing: "处理中...",
-    insufficientBalance: "余额不足，请充值",
-    selectRegion: "选择地区", regionFi: "🇫🇮 芬兰", regionNl: "🇳🇱 荷兰",
-  },
-};
-
 function SubscriptionModal({
   lang, balance, tgId, mode, currentRegion, onClose, onSuccess,
 }: {
-  lang: ProfileLang;
+  lang: Language;
   balance: number;
   tgId: number;
   mode: "buy" | "renew";
@@ -220,7 +282,7 @@ function SubscriptionModal({
   onClose: () => void;
   onSuccess: () => void;
 }) {
-  const t = UI[lang];
+  const t = translations[lang].profile.dashboard;
   const plans = PLANS[lang];
   const [selected, setSelected] = useState(0);
   const [region, setRegion] = useState<"fi" | "nl">(
@@ -356,14 +418,14 @@ function SubscriptionModal({
   );
 }
 export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props) {
-  const [lang, setLang] = useState<ProfileLang>("ru");
+  const [lang, setLang] = useState<Language>("ru");
   const [copied, setCopied] = useState<string | null>(null);
   const [copiedRef, setCopiedRef] = useState(false);  
   const [showPayment, setShowPayment] = useState(false);
   const [showSubscription, setShowSubscription] = useState(false);
   const [subMode, setSubMode] = useState<"buy" | "renew">("buy");
   const [refreshing, setRefreshing] = useState(false);
-  const t = UI[lang];
+  const t = translations[lang].profile.dashboard;
 
   const days = daysUntil(profile.expires_at);
   const showWarning = profile.subscription === "active" && days !== null && days <= 7;
@@ -409,47 +471,13 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
         }}
       />
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[280px] bg-green-500/5 blur-[100px] pointer-events-none" />
-      <header className="relative border-b border-white/6 px-6 py-4">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <a href="/" className="text-white/25 font-mono text-xs tracking-[0.4em] hover:text-green-400/60 transition-colors uppercase">
-            escapethematrix.to
-          </a>
-          <div className="text-xs font-mono tracking-[0.5em] text-green-400/40 uppercase hidden sm:block">
-            {t.greeting}
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="flex gap-1">
-              {LANGS.map((l) => (
-                <button
-                  key={l}
-                  onClick={() => setLang(l)}
-                  className={`px-2 py-1 font-mono text-xs tracking-widest uppercase transition-all rounded-sm ${
-                    lang === l
-                      ? "border border-green-400/50 text-green-400"
-                      : "border border-white/8 text-white/20 hover:text-white/40"
-                  }`}
-                >
-                  {l}
-                </button>
-              ))}
-            </div>
-            <button
-              onClick={handleRefresh}
-              className="px-3 py-1.5 border border-white/8 text-white/25 font-mono text-xs hover:border-white/20 hover:text-white/50 transition-all rounded-sm"
-            >
-              {refreshing ? (
-                <span className="inline-block w-3 h-3 border border-white/30 border-t-white/70 rounded-full animate-spin" />
-              ) : "↻"}
-            </button>
-            <button
-              onClick={onLogout}
-              className="px-3 py-1.5 border border-white/8 text-white/25 font-mono text-xs hover:border-red-400/30 hover:text-red-400/60 transition-all rounded-sm uppercase tracking-wider"
-            >
-              {t.logout}
-            </button>
-          </div>
-        </div>
-      </header>
+      <Navbar
+        t={translations[lang]}
+        lang={lang}
+        setLang={setLang}
+        isAuthenticated
+        onLogout={onLogout}
+      />
 
       <main className="relative max-w-5xl mx-auto px-4 py-10 flex flex-col gap-8">
         <div>
@@ -493,9 +521,7 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
               <span className="text-green-400 font-bold">{profile.devices_max}</span>
             </div>
             <div className="font-mono text-[10px] text-white/25 mt-1">
-              {lang === "ru" ? "доступных устройств" :
-              lang === "de" ? "verfügbare Geräte" :
-              lang === "zh" ? "个可用设备" : "devices available"}
+              {t.availableDevices}
             </div>
           </div>
         </div>
@@ -578,17 +604,11 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
         )}
         <div>
           <div className="text-xs font-mono tracking-[0.4em] text-white/25 uppercase mb-4">
-            — {lang === "ru" ? "Реферальная программа" : lang === "de" ? "Empfehlungsprogramm" : lang === "zh" ? "推荐计划" : "Referral program"}
+            — {t.referralTitle}
           </div>
           <div className="border border-white/6 bg-white/[0.015] rounded-sm p-5 flex flex-col gap-4">
             <p className="font-mono text-xs text-white/40 leading-relaxed">
-              {lang === "ru"
-                ? "Приглашайте друзей и получайте 25% от каждого их пополнения баланса."
-                : lang === "de"
-                ? "Laden Sie Freunde ein und erhalten Sie 25% von jeder ihrer Aufladungen."
-                : lang === "zh"
-                ? "邀请朋友，每次充值获得 25% 返佣。"
-                : "Invite friends and earn 25% of every balance top-up they make."}
+              {t.referralSub}
             </p>
             <div className="flex items-center gap-3">
               <code className="flex-1 bg-black/40 border border-white/8 rounded-sm px-4 py-2.5 text-xs text-green-400/70 font-mono truncate">
@@ -611,7 +631,7 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
               </button>
             </div>
             <div className="font-mono text-xs text-white/25">
-              👥 {lang === "ru" ? `Приглашено: ` : lang === "de" ? "Eingeladen: " : lang === "zh" ? "已邀请：" : "Invited: "}
+              👥 {t.invited}
               <span className="text-white/60 font-bold">{refCount}</span>
             </div>
           </div>
@@ -684,6 +704,7 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
           onSuccess={handleRefresh}
         />
       )}
+      <Footer t={translations[lang]} />
     </div>
   );
 }

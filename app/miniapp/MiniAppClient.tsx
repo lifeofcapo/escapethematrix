@@ -2,29 +2,7 @@
 
 
 import { useEffect, useState, useCallback } from "react";
-
-interface Subscription {
-  status: "active" | "expired" | "none";
-  plan: string;
-  expires_at: string;
-  days_left: number;
-  devices_limit: number;
-  sub_link: string;
-  region: string;
-}
-
-interface Profile {
-  user_id: number;
-  username?: string;
-  first_name?: string;
-  profile_key: string;
-  balance: number;
-  referrals: number;
-  language: string;
-  subscription: Subscription | null;
-}
-
-type Phase = "loading" | "profile" | "error" | "not_registered";
+import { Profile, Subscription, Phase } from "@/lib/types";
 
 const REGION_LABELS: Record<string, { flag: string; name: string }> = {
   fi: { flag: "🇫🇮", name: "Финляндия" },

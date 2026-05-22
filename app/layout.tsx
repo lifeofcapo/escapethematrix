@@ -20,14 +20,14 @@ const anton = Anton({
 });
 
 export const metadata: Metadata = {
-  title: "Escape The Matrix — VPN",
+  title: "EscapeTheMatrix VPN",
   description: "Zero logs. Zero trace. VLESS + Reality. Helsinki & Amsterdam. 100₽/мес.",
   metadataBase: new URL("https://www.escapethematrix.to"),
   alternates: {
     canonical: "https://www.escapethematrix.to",
   },
   openGraph: {
-    title: "EscapeTheMatrix — VPN",
+    title: "EscapeTheMatrix VPN",
     description: "Без рекламы и слежки. Unlimited. 100₽/m.",
     url: "https://www.escapethematrix.to",
     siteName: "Escape The Matrix",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "EscapeTheMatrix — VPN",
+    title: "EscapeTheMatrix VPN",
     description: "Zero logs. Zero trace. Unlimited. 100₽/мес.",
   },
   icons: {

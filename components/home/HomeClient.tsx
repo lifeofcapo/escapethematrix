@@ -1,17 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { translations, Language } from "../lib/i18n";
-import HeroSection from "../components/HeroSection";
-import FeaturesSection from "../components/FeaturesSection";
-import PricingSection from "../components/PricingSection";
-import PaymentSection from "../components/PaymentSection";
-import CompareSection from "../components/CompareSection";
-import BlogSection from "../components/BlogSection";
-import HowToSection from "../components/HowToSection";
-import FAQSection from "../components/FAQSection";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { translations, Language } from "../../lib/i18n";
+import HeroSection from "./HeroSection";
+import FeaturesSection from "./FeaturesSection";
+import PricingSection from "./PricingSection";
+import PaymentSection from "./PaymentSection";
+import CompareSection from "./CompareSection";
+import BlogSection from "./BlogSection";
+import HowToSection from "./HowToSection";
+import FAQSection from "../FAQSection";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 
 export default function HomeClient() {
   const [lang, setLang] = useState<Language>("ru");

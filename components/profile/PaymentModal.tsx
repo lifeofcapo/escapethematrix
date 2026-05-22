@@ -1,83 +1,8 @@
 "use client";
 
 import { useState } from "react";
-
-type Lang = "ru" | "en" | "de" | "zh";
-
-const T = {
-  ru: {
-    title: "Пополнение баланса",
-    method: "Способ оплаты",
-    amount: "Сумма",
-    amountPlaceholder: "Введите сумму в рублях",
-    pay: "Оплатить",
-    cancel: "Отмена",
-    loading: "Создание платежа...",
-    yookassa: "Карта / СБП",
-    crypto: "Криптовалюта",
-    selectCrypto: "Выберите валюту",
-    cryptoNote: "После оплаты баланс пополнится автоматически",
-    minAmount: "Минимум 100 ₽",
-    errorAmount: "Введите корректную сумму",
-    errorPayment: "Ошибка создания платежа. Попробуйте позже.",
-    rubSymbol: "₽",
-    chooseAmount: "Быстрый выбор",
-  },
-  en: {
-    title: "Top up balance",
-    method: "Payment method",
-    amount: "Amount",
-    amountPlaceholder: "Enter amount in rubles",
-    pay: "Pay",
-    cancel: "Cancel",
-    loading: "Creating payment...",
-    yookassa: "Card / SBP",
-    crypto: "Cryptocurrency",
-    selectCrypto: "Select currency",
-    cryptoNote: "Balance will be updated automatically after payment",
-    minAmount: "Minimum 100 ₽",
-    errorAmount: "Enter a valid amount",
-    errorPayment: "Payment creation failed. Please try later.",
-    rubSymbol: "₽",
-    chooseAmount: "Quick select",
-  },
-  de: {
-    title: "Guthaben aufladen",
-    method: "Zahlungsmethode",
-    amount: "Betrag",
-    amountPlaceholder: "Betrag in Rubel eingeben",
-    pay: "Bezahlen",
-    cancel: "Abbrechen",
-    loading: "Zahlung wird erstellt...",
-    yookassa: "Karte / SBP",
-    crypto: "Kryptowährung",
-    selectCrypto: "Währung auswählen",
-    cryptoNote: "Guthaben wird nach der Zahlung automatisch aktualisiert",
-    minAmount: "Mindestbetrag 100 ₽",
-    errorAmount: "Gültigen Betrag eingeben",
-    errorPayment: "Fehler beim Erstellen der Zahlung. Bitte später versuchen.",
-    rubSymbol: "₽",
-    chooseAmount: "Schnellauswahl",
-  },
-  zh: {
-    title: "充值余额",
-    method: "支付方式",
-    amount: "金额",
-    amountPlaceholder: "输入卢布金额",
-    pay: "支付",
-    cancel: "取消",
-    loading: "创建支付中...",
-    yookassa: "银行卡 / SBP",
-    crypto: "加密货币",
-    selectCrypto: "选择货币",
-    cryptoNote: "支付后余额将自动更新",
-    minAmount: "最低 100 ₽",
-    errorAmount: "请输入有效金额",
-    errorPayment: "创建支付失败，请稍后重试。",
-    rubSymbol: "₽",
-    chooseAmount: "快速选择",
-  },
-};
+import { translations } from "@/lib/i18n";
+import { Language } from "@/lib/types";
 
 const CRYPTO_OPTIONS = [
   { id: "USDT_TRC20", label: "USDT", network: "TRC-20", icon: "₮" },
@@ -93,12 +18,12 @@ const QUICK_AMOUNTS = [100, 300, 500, 1000, 2000];
 interface Props {
   balance: number;
   tgId: number;
-  lang: Lang;
+  lang: Language;
   onClose: () => void;
 }
 
 export default function PaymentModal({ balance, tgId, lang, onClose }: Props) {
-  const t = T[lang];
+  const t = translations[lang].profile.payment;
   const [method, setMethod] = useState<"yookassa" | "crypto">("yookassa");
   const [amount, setAmount] = useState("");
   const [cryptoCurrency, setCryptoCurrency] = useState("USDT_TRC20");

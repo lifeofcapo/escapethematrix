@@ -51,7 +51,7 @@ export default function HeroSection({ t }: { t: any }) {
             className="block text-white/90"
             style={{
               fontFamily: "var(--font-anton), 'Anton', sans-serif",
-              fontSize: "clamp(4rem,15vw,10rem)",
+              fontSize: "clamp(3rem,13vw,8rem)",
               letterSpacing: "0.04em",
               lineHeight: 1.05,
             }}
@@ -62,7 +62,7 @@ export default function HeroSection({ t }: { t: any }) {
             className="block text-green-400"
             style={{
               fontFamily: "var(--font-anton), 'Anton', sans-serif",
-              fontSize: "clamp(4rem,15vw,10rem)",
+              fontSize: "clamp(3rem,13vw,8rem)",
               letterSpacing: "0.04em",
               lineHeight: 1.05,
             }}
