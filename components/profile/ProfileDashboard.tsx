@@ -99,26 +99,26 @@ const VPN_CLIENTS: VPNClient[] = [
 
       {
         label: "macOS ARM64",
-        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClash-darwin-arm64.dmg",
+        url: "https://github.com/pluralplay/FlClashX/releases/download/v0.3.2/FlClashX-macos-arm64.dmg",
       },
       {
         label: "macOS AMD64",
-        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClash-darwin-amd64.dmg",
+        url: "https://github.com/pluralplay/FlClashX/releases/download/v0.3.2/FlClashX-macos-amd64.dmg",
       },
 
       {
         label: "Windows",
-        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClash-windows-amd64-setup.exe",
+        url: "https://github.com/pluralplay/FlClashX/releases/download/v0.3.2/FlClashX-windows-amd64-setup.exe",
       },
 
       {
         label: "Linux AppImage",
-        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClash-linux-amd64.AppImage",
+        url: "https://github.com/pluralplay/FlClashX/releases/download/v0.3.2/FlClashX-linux-amd64.AppImage",
       },
 
       {
         label: "Android APK",
-        url: "https://github.com/pluralplay/FlClashX/releases/latest/download/app-release.apk",
+        url: "https://github.com/pluralplay/FlClashX/releases/download/v0.3.2/FlClashX-android-universal.apk",
       },
 
       {
@@ -195,6 +195,10 @@ const VPN_CLIENTS: VPNClient[] = [
         label: "GitHub",
         url: "https://github.com/MatsuriDayo/NekoBoxForAndroid/releases/latest",
       },
+      {
+        label: "Android (APK)",
+        url: "https://github.com/MatsuriDayo/NekoBoxForAndroid/releases/download/1.4.2/NekoBox-1.4.2-x86_64.apk",
+      }
     ],
   },
 
