@@ -6,8 +6,8 @@ import PaymentModal from "./PaymentModal";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { signOut } from "next-auth/react";
-import { VPN_CLIENTS } from "./VPNClients";
-import { PLANS } from "./Plans";
+import { VPN_CLIENTS } from "./static/VPNClients";
+import { PLANS } from "./static/Plans";
 
 import {
   Language,
