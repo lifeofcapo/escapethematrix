@@ -24,9 +24,6 @@ function getPool(): Pool {
 const REGION_META: Record<string, { city: string; flag: string; ping: string }> = {
   fi:  { city: "Helsinki",   flag: "🇫🇮", ping: "~60ms"  },
   nl:  { city: "Amsterdam",  flag: "🇳🇱", ping: "~65ms"  },
-  // на случай добавления новых серверов
-  de:  { city: "Frankfurt",  flag: "🇩🇪", ping: "~72ms"  },
-  us:  { city: "New York",   flag: "🇺🇸", ping: "~90ms"  },
 };
 
 export async function POST(req: NextRequest) {

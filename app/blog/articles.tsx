@@ -948,7 +948,7 @@ export const articleContent = {
         },
         {
           type: "image",
-          src: "/images/articles/escapethematrix-update-1.jpg",
+          src: "/images/articles/EscapeTheMatrixVPN.jpg",
           alt: "Новые протоколы подключения EscapeTheMatrix",
           caption: "Новые способы подключения для повышения стабильности"
         },
@@ -1028,7 +1028,7 @@ export const articleContent = {
       metaDescription: "EscapeTheMatrix adds VLESS+gRPC, VLESS+xHTTP and Hysteria2 protocols. We recommend switching to the INCY app for stable connections on iOS and Android.",
       content: [
         { type: "intro", text: "Due to new mobile blocking measures, some users may have experienced connection issues. We responded quickly and prepared several improvements to increase service stability." },
-        { type: "image", src: "/images/articles/escapethematrix-update-1.jpg", alt: "New EscapeTheMatrix connection protocols", caption: "New connection methods for improved stability" },
+        { type: "image", src: "/images/articles/EscapeTheMatrixVPN.jpg", alt: "New EscapeTheMatrix connection protocols", caption: "New connection methods for improved stability" },
         { type: "h2", text: "New connection methods" },
         { type: "p", text: "To improve resistance to blocking, we've added additional connection protocols:" },
         { type: "list", items: [
@@ -1063,7 +1063,7 @@ export const articleContent = {
       metaDescription: "EscapeTheMatrix añade los protocolos VLESS+gRPC, VLESS+xHTTP y Hysteria2. Recomendamos cambiar a la app INCY para conexiones estables en iOS y Android.",
       content: [
         { type: "intro", text: "Debido a las nuevas medidas de bloqueo en dispositivos móviles, algunos usuarios pueden haber experimentado problemas de conexión. Respondimos rápidamente y preparamos varias mejoras para aumentar la estabilidad del servicio." },
-        { type: "image", src: "/images/articles/escapethematrix-update-1.jpg", alt: "Nuevos protocolos de conexión de EscapeTheMatrix", caption: "Nuevos métodos de conexión para mayor estabilidad" },
+        { type: "image", src: "/images/articles/EscapeTheMatrixVPN.jpg", alt: "Nuevos protocolos de conexión de EscapeTheMatrix", caption: "Nuevos métodos de conexión para mayor estabilidad" },
         { type: "h2", text: "Nuevos métodos de conexión" },
         { type: "p", text: "Para mejorar la resistencia a los bloqueos, hemos añadido protocolos de conexión adicionales:" },
         { type: "list", items: [
@@ -1098,7 +1098,7 @@ export const articleContent = {
       metaDescription: "EscapeTheMatrix fügt die Protokolle VLESS+gRPC, VLESS+xHTTP und Hysteria2 hinzu. Wir empfehlen den Wechsel zur INCY-App für stabile Verbindungen auf iOS und Android.",
       content: [
         { type: "intro", text: "Aufgrund neuer mobiler Sperrmaßnahmen hatten einige Nutzer möglicherweise Verbindungsprobleme. Wir haben schnell reagiert und mehrere Verbesserungen zur Steigerung der Servicestabilität vorbereitet." },
-        { type: "image", src: "/images/articles/escapethematrix-update-1.jpg", alt: "Neue EscapeTheMatrix-Verbindungsprotokolle", caption: "Neue Verbindungsmethoden für mehr Stabilität" },
+        { type: "image", src: "/images/articles/EscapeTheMatrixVPN.jpg", alt: "Neue EscapeTheMatrix-Verbindungsprotokolle", caption: "Neue Verbindungsmethoden für mehr Stabilität" },
         { type: "h2", text: "Neue Verbindungsmethoden" },
         { type: "p", text: "Um die Widerstandsfähigkeit gegen Sperren zu verbessern, haben wir zusätzliche Verbindungsprotokolle hinzugefügt:" },
         { type: "list", items: [
@@ -1133,7 +1133,7 @@ export const articleContent = {
       metaDescription: "EscapeTheMatrix新增VLESS+gRPC、VLESS+xHTTP和Hysteria2协议。建议在iOS和Android上切换至INCY应用以获得稳定连接。",
       content: [
         { type: "intro", text: "由于新的移动端封锁措施，部分用户可能遇到连接问题。我们已迅速响应，并准备了多项改进以提高服务稳定性。" },
-        { type: "image", src: "/images/articles/escapethematrix-update-1.jpg", alt: "EscapeTheMatrix新连接协议", caption: "新增连接方式以提高稳定性" },
+        { type: "image", src: "/images/articles/EscapeTheMatrixVPN.jpg", alt: "EscapeTheMatrix新连接协议", caption: "新增连接方式以提高稳定性" },
         { type: "h2", text: "新连接方式" },
         { type: "p", text: "为提高抗封锁能力，我们新增了以下连接协议：" },
         { type: "list", items: [
@@ -1162,8 +1162,6 @@ export const articleContent = {
   }
 };
 
-// Ordered list of all article slugs (newest first).
-// Used by the /blog listing page and "related articles" sections.
 export const articleSlugs = [
   "escapethematrix-news",
   "vpn-blocks-developers",
@@ -1176,8 +1174,6 @@ export const articleSlugs = [
 
 export type ArticleSlug = (typeof articleSlugs)[number];
 
-// Convenience accessor: returns { slug, ...articleContent[slug][lang] } for every slug,
-// in the order defined by articleSlugs (newest first).
 export function getArticleList(lang: Language) {
   return articleSlugs.map((slug) => ({
     slug,
@@ -1185,7 +1181,6 @@ export function getArticleList(lang: Language) {
   }));
 }
 
-// Returns up to `count` most recent articles, excluding `excludeSlug`.
 export function getRelatedArticles(
   lang: Language,
   excludeSlug: string,
