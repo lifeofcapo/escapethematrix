@@ -2,13 +2,22 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { translations, articleContent, Language } from "../../lib/i18n";
+import { translations, Language } from "../../lib/i18n";
+import { articleContent } from "./articles";
 import Navbar from "../../components/Navbar";
 import FAQSection from "../../components/FAQSection";
 import Footer from "../../components/Footer";
+import RelatedArticles from "./RelatedArticles";
 
 interface ArticlePageClientProps {
-  slug: "public-wifi-safe" | "vpn-legal" | "vpn-devices";
+  slug:
+    | "public-wifi-safe"
+    | "vpn-legal"
+    | "vpn-devices"
+    | "gosvpn-developers"
+    | "bot-traffic-exceeds-human"
+    | "vpn-blocks-developers"
+    | "escapethematrix-news";
 }
 
 export default function ArticlePageClient({ slug }: ArticlePageClientProps) {
@@ -59,7 +68,7 @@ export default function ArticlePageClient({ slug }: ArticlePageClientProps) {
             <nav aria-label="breadcrumb" className="flex items-center gap-2 font-mono text-xs text-white/25 tracking-widest mb-8">
               <Link href="/" className="hover:text-green-400/60 transition-colors">HOME</Link>
               <span>/</span>
-              <Link href="/#blog" className="hover:text-green-400/60 transition-colors">BLOG</Link>
+              <Link href="/blog" className="hover:text-green-400/60 transition-colors">BLOG</Link>
               <span>/</span>
               <span className="text-white/50">{article.tag.toUpperCase()}</span>
             </nav>
@@ -135,12 +144,29 @@ export default function ArticlePageClient({ slug }: ArticlePageClientProps) {
                     </div>
                   );
                 }
+                if (block.type === "image") {
+                  return (
+                    <figure key={i} className="my-10 flex flex-col items-center">
+                      <img
+                        src={block.src}
+                        alt={block.alt || ""}
+                        loading="lazy"
+                        className="max-w-full md:max-w-2xl w-full h-auto rounded-sm border border-white/10 mx-auto"
+                      />
+                      {block.caption && (
+                        <figcaption className="mt-3 text-center text-white/30 font-mono text-xs tracking-wide">
+                          {block.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  );
+                }
                 return null;
               })}
             </div>
             <div className="mt-16 pt-10 border-t border-white/5 flex flex-col sm:flex-row items-start sm:items-center gap-6">
               <a
-                href="EscapeTheMatrixVPNBot"
+                href="https://t.me/EscapeTheMatrixVPNBot"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-green-400 text-[#080808] font-mono font-bold text-sm tracking-wider rounded hover:bg-green-300 transition-all"
@@ -172,12 +198,12 @@ export default function ArticlePageClient({ slug }: ArticlePageClientProps) {
               "dateModified": "2026-04-09",
               "author": {
                 "@type": "Organization",
-                "name": "Escape The Matrix",
+                "name": "EscapeTheMatrix",
                 "url": "https://www.escapethematrix.to"
               },
               "publisher": {
                 "@type": "Organization",
-                "name": "Escape The Matrix",
+                "name": "EscapeTheMatrix",
                 "url": "https://www.escapethematrix.to"
               },
               "mainEntityOfPage": {
@@ -187,6 +213,8 @@ export default function ArticlePageClient({ slug }: ArticlePageClientProps) {
             })
           }}
         />
+
+        <RelatedArticles lang={lang} currentSlug={slug} />
 
         <FAQSection t={t} />
         <Footer t={t} />

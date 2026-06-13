@@ -18,6 +18,14 @@ import {
 
 const LANGS: Language[] = ["ru", "en", "es", "de", "zh"];
 
+const supportText: Record<Language, { label: string; sub: string }> = {
+  ru: { label: "Поддержка VK", sub: "Если возникли проблемы с подключением — напишите нам" },
+  en: { label: "VK Support", sub: "Having connection issues? Reach out to us" },
+  es: { label: "Soporte VK", sub: "¿Problemas de conexión? Escríbenos" },
+  de: { label: "VK-Support", sub: "Verbindungsprobleme? Schreiben Sie uns" },
+  zh: { label: "VK客服支持", sub: "连接遇到问题？联系我们" },
+};
+
 interface Props {
   profile: ProfileData;
   onLogout: () => void;
@@ -449,6 +457,21 @@ export default function ProfileDashboard({ profile, onLogout, onRefresh }: Props
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12 pt-8 border-t border-white/5 flex flex-col items-center text-center gap-3">
+            <p className="text-white/20 font-mono text-xs">{supportText[lang].sub}</p>
+            <a
+              href="https://vk.com/disturbingcontent"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-6 py-3 border border-white/8 rounded-sm font-mono text-sm tracking-wider text-white/60 hover:border-blue-400/30 hover:text-blue-300 hover:bg-blue-400/[0.04] transition-all group"
+            >
+              <svg className="w-4 h-4 flex-shrink-0 text-[#2787F5] group-hover:text-blue-300 transition-colors" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.785 16.241s.288-.032.436-.194c.136-.148.131-.427.131-.427s-.02-1.304.572-1.496c.583-.19 1.332 1.26 2.127 1.818.602.422 1.06.33 1.06.33l2.124-.03s1.112-.07.585-.964c-.043-.073-.308-.652-1.587-1.852-1.338-1.255-1.159-1.052.453-3.224.98-1.323 1.371-2.13 1.247-2.477-.117-.33-.842-.243-.842-.243l-2.394.015s-.177-.024-.31.057c-.128.08-.21.265-.21.265s-.379 1.018-.884 1.883c-1.066 1.838-1.493 1.935-1.665 1.823-.405-.264-.304-1.066-.304-1.635 0-1.776.27-2.516-.523-2.71-.264-.065-.458-.108-1.131-.115-.86-.009-1.587.003-1.999.21-.275.137-.487.443-.358.46.158.022.518.099.708.359.246.336.237.99.237.99s.142 2.084-.33 2.343c-.325.178-.77-.186-1.722-1.846-.488-.84-.857-1.769-.857-1.769s-.07-.174-.196-.267c-.153-.114-.367-.15-.367-.15l-2.275.015s-.342.01-.467.158c-.112.132-.009.405-.009.405s1.78 4.165 3.795 6.264c1.848 1.925 3.945 1.799 3.945 1.799h.946z"/>
+              </svg>
+              <span>{supportText[lang].label}</span>
+            </a>
           </div>
         </div>
       </main>

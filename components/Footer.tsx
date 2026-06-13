@@ -15,19 +15,40 @@ export default function Footer({ t }: { t: any }) {
           </div>
 
           <div className="flex flex-wrap items-center gap-6">
+            <a href="/blog" className="text-white/70 font-mono text-xs tracking-widest hover:text-white/40 transition-colors">
+              Blog
+            </a>
+            <a href="/#faq" className="text-white/70 font-mono text-xs tracking-widest hover:text-white/40 transition-colors">
+              FAQ
+            </a>
+            <a href="/profile" className="text-white/70 font-mono text-xs tracking-widest hover:text-white/40 transition-colors">
+              {t.nav?.profile ?? "Profile"}
+            </a>
             <a href="/privacy" className="text-white/70 font-mono text-xs tracking-widest hover:text-white/40 transition-colors">
               {t.footer.privacy}
             </a>
             <a href="/terms" className="text-white/70 font-mono text-xs tracking-widest hover:text-white/40 transition-colors">
               {t.footer.terms}
             </a>
+            <a
+              href="/agreement-pd.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 font-mono text-xs tracking-widest hover:text-white/40 transition-colors">
+              {t.footer.agreement}
+            </a>
           </div>
         </div>
 
         <div className="mt-10 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <span className="text-white/50 font-mono text-[10px] tracking-widest uppercase">
-            © 2026 escapethematrix.to — All rights reserved
-          </span>
+          <div className="flex flex-col gap-1">
+            <span className="text-white/50 font-mono text-[10px] tracking-widest uppercase">
+              © 2026 escapethematrix.to — All rights reserved
+            </span>
+            <span className="text-white/30 font-mono text-[10px] tracking-widest">
+              ИНН 920162447720
+            </span>
+          </div>
 
           <div className="flex items-center gap-4">
             <a

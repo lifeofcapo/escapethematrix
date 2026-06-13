@@ -13,6 +13,34 @@ interface Props {
   onLogin: (data: any, key: string) => void;
 }
 
+const consentText: Record<Language, { pre: string; link: string; post: string }> = {
+  ru: {
+    pre: "Авторизуясь через Google Аккаунт, вы соглашаетесь с ",
+    link: "обработкой персональных данных",
+    post: "",
+  },
+  en: {
+    pre: "By signing in with Google, you agree to the ",
+    link: "processing of personal data",
+    post: "",
+  },
+  es: {
+    pre: "Al iniciar sesión con Google, aceptas el ",
+    link: "procesamiento de datos personales",
+    post: "",
+  },
+  de: {
+    pre: "Durch die Anmeldung mit Google stimmen Sie der ",
+    link: "Verarbeitung personenbezogener Daten",
+    post: " zu",
+  },
+  zh: {
+    pre: "通过Google账户登录，即表示您同意",
+    link: "个人数据处理协议",
+    post: "",
+  },
+};
+
 export default function ProfileLogin({ onLogin }: Props) {
   const [lang, setLang] = useState<Language>("ru");
   const [key, setKey] = useState("");
@@ -22,6 +50,7 @@ export default function ProfileLogin({ onLogin }: Props) {
   const [showKeyForm, setShowKeyForm] = useState(false);
 
   const t = translations[lang].profile.login;
+  const consent = consentText[lang];
 
   const handleSubmit = async () => {
     if (!key.trim()) return;
@@ -146,6 +175,19 @@ export default function ProfileLogin({ onLogin }: Props) {
                 </span>
               </div>
             </button>
+
+            <p className="text-white/20 font-mono text-[11px] leading-relaxed text-center -mt-1">
+              {consent.pre}
+              <a
+                href="/agreement-pd.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/35 underline hover:text-green-400/60 transition-colors"
+              >
+                {consent.link}
+              </a>
+              {consent.post}
+            </p>
 
             <div className="flex items-center gap-3">
               <div className="flex-1 h-px bg-white/6" />
