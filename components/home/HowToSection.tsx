@@ -12,9 +12,9 @@ export default function HowToSection({ t }: { t: TranslationSet }) {
   }));
 
   const apps = [
-    { platform: "Android", icon: "▲", recommended: "FlClashX", others: ["Happ"] },
-    { platform: "iOS", icon: "◆", recommended: "Happ", others: ["Streisand"] },
-    { platform: "Windows", icon: "◈", recommended: "FlClashX", others: ["Happ", "Clash Verge"] },
+    { platform: "Android", icon: "▲", recommended: "INCY", others: ["Happ", "FlClashX"] },
+    { platform: "iOS", icon: "◆", recommended: "INCY", others: ["Happ", "Streisand"] },
+    { platform: "Windows", icon: "◈", recommended: "FlClashX", others: ["Happ", "Clash Verge", "Nekoray"] },
     { platform: "macOS", icon: "◉", recommended: "FlClashX", others: ["Happ", "Clash Verge"] },
     { platform: "Linux", icon: "◐", recommended: "FlClashX", others: ["Clash Verge"] },
   ];

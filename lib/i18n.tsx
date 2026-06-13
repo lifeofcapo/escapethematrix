@@ -189,7 +189,7 @@ export const translations = {
       title: "Почему мы",
       items: [
         { icon: "◈", title: "Zero Logs", desc: "Мы технически не можем предоставить то, чего не существует. Никаких логов, никаких IP, никаких данных о трафике." },
-        { icon: "◎", title: "VLESS + Reality", desc: "Современный протокол. Обходит DPI-блокировки. Работает везде: Windows, macOS, Linux, iOS, Android." },
+        { icon: "◎", title: "VLESS + Reality | Hysteria", desc: "Современный протокол. Обходит DPI-блокировки. Работает везде: Windows, macOS, Linux, iOS, Android." },
         { icon: "◬", title: "1+ Гбит/с", desc: "Скорость для 4K стриминга и онлайн-игр. Без ограничений и троттлинга." },
         { icon: "◆", title: "Крипта и карты", desc: "Оплата криптой, Visa, Mastercard, МИР, СБП. Быстро и удобно." },
         { icon: "◉", title: "4 устройства", desc: "Одна подписка — 4 устройства одновременно. Нужно больше — +49₽ за ещё 3 слота." },
@@ -269,7 +269,7 @@ export const translations = {
       ctaSub: "@EscapeTheMatrixVPNBot",
       steps: [
         { title: "Открой Telegram-бот", desc: "@EscapeTheMatrixVPNBot — там всё просто и понятно" },
-        { title: "Выбери тариф", desc: "1 локация за 100₽/мес — один из лучших серверов Европы" },
+        { title: "Выбери тариф", desc: "2 локации и мобильные обходы за 100₽/мес — одни из лучших серверов Европы" },
         { title: "Оплати", desc: "Карта или СБП — быстро и удобно" },
         { title: "Получи ссылку", desc: "VLESS-ссылка для импорта в приложение" },
         { title: "Подключись", desc: "Импортируй в FlClashX / Happ — готово" },
@@ -281,7 +281,7 @@ export const translations = {
         { q: "Реально zero logs?", a: "Да. Мы не храним никакие логи подключений, IP-адреса или данные о трафике. Технически не можем предоставить то, чего не существует." },
         { q: "Какой протокол?", a: "VLESS. Современный, быстрый, безопасный. Обходит блокировки DPI. Работает на всех платформах: Windows, macOS, Linux, iOS, Android." },
         { q: "Какая скорость?", a: "Зависит от сервера, но в среднем 1+ Гбит/с. Хватает для 4K стриминга и онлайн-игр." },
-        { q: "Сколько устройств?", a: "5 устройств включено в тариф. Нужно больше — +49₽ за ещё 5 слотов." },
+        { q: "Сколько устройств?", a: "4 устройств включено в тариф. Нужно больше — +49₽ за ещё 3 слота." },
         { q: "Возврат денег?", a: "Если что-то не работает и мы не можем решить проблему — вернём деньги. Без вопросов." },
       ],
     },
@@ -374,7 +374,7 @@ export const translations = {
       sub: "Твоя свобода в сети.",
       privacy: "Политика конфиденциальности",
       terms: "Условия использования",
-      agreement: "Согласине на обработку ПНД"
+      agreement: "Согласие на обработку ПНД"
     },
   },
 
@@ -391,7 +391,7 @@ export const translations = {
       title: "Why us",
       items: [
         { icon: "◈", title: "Zero Logs", desc: "We technically cannot provide what doesn't exist. No logs, no IPs, no traffic data. Ever." },
-        { icon: "◎", title: "VLESS + Reality", desc: "Modern protocol. Bypasses DPI censorship. Works everywhere: Windows, macOS, Linux, iOS, Android." },
+        { icon: "◎", title: "VLESS + Reality | Hysteria", desc: "Modern protocol. Bypasses DPI censorship. Works everywhere: Windows, macOS, Linux, iOS, Android." },
         { icon: "◬", title: "1+ Gbps", desc: "Speed for 4K streaming and online gaming. No limits, no throttling." },
         { icon: "◆", title: "Crypto & Cards", desc: "Pay with crypto, Visa, Mastercard. Fast and convenient." },
         { icon: "◉", title: "4 Devices", desc: "One subscription — 4 simultaneous devices. Need more? +49₽ for 3 extra slots." },
@@ -471,7 +471,7 @@ export const translations = {
       ctaSub: "@EscapeTheMatrixVPNBot",
       steps: [
         { title: "Open Telegram Bot", desc: "@EscapeTheMatrixVPNBot — simple and clear" },
-        { title: "Choose a plan", desc: "1 location for 100₽/mo — one of Europe's best servers" },
+        { title: "Choose a plan", desc: "2 locations and additional configs for 100₽/mo — one of Europe's best servers" },
         { title: "Pay", desc: "Card or crypto — fast and easy" },
         { title: "Get your link", desc: "VLESS link to import into the app" },
         { title: "Connect", desc: "Import into FlClashX / Happ — done" },
@@ -483,7 +483,7 @@ export const translations = {
         { q: "Really zero logs?", a: "Yes. We don't store any connection logs, IP addresses or traffic data. We technically cannot provide what doesn't exist." },
         { q: "Which protocol?", a: "VLESS. Modern, fast, secure. Bypasses DPI blocking. Works on all platforms: Windows, macOS, Linux, iOS, Android." },
         { q: "What speed?", a: "Depends on the server, but averages 1+ Gbps. Enough for 4K streaming and online gaming." },
-        { q: "How many devices?", a: "5 devices included in the plan. Need more — +49₽ for another 5 slots." },
+        { q: "How many devices?", a: "4 devices included in the plan. Need more — +49₽ for another 3 slots." },
         { q: "Refund policy?", a: "If something doesn't work and we can't fix the problem — we'll refund. No questions asked." },
       ],
     },
@@ -592,7 +592,7 @@ export const translations = {
       title: "Por qué nosotros",
       items: [
         { icon: "◈", title: "Zero Logs", desc: "Técnicamente no podemos proporcionar lo que no existe. Sin logs, sin IPs, sin datos de tráfico." },
-        { icon: "◎", title: "VLESS + Reality", desc: "Protocolo moderno. Evita la censura DPI. Funciona en todas partes: Windows, macOS, Linux, iOS, Android." },
+        { icon: "◎", title: "VLESS + Reality | Hysteria", desc: "Protocolo moderno. Evita la censura DPI. Funciona en todas partes: Windows, macOS, Linux, iOS, Android." },
         { icon: "◬", title: "1+ Gbps", desc: "Velocidad para streaming 4K y juegos online. Sin límites ni throttling." },
         { icon: "◆", title: "Cripto y tarjetas", desc: "Paga con criptomoneda, Visa, Mastercard. Rápido y conveniente." },
         { icon: "◉", title: "4 dispositivos", desc: "Una suscripción — 4 dispositivos simultáneos. ¿Necesitas más? +49₽ por 3 ranuras extra." },
@@ -672,7 +672,7 @@ export const translations = {
       ctaSub: "@EscapeTheMatrixVPNBot",
       steps: [
         { title: "Abre el Bot de Telegram", desc: "@EscapeTheMatrixVPNBot — simple y claro" },
-        { title: "Elige un plan", desc: "1 ubicación por 100₽/mes" },
+        { title: "Elige un plan", desc: "2 ubicaciónas por 100₽/mes" },
         { title: "Paga", desc: "Tarjeta o cripto — rápido y fácil" },
         { title: "Obtén tu enlace", desc: "Enlace VLESS para importar en la app" },
         { title: "Conéctate", desc: "Importa en FlClashX / Happ — listo" },
@@ -684,7 +684,7 @@ export const translations = {
         { q: "¿De verdad zero logs?", a: "Sí. No almacenamos logs de conexión, direcciones IP ni datos de tráfico." },
         { q: "¿Qué protocolo?", a: "VLESS. Moderno, rápido, seguro. Evita el bloqueo DPI. Funciona en todas las plataformas." },
         { q: "¿Qué velocidad?", a: "Promedia 1+ Gbps. Suficiente para streaming 4K y juegos." },
-        { q: "¿Cuántos dispositivos?", a: "5 dispositivos incluidos. ¿Necesitas más? +49₽ por 5 ranuras adicionales." },
+        { q: "¿Cuántos dispositivos?", a: "4 dispositivos incluidos. ¿Necesitas más? +49₽ por 3 ranuras adicionales." },
         { q: "¿Política de reembolso?", a: "Si algo no funciona y no podemos resolver el problema — te devolvemos el dinero." },
       ],
     },
@@ -794,7 +794,7 @@ export const translations = {
       title: "Warum wir",
       items: [
         { icon: "◈", title: "Zero Logs", desc: "Wir können technisch nicht liefern, was nicht existiert. Keine Logs, keine IPs, keine Traffic-Daten." },
-        { icon: "◎", title: "VLESS + Reality", desc: "Modernes Protokoll. Umgeht DPI-Sperren. Läuft überall: Windows, macOS, Linux, iOS, Android." },
+        { icon: "◎", title: "VLESS + Reality | Hysteria", desc: "Modernes Protokoll. Umgeht DPI-Sperren. Läuft überall: Windows, macOS, Linux, iOS, Android." },
         { icon: "◬", title: "1+ Gbps", desc: "Geschwindigkeit für 4K-Streaming und Online-Gaming. Ohne Limits." },
         { icon: "◆", title: "Krypto & Karten", desc: "Zahle mit Krypto, Visa oder Mastercard. Schnell und bequem." },
         { icon: "◉", title: "4 Geräte", desc: "Ein Abo — 4 gleichzeitige Geräte. Mehr nötig? +49₽ für 3 weitere." },
@@ -874,7 +874,7 @@ export const translations = {
       ctaSub: "@EscapeTheMatrixVPNBot",
       steps: [
         { title: "Telegram-Bot öffnen", desc: "@EscapeTheMatrixVPNBot — einfach und klar" },
-        { title: "Tarif wählen", desc: "1 Standort für 100₽/Monat" },
+        { title: "Tarif wählen", desc: "2 Standort für 100₽/Monat" },
         { title: "Bezahlen", desc: "Karte oder Krypto — schnell und einfach" },
         { title: "Link erhalten", desc: "VLESS-Link zum Importieren in die App" },
         { title: "Verbinden", desc: "In FlClashX / Happ importieren — fertig" },
@@ -886,7 +886,7 @@ export const translations = {
         { q: "Wirklich zero logs?", a: "Ja. Wir speichern keine Verbindungslogs, IP-Adressen oder Traffic-Daten." },
         { q: "Welches Protokoll?", a: "VLESS. Modern, schnell, sicher. Umgeht DPI-Sperren. Funktioniert auf allen Plattformen." },
         { q: "Welche Geschwindigkeit?", a: "Im Durchschnitt 1+ Gbps. Ausreichend für 4K-Streaming und Online-Gaming." },
-        { q: "Wie viele Geräte?", a: "5 Geräte im Tarif enthalten. Mehr nötig — +49₽ für weitere 5 Slots." },
+        { q: "Wie viele Geräte?", a: "4 Geräte im Tarif enthalten. Mehr nötig — +49₽ für weitere 3 Slots." },
         { q: "Rückerstattungsrichtlinie?", a: "Wenn etwas nicht funktioniert und wir das Problem nicht lösen können — erstatten wir." },
       ],
     },
@@ -996,7 +996,7 @@ export const translations = {
       title: "为什么选择我们",
       items: [
         { icon: "◈", title: "零日志", desc: "我们在技术上无法提供不存在的东西。没有日志，没有IP，没有流量数据。" },
-        { icon: "◎", title: "VLESS + Reality", desc: "现代协议，绕过DPI封锁，支持所有平台：Windows、macOS、Linux、iOS、Android。" },
+        { icon: "◎", title: "VLESS + Reality | Hysteria", desc: "现代协议，绕过DPI封锁，支持所有平台：Windows、macOS、Linux、iOS、Android。" },
         { icon: "◬", title: "1+ Gbps", desc: "足以支持4K流媒体和在线游戏，无限速，无节流。" },
         { icon: "◆", title: "加密货币和银行卡", desc: "支持加密货币、Visa、Mastercard付款。快速便捷。" },
         { icon: "◉", title: "4台设备", desc: "一个订阅，同时支持4台设备。需要更多？额外3个槽位仅需+49₽。" },
@@ -1076,7 +1076,7 @@ export const translations = {
       ctaSub: "@EscapeTheMatrixVPNBot",
       steps: [
         { title: "打开Telegram机器人", desc: "@EscapeTheMatrixVPNBot — 简单明了" },
-        { title: "选择套餐", desc: "1个地区每月100₽" },
+        { title: "选择套餐", desc: "2个地区每月100₽" },
         { title: "付款", desc: "银行卡或加密货币 — 快速简便" },
         { title: "获取链接", desc: "用于导入应用的VLESS链接" },
         { title: "连接", desc: "导入FlClashX / Happ — 完成" },
@@ -1088,7 +1088,7 @@ export const translations = {
         { q: "真的零日志？", a: "是的。我们不存储任何连接日志、IP地址或流量数据。" },
         { q: "使用什么协议？", a: "VLESS。现代、快速、安全。绕过DPI封锁。适用于所有平台。" },
         { q: "速度如何？", a: "平均1+ Gbps。足以支持4K流媒体和在线游戏。" },
-        { q: "支持多少设备？", a: "套餐包含5台设备。需要更多——额外5个槽位只需+49₽。" },
+        { q: "支持多少设备？", a: "套餐包含4台设备。需要更多——额外3个槽位只需+49₽。" },
         { q: "退款政策？", a: "如果某些功能不起作用且我们无法解决问题——我们将退款。无需理由。" },
       ],
     },

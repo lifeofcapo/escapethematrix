@@ -19,7 +19,7 @@ import {
 const LANGS: Language[] = ["ru", "en", "es", "de", "zh"];
 
 const supportText: Record<Language, { label: string; sub: string }> = {
-  ru: { label: "Поддержка VK", sub: "Если возникли проблемы с подключением — напишите нам" },
+  ru: { label: "Поддержка VK", sub: "Если нет возможности написать в Телеграм — напишите нам в ВК" },
   en: { label: "VK Support", sub: "Having connection issues? Reach out to us" },
   es: { label: "Soporte VK", sub: "¿Problemas de conexión? Escríbenos" },
   de: { label: "VK-Support", sub: "Verbindungsprobleme? Schreiben Sie uns" },
